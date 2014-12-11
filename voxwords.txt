@@ -721,6 +721,7 @@ malfunctioning
 malf
 me
 medbay
+minus
 mommi = mommy
 money
 monkey
@@ -728,6 +729,7 @@ monkeys
 move
 my
 nanotrasen
+negative
 ninja
 ninjas
 obtain

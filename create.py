@@ -56,7 +56,7 @@ VOICE='nitech_us_slt_arctic_hts' # less bored US female
 #PHONESET='mrpa'
 PHONESET=''
 
-MALE=True
+MALE=False
 # What we do with SoX:
 if MALE:
 	VOICE='nitech_us_slt_arctic_hts' # less bored US female
