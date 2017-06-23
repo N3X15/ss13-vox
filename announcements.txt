@@ -12,6 +12,12 @@ sound/AI/vox_reminder6 = Hate your jawb?  The H. O. P. can help.
 sound/AI/vox_reminder7 = Travel to strange new worlds, meet new creatures, and kill them for their gold.  Become a miner today.
 sound/AI/vox_reminder8 = Reminder: Beez kill.  Lynch a beekeeper today.
 sound/AI/vox_reminder9 = Reminder: Mobile M. M. Eyes are not asimov borgs.  Stop asking them to open doors.
+sound/AI/vox_reminder10 = Reminder: Do not try to catch pink snowflakes with your tongue.
+sound/AI/vox_reminder11 = Reminder: Knowing the difference between N 2 and N 2 O could save your life.
+sound/AI/vox_reminder12 = Reminder: Do not tickle the supermatter.
+sound/AI/vox_reminder13 = Remember: Tah har rans carry a load of diseases and are usually full of rabies to boot.  Kill cat beasts before they kill you.
+sound/AI/vox_reminder14 = Reminder: Most ayy eyes and cyborgs use the brains of convicted criminals. Purging them is a very bad idea, so use the planning frame when changing laws.
+sound/AI/vox_reminder15 = Reminder: Do not touch strange alien artefacts, use the clown instead
 
 sound/AI/aliens = Unidentified lifesigns detected.  Secure any exterior access, including ducting and ventilation.
 sound/AI/animes = Wow!  This is just like one of those japanese animes.

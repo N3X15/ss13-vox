@@ -130,6 +130,7 @@ d = D.
 damage
 damaged
 danger
+dat
 day
 deactivated
 decompression
@@ -152,6 +153,7 @@ die
 dimensional
 dirt
 disengaged
+disk
 dish
 disposal
 distance
@@ -634,20 +636,29 @@ zulu
 
 aft
 ai = A.I.
+alive
 andy
 antimov
 array
 asimov
 atmospherics
+awesome
 bar
+bellmont
 biomass
+birb
+birbs
+blob
+blobs
 bomb
+bombed
 bombs
 borer
 borers
 botanist
 botanists
 brain
+braindead
 brains
 brawl
 bridge
@@ -655,70 +666,126 @@ brig
 cage
 can
 cargo
-catbeast
+catbeast = cat beast
+# yes, also a verb now
+catbeasted = cat beasted
+catbeasting = cat beasting
+catbeasts = cat beasts
 ce = Chief Engineer
 centcomm
-chemist
-chemists
 changed
 changeling
 changelings
 changer
+chaplain
+chaplains
 chef
 chefs
+chemist
+chemists
+chicken
+chickens
+christ
 clown
 clowns
+cmo = C. M. O.
+cocaine
+codeine
 comdom
 come
 conflict
 connor
-cmo = C. M. O.
 contraband
+cool
+could
+couldnt = couldn't
 court
+cow
+cows
+crystal
+crystals
+cult
+cyberhorror = cyber horror
+cyberhorrors = cyber horrors
 cyborg
 cyborgs
 dead
-desk
+death
 department
 departments
-death
+desk
 doctor
 doctors
 dorms
+dracula
+dying
 engineer
 engineering
 engineers
 every
 everywhere
+excellent = @samples/billandted-excellent.mp3
 execution
 fire
+fires
+fluke
 fore
+gang
+gangs
 gas
+gasses
+gassing
+genetics
+gibbed
+gibbing
+gibs
 glory
+goose
 gray
 hacker
 hackers
 hacking
 happening
 harm
+holy
 hop = Head of Personnel
 hos = Head of Security
+hug
+hugged
+hugging
+hugs
 human
 humans
 hunger
 hydroponics
 iaa = internal affairs agent
-kitchen
+ian
+jesus
 killed
 killing
+kitchen
+krokodil = croc oh deal
 law
 laws
 lawyer
+live
+lived
+living
 lizard
+lock
+locked
+locking
+look
+looks
 loose
+lord
+lorded
+lording
+lords
 love
-malfunctioning
+lsd = L S D
 malf
+malfunctioning
 me
 medbay
 minus
@@ -727,15 +794,40 @@ money
 monkey
 monkeys
 move
+mrclean = mister clean
+murder
+murdering
+mutant
+mutants
 my
+nanites
 nanotrasen
+narsie = nar-see
 negative
 ninja
 ninjas
+nuke
+nukes
 obtain
+op = operative
+operative
+operatives
+ops = operatives
 or
+overdose
+overdosed
+overdosing
 plasma
+poison
+poisoned
+poisonous
+poly = polly
 port
+post
+posting
+posts
+pox
+punpun = pun pun
 qm = quartermaster
 quarters
 queen
@@ -743,39 +835,68 @@ rage
 raider
 raiders
 rd = Research Director
-removal
 recommend
+removal
 request
 requested
 respond
 rest
+revolution
+revolutionaries
+revolutionary
+riot
+riots
 roboticist
 robotics
 rogue
+rune
+runes
 sarah
+sasha
+savior
+saviors
 sensors
+shard
+shards
 shirt
 shirts
 shitcurity
 shitlord = shit lord
 shuttle
+sick
 singularity
 skipjack
 smoke
 solar
 solars
+sound
+sounds
 ss13 = Space Station thirteen
 starboard
 station
 stations
 stuck
+suck
+sucked
+sucking
 suffer
 suffering
+supermatter
+sweet
 syndicate
 tajaran
+tajarans
+talk
+talked
+talking
 telecomms
+tickle
+tickled
+tickling
 tide
 toxins
+trader
+traders
 traitor
 traitors
 triggering
@@ -784,6 +905,8 @@ updated
 updating
 upload
 vampire
+vampire
+vampires
 vampires
 virology
 vox
@@ -791,27 +914,39 @@ wanker
 wankers
 weed
 welcome
+what
+why
 wizard
 wizards
 wood
 woody = wood E.
+would
+wouldnt = wouldn't
 xenobiology
 xenomorph
 xenomorphs
 
+abortion
 abortions
 asshole
 assholes
+# ass is in the original list.
+asses
 bitch
 bitches
 cancer
+cancerous
 coward
 cowards
+cowering
 cunt
 cunts
 fuck
 fucking
 fucks
+motherfucker = mother fucker
+motherfuckers = mother fuckers
+shat
 shit
 shits
 shitting
@@ -823,3 +958,5 @@ voxtest2 = Fuck your cunt you shit eating cocksucker. Man, eat a dong, fucking a
 vox_420 = Smoke weed every day.
 voxtest3 = You.  You got what I neeeeeeeed.  But you say he's just a friend. But you say he's just a friend.
 gasthevox = Gas the vox, race war now!
+cracktheack = Crack the ack.
+voxtest4 = The humans are dead.  The humans are dead.  We used poisonous gasses, and we poisoned their asses.
