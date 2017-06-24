@@ -1,0 +1,7 @@
+/cache/**
+/hts_tmp/**
+/code/**
+/tmp/**
+/tools/**
+*.bak
+*~
