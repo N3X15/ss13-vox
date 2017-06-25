@@ -724,7 +724,7 @@ engineering
 engineers
 every
 everywhere
-excellent = @samples/billandted-excellent.mp3
+excellent = @samples/billandted-excellent-trimmed.wav
 execution
 fire
 fires
