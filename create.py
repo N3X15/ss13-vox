@@ -266,7 +266,7 @@ def GenerateForWord(word, wordfile):
     md5 += '\n'.join(my_phonemes.values())
     md5 += SOX_ARGS + PRE_SOX_ARGS
     md5 += VOICE
-    oggfile = os.path.abspath(os.path.join('sound', 'vox_fem', wordfile + '.ogg'))
+    oggfile = os.path.abspath(os.path.join('dist', 'sound', 'vox_fem', wordfile + '.ogg'))
     if '/' in wordfile:
         oggfile = os.path.abspath(os.path.join(wordfile + '.ogg'))
     cachefile = os.path.abspath(os.path.join('cache', wordfile.replace(os.sep, '_').replace('.', '') + '.dat'))

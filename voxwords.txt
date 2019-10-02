@@ -45,6 +45,7 @@ all
 alpha
 am
 amigo
+amigos
 ammunition
 an
 and
@@ -56,6 +57,7 @@ answered
 answering
 answers
 antenna
+antennae
 any
 apc = Ay Pee See
 apprehend
@@ -85,7 +87,7 @@ authorize
 authorized
 automatic
 away
-b = B.
+b = B.\
 babies
 baby
 back
@@ -102,17 +104,20 @@ bars
 bartender
 bartenders
 base
+base
+bases
 bay
+bays
 be
+bear
 been
 before
 beyond
 biohazard
+biohazards
 biological
 # Goon sound we don't have.
 #birdwell
-bitcoin
-bitcoins
 black
 blast
 blocked
@@ -603,14 +608,17 @@ juliet
 k = K.
 key
 keys
+khorn = corn
+khornate = corn-it
 kill
 killed
 killing
 kills
 kilo
 kit
-kits
 kitchen
+kits
+kudzu
 l = L.
 lab
 labs
@@ -760,6 +768,8 @@ november
 now
 number
 numbers
+nurgle
+nurglite
 o = O.
 objective
 objectives
@@ -834,6 +844,7 @@ points
 portal
 portals
 power
+powercreep
 presence
 press
 pressure
@@ -1326,6 +1337,7 @@ changelings
 changer
 changes
 changing
+chaos
 chaplain
 chaplains
 chef
@@ -1575,6 +1587,8 @@ need
 negative
 ninja
 ninjas
+ntcoin = n t coin
+ntcoins = n t coins
 nuke
 nukeop = Nuclear Operative
 nukeops = Nuclear Operatives
@@ -1598,12 +1612,12 @@ overdose
 overdosed
 overdosing
 oxygen
-plague
-plagues
 place
 placed
 places
 placing
+plague
+plagues
 plasma
 plasmagirl = plasma girl
 plasmaman = plasma man
@@ -1614,6 +1628,8 @@ poisoning
 poisonous
 poisons
 poly = polly
+pomfcoin = pomf coin
+pomfcoins = pomf coins
 port
 ports
 possibilities
@@ -1734,8 +1750,8 @@ swearing
 swore
 swears
 syndicate
-tajaran
-tajarans
+tajaran = tah-har-ran
+tajarans = tah-har-rans
 talk
 talked
 talking
@@ -1749,10 +1765,15 @@ technology
 telecomms
 texas
 text
+texted
+texting
+texts
 tickle
 tickled
 tickling
 tide
+toxic
+toxin
 toxins
 trader
 traders
@@ -1766,6 +1787,7 @@ trip
 tripped
 tripping
 trips
+tzeench
 update
 updated
 updating
@@ -1837,7 +1859,7 @@ shitting
 wiggle
 
 # Stupid memey shit that TG added
-wew
+wew = woo
 wow
 epic
 awful
