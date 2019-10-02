@@ -1,17 +1,21 @@
+import argparse
+import collections
+import hashlib
+import jinja2
+import json
+import logging
 import os
-import sys
 import re
 import subprocess
-import hashlib
-import logging
-import argparse
+import sys
+import time
+import yaml
+
+from enum import IntFlag
 
 script_dir = os.path.dirname(os.path.realpath(__file__))
 
-from buildtools import *
-from buildtools import os_utils
-#from buildtools.wrapper import Git
-from buildtools.bt_logging import IndentLogger
+from buildtools import os_utils, log
 
 """
 Usage:
@@ -46,6 +50,8 @@ THE SOFTWARE.
 ###############################################
 # CONFIG
 ###############################################
+
+CODEBASE = 'vg'
 
 # Voice you want to use
 # VOICE='rab_diphone'
@@ -110,7 +116,7 @@ REGEX_SEARCH_STRINGS = re.compile(r'(\'|")(.*?)(?:\1)')
 othersounds = []
 known_phonemes = {}
 wordlist = dict(preexisting.items())
-log = None
+ALL_WORDS={}
 args = None
 
 
@@ -121,6 +127,25 @@ def md5sum(filename):
             md5.update(chunk)
     return md5.hexdigest()
 
+class EWordFlags(IntFlag):
+    NONE    = 0
+    OLD_VOX = 1 # AKA preexisting
+    SFX     = 2
+
+class Word(object):
+    def __init__(self, word: str, wordlen: int):
+        self.id: str = word
+        self.wordlen: int = wordlen
+        self.phrase: str = ''
+        self.filename: str = ''
+        self.flags: EWordFlags = EWordFlags.NONE
+
+    def serialize(self) -> dict:
+        return {
+            'wordlen': self.wordlen,
+            'filename': self.filename,
+            'flags': [x.name.lower().replace('_','-') for x in list(EWordFlags) if x.value > 0 and (self.flags & x) == x]
+        }
 
 class Pronunciation(object):
     '''
@@ -222,6 +247,7 @@ class Pronunciation(object):
         log.info('Parsed {0} as {1}.'.format(pronunciation, repr(self.syllables)))
 
 
+
 def GenerateForWord(word, wordfile):
     global wordlist, preexisting, SOX_ARGS, known_phonemes, othersounds
     my_phonemes = {}
@@ -286,7 +312,7 @@ def GenerateForWord(word, wordfile):
     for command_spec in cmds:
         (command, cfn) = command_spec
         with os_utils.TimeExecution(command[0]):
-            cmd(command, echo=False, critical=True, show_output=False)
+            os_utils.cmd(command, echo=False, critical=True, show_output=False)
     for command_spec in cmds:
         (command, cfn) = command_spec
         if not os.path.isfile(fn):
@@ -310,6 +336,7 @@ def ProcessWordList(filename):
                 toprocess[word] = word
     for wordfile, phrase in iter(sorted(toprocess.items())):
         GenerateForWord(phrase, wordfile)
+        ALL_WORDS[wordfile] = phrase
 
 
 def ProcessLexicon(filename):
@@ -326,61 +353,73 @@ def ProcessLexicon(filename):
                     lisp.write(p.toLisp())
                     known_phonemes[p.name] = p
 
-#argp = argparse.ArgumentParser(prog='chanman', description='Manage your threads.')
-# argp.add
-
-logFormatter = logging.Formatter(fmt='%(asctime)s [%(levelname)-8s]: %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')  # , level=logging.INFO, filename='crashlog.log', filemode='a+')
-log = logging.getLogger()
-log.setLevel(logging.INFO)
-
-# fileHandler = logging.handlers.RotatingFileHandler(os.path.join(LOGPATH, 'crash.log'), maxBytes=1024 * 1024 * 50, backupCount=0)  # 50MB
-# fileHandler.setFormatter(logFormatter)
-# log.addHandler(fileHandler)
-
-log = IndentLogger(log)
-# consoleHandler = logging.StreamHandler()
-# consoleHandler.setFormatter(logFormatter)
-# log.addHandler(consoleHandler)
 
 if not os.path.isdir('tmp'):
     os.makedirs('tmp')
-CODE_BASE = os.path.join('code', 'defines')
-if not os.path.isdir(CODE_BASE):
-    os.makedirs(CODE_BASE)
+DIST_DIR = 'dist'
+CODE_DIR = ''
+vox_sounds_path = ''
+templatefile = ''
+PREEX_SOUND = 'sound/vox/{}.wav'
+NUVOX_SOUND = 'sound/vox_fem/{}.ogg'
+if CODEBASE == 'tg':
+    CODE_DIR = os.path.join(DIST_DIR, 'code', 'modules', 'mob', 'living', 'silicon', 'ai')
+    vox_sounds_path = os.path.join(CODE_DIR, 'vox_sounds.dm')
+    templatefile = 'tglist.jinja'
+else:
+    CODE_DIR = os.path.join(DIST_DIR, 'code', 'defines')
+    vox_sounds_path = os.path.join(CODE_DIR, 'vox_sounds.dm')
+    templatefile = 'vglist.jinja'
+
+DATA_DIR = os.path.join(DIST_DIR, 'data')
+os_utils.ensureDirExists(CODE_DIR)
+os_utils.ensureDirExists(DATA_DIR)
 ProcessLexicon('lexicon.txt')
 for arg in sys.argv[1:]:
     ProcessWordList(arg)
 soundsToKeep = set()
 for sound in othersounds:
-    soundsToKeep.add(sound + '.ogg')
-with open(os.path.join(CODE_BASE, 'vox_sounds.dm'), 'w') as w:
-    w.write("// AUTOMATICALLY GENERATED, DO NOT EDIT.\n")
-    w.write("// List is required to compile the resources into the game when it loads.\n")
-    w.write("// Dynamically loading it has bad results with sounds overtaking each other, even with the wait variable.\n")
-    w.write("var/list/vox_sounds = list(\n")
-    for word, wordlen in sorted(wordlist.items()):
-        if '/' in word:
-            continue
-        filename = ''
-        if word in preexisting:
-            filename = 'sound/vox/{0}.wav'.format(word)
-        else:
-            filename = 'sound/vox_fem/{0}.ogg'.format(word)
-        w.write('\t"{0}" = \'{1}\',\n'.format(word, filename))
-        soundsToKeep.add(filename)
-    w.write(')')
-    w.write('\n\n// How long each "word" really is (in words).  Single-word phrases are skipped for brevity.')
-    w.write('\nvar/list/vox_wordlen = list(\n')
-    for word, wordlen in sorted(wordlist.items()):
-        if wordlen == 1:
-            continue
-        if '/' in word:
-            continue
-        w.write('\t"{0}" = {1},\n'.format(word, wordlen))
-    w.write(')')
+    soundsToKeep.add(os.path.join(DIST_DIR, sound + '.ogg'))
 
+wordobjs = collections.OrderedDict()
+for word, wordlen in sorted(wordlist.items()):
+    # If it has a path, it's being manually specified.
+    if '/' in word:
+        continue
+    w = Word(word, wordlen)
+    w.filename = NUVOX_SOUND.format(word)
+    if word in preexisting:
+        w.flags |= EWordFlags.OLD_VOX
+        w.filename = PREEX_SOUND.format(word)
+    if word in ALL_WORDS:
+        # We should always drop in here, but additional checks are always good.
+        w.phrase = ALL_WORDS[word].strip()
+        if w.phrase.startswith('@'):
+            w.flags |= EWordFlags.SFX
+    wordobjs[word] = w
+    soundsToKeep.add(os.path.join(DIST_DIR, w.filename))
 
-for root, dirs, files in os.walk('sound/', topdown=False):
+jenv = jinja2.Environment(loader=jinja2.FileSystemLoader(['./templates']))
+templ = jenv.get_template(templatefile)
+os_utils.ensureDirExists(os.path.dirname(vox_sounds_path))
+with open(vox_sounds_path, 'w') as f:
+    f.write(templ.render(WORDS=wordobjs.values()))
+soundsToKeep.add(vox_sounds_path)
+
+os_utils.ensureDirExists(DATA_DIR)
+with open(os.path.join(DATA_DIR, 'vox_data.json'), 'w') as f:
+    data = {
+        'version': 1,
+        'compiled': time.time(),
+        'voice': VOICE,
+        'phoneset': PHONESET,
+        'preexisting': preexisting,
+        #'phonemes': known_phonemes,
+        'words': collections.OrderedDict({w.id: w.serialize() for w in wordobjs.values() if '/' not in w.id}),
+    }
+    json.dump(data, f, indent=2)
+soundsToKeep.add(os.path.join(DATA_DIR, 'vox_data.json'))
+for root, dirs, files in os.walk('dist/', topdown=False):
     for name in files:
         filename = os.path.join(root, name)
         if filename not in soundsToKeep:

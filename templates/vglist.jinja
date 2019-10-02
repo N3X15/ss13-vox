@@ -1,0 +1,18 @@
+// AUTOMATICALLY @generated, DO NOT EDIT.
+// List is required to compile the resources into the game when it loads.
+// Dynamically loading it has bad results with sounds overtaking each other, even with the wait variable.
+
+var/list/vox_sounds = list(
+  {% for word in WORDS -%}
+  "{{- word.id -}}" = '{{- word.filename -}}',
+  {% endfor %}
+)
+
+// How long each "word" really is (in words).  Single-word phrases are skipped for brevity.
+var/list/vox_wordlen = list(
+  {%- for word in WORDS -%}
+  {%- if word.wordlen > 1 %}
+  "{{- word.id -}}" = {{ word.wordlen }},
+  {%- endif -%}
+  {%- endfor %}
+)
