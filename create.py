@@ -7,7 +7,6 @@ import logging
 import argparse
 
 script_dir = os.path.dirname(os.path.realpath(__file__))
-sys.path.append(os.path.join(script_dir, 'lib', 'buildtools'))
 
 from buildtools import *
 from buildtools import os_utils
@@ -22,7 +21,7 @@ Requires festival, sox, and vorbis-tools.
 
 create.py - Uses festival to generate word oggs.
 
-Copyright 2013 Rob "N3X15" Nelson <nexis@7chan.org>
+Copyright 2013-2019 Rob "N3X15" Nelson <nexis@7chan.org>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -85,6 +84,8 @@ SOX_ARGS += ' echos 0.3 0.5 100 0.25 10 0.25'  # Good with stretch, otherwise so
 #SOX_ARGS += ' delay 0.5'
 SOX_ARGS += ' norm'
 
+RECOMPRESS_ARGS = ['-c:a', 'libvorbis', '-ac', '1', '-ar', '16000', '-q:a', '0', '-speed', '0', '-threads', '8', '-y']
+
 # Have to do the trimming seperately.
 PRE_SOX_ARGS = 'trim 0 -0.1'  # Trim off last 0.2s.
 
@@ -121,8 +122,12 @@ def md5sum(filename):
     return md5.hexdigest()
 
 
-class Pronunciation:
+class Pronunciation(object):
+    '''
+    Festival can fuck up pronunciation of stuff, but thankfully, we can specify a new set.
 
+    Unfortunately, it's in LISP, which this class will generate for you.
+    '''
     def __init__(self):
         self.syllables = []
         self.name = []
@@ -227,7 +232,7 @@ def GenerateForWord(word, wordfile):
         wordlist[wordfile] = len(word.split(' '))
     else:
         othersounds += [wordfile]
-    md5 = hashlib.md5(word).hexdigest()
+    md5 = hashlib.md5(word.encode('utf-8')).hexdigest()
     for w in word.split(' '):
         w = w.lower()
         if w in known_phonemes:
@@ -276,7 +281,8 @@ def GenerateForWord(word, wordfile):
     cmds += [(text2wave.split(' '), 'tmp/VOX-word.wav')]
     cmds += [(['sox', 'tmp/VOX-word.wav', 'tmp/VOX-soxpre-word.wav'] + PRE_SOX_ARGS.split(' '), 'tmp/VOX-soxpre-word.wav')]
     cmds += [(['sox', 'tmp/VOX-soxpre-word.wav', 'tmp/VOX-sox-word.wav'] + SOX_ARGS.split(' '), 'tmp/VOX-sox-word.wav')]
-    cmds += [(['oggenc', 'tmp/VOX-sox-word.wav', '-o', oggfile], oggfile)]
+    cmds += [(['oggenc', 'tmp/VOX-sox-word.wav', '-o', 'tmp/VOX-encoded.ogg'], 'tmp/VOX-encoded.ogg')]
+    cmds += [(['ffmpeg', '-i', 'tmp/VOX-encoded.ogg']+RECOMPRESS_ARGS+[oggfile], oggfile)]
     for command_spec in cmds:
         (command, cfn) = command_spec
         with os_utils.TimeExecution(command[0]):
@@ -302,7 +308,7 @@ def ProcessWordList(filename):
             elif line != '' and ' ' not in line and len(line) > 0:
                 word = line.strip()
                 toprocess[word] = word
-    for wordfile, phrase in iter(sorted(toprocess.iteritems())):
+    for wordfile, phrase in iter(sorted(toprocess.items())):
         GenerateForWord(phrase, wordfile)
 
 

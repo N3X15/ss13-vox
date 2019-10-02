@@ -5,7 +5,6 @@ import os, re, sys, logging, shutil
 import apt
 
 script_dir = os.path.dirname(os.path.realpath(__file__))
-sys.path.append(os.path.join(script_dir, 'lib', 'buildtools'))
 
 from buildtools import *
 from buildtools import os_utils, bt_logging
@@ -14,12 +13,16 @@ from buildtools.bt_logging import IndentLogger
 
 REQUIRED_PACKAGES = [
 	# Festival stuff
-	'festival','festlex-cmu','festlex-poslex','festlex-oald','libestools2.1','unzip',
-	
+	'festival','festlex-cmu','festlex-poslex','festlex-oald','libestools2.5','unzip',
+
 	# For our own nefarious purposes.
 	'sox',
 	'libsox-fmt-all',
-	'vorbis-tools' #oggenc
+	'vorbis-tools', #oggenc
+	'ffmpeg',
+
+	# It's 2019
+	'python3.6'
 ]
 
 NITECH_VOICES = [
@@ -39,7 +42,7 @@ def InstallPackages():
 	global REQUIRED_PACKAGES
 	with log.info('Checking system packages...'):
 		cache = apt.Cache()
-		
+
 		num_changes = 0
 		with cache.actiongroup():
 			for pkg in REQUIRED_PACKAGES:
@@ -53,7 +56,7 @@ def InstallPackages():
 		if num_changes == 0:
 			log.info('No changes required, skipping.')
 			return
-		
+
 		cache.commit(apt.progress.text.AcquireProgress(),
 			apt.progress.base.InstallProgress())
 
@@ -75,7 +78,7 @@ def InstallHTS():
 			os_utils.copytree('lib/voices/us/', '/usr/share/festival/voices/us/')
 			os_utils.copytree('lib/voices/us/', '/usr/share/festival/voices/us/')
 			shutil.copy2('lib/hts.scm', '/usr/share/festival/hts.scm')
-	
+
 def fix_HTS():
 	with log.info('Fixing HTS...'):
 		fixes = []
@@ -91,7 +94,7 @@ def fix_HTS():
 		#+(Parameter.set 'Synth_Method 'HTS21)
 		fixes += [[re.compile(r'\(Parameter.set \'Synth_Method \'HTS\)'),
 			'(Parameter.set \'Synth_Method \'HTS21)']]
-		
+
 		files_changed=0
 		for root, dirs, files in os.walk('/usr/share/festival/voices/us'):
 			for filename in files:
@@ -119,12 +122,12 @@ def fix_HTS():
 						#print('Renamed '+fixed_filename+' to '+filename)
 						log.info(' Fixed {} ({} changes)'.format(filename,changes))
 						files_changed+=1
-					
+
 					if os.path.exists(fixed_filename):
 						os.remove(fixed_filename)
 		log.info('{} files changed.'.format(files_changed))
-					
-	
+
+
 
 logFormatter = logging.Formatter(fmt='%(asctime)s [%(levelname)-8s]: %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')  # , level=logging.INFO, filename='crashlog.log', filemode='a+')
 log = logging.getLogger()
