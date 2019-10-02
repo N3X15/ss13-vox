@@ -1007,7 +1007,7 @@ silo
 siloes
 silicon
 silicons
-six
+six = sih-icks
 sixteen
 sixty
 slaughter
@@ -1847,6 +1847,7 @@ wanker
 wankers
 warden
 wardens
+we
 weed
 welcome
 were
