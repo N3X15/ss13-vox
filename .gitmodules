@@ -1,3 +1,0 @@
-[submodule "lib/buildtools"]
-	path = lib/buildtools
-	url = https://github.com/N3X15/python-build-tools.git
