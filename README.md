@@ -2,6 +2,8 @@
 
 TTS-based announcer inspired by Half Life's announcement system.
 
+**This project was originally written in 2013 when I was still learning python, so it's a bit rough around the edges.** I am slowly trying to improve the code.
+
 ## Installing
 
 **This system has only been tested on Ubuntu.** Therefore, this should be installed and run on an Ubuntu system. A VM is recommended, but not necessary.
@@ -12,7 +14,7 @@ TTS-based announcer inspired by Half Life's announcement system.
 
 ## Generating voices
 
-Simply edit voxwordlist.txt and announcements.txt to taste, and run generate.sh.
+Simply edit voxwords.txt and announcements.txt to taste, and run generate.sh.
 
 Sounds encoded will end up in the sounds directory, alongside a cache directory and a tmp directory. Pauses and beeps/bloops will NOT be generated.
 
