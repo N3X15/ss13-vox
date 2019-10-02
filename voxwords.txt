@@ -535,28 +535,35 @@ head
 heading
 heads
 health
+heart
+hearts
 heat
 helicopter
 helicopters
 helium
 hello
 help
+her
 here
+hers
+herself
 hidden
 hide
 hides
 hiding
 high
 highest
+himself
+his
 hit
-hop = head of personnel
-how
 hole
 holes
+hop = head of personnel
 hostile
 hostiles
 hot
 hotter
+how
 hotel
 hour
 hours
@@ -602,6 +609,8 @@ is
 it
 its
 j = J.
+job
+jobs
 johnson
 johnsons
 juliet
@@ -745,6 +754,10 @@ motor
 motorpool
 motors
 mouse
+mouth
+mouthed
+mouthing
+mouths
 move
 moves
 multitude
@@ -892,6 +905,7 @@ r = R.
 radiation
 radioactive
 rads
+ran
 rapid
 reach
 reached
@@ -909,7 +923,8 @@ required
 requires
 requiring
 research
-resevoir
+reservoir
+reservoirs
 resistance
 restoration
 right
@@ -921,21 +936,29 @@ round
 run
 rune
 runes
+running
+runs
+runtime
 s = S.
 sabotage
 saboteur
 saboteurs
 safe
+safer
+safest
+safeties
 safety
-sargeant
 satellite
 save
+saved
+saving
 science
 sciences
 scientist
 scientists
 scream
 screamed
+sergeant
 screaming
 screams
 screen
@@ -1013,17 +1036,19 @@ south
 squad
 squads
 square
+staff
 stairway
 stairways
 status
+staves
 sterile
 sterilization
 stop
+stopped
 stopping
+stops
 storage
 storing
-stops
-stopped
 sub
 subsurface
 sudden
@@ -1467,6 +1492,9 @@ grave
 graves
 gravity
 gray
+grayshit
+graytide
+graytiding
 hacker
 hackers
 hacking
@@ -1641,6 +1669,10 @@ posting
 posts
 pox
 punpun = pun pun
+punch
+punched
+punching
+punches
 put
 qm = quartermaster
 quarantine
@@ -1672,6 +1704,9 @@ rest
 rested
 resting
 rests
+retard
+retarded
+retards
 revolution
 revolutionaries
 revolutionary
