@@ -1254,10 +1254,13 @@ with
 without
 x = X.
 xeno
+xenos
 y = Y.
 yankee
+yankees
 yards
 year
+years
 yellow
 yes
 you
@@ -1266,6 +1269,7 @@ yourself
 z = Z.
 zero
 zone
+zones
 zulu
 zombie
 zombies

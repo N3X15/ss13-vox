@@ -268,7 +268,7 @@ def GenerateForWord(word, wordfile):
     md5 += VOICE
     oggfile = os.path.abspath(os.path.join('dist', 'sound', 'vox_fem', wordfile + '.ogg'))
     if '/' in wordfile:
-        oggfile = os.path.abspath(os.path.join(wordfile + '.ogg'))
+        oggfile = os.path.abspath(os.path.join('dist', wordfile + '.ogg'))
     cachefile = os.path.abspath(os.path.join('cache', wordfile.replace(os.sep, '_').replace('.', '') + '.dat'))
 
     parent = os.path.dirname(oggfile)
@@ -413,7 +413,7 @@ with open(os.path.join(DATA_DIR, 'vox_data.json'), 'w') as f:
         'compiled': time.time(),
         'voice': VOICE,
         'phoneset': PHONESET,
-        'preexisting': preexisting,
+        #'preexisting': preexisting,
         #'phonemes': known_phonemes,
         'words': collections.OrderedDict({w.id: w.serialize() for w in wordobjs.values() if '/' not in w.id}),
     }
