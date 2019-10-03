@@ -5,6 +5,7 @@
 # If it's not pronouncing a word correctly, correct it with lexicon.txt
 # Do not specify a directory if you want it to go to sounds/vox_fem/.
 #
+
 a = Ay
 aac = Ay Ay See
 accelerating
@@ -104,7 +105,8 @@ bars
 bartender
 bartenders
 base
-base
+based
+basing
 bases
 bay
 bays
@@ -558,7 +560,6 @@ his
 hit
 hole
 holes
-hop = head of personnel
 hostile
 hostiles
 hot
@@ -895,10 +896,8 @@ q = Q.
 quantum
 quebec
 question
-question
 questionable
 questioned
-questioning
 questioning
 questions
 quick
@@ -1091,12 +1090,12 @@ targeted
 targeting
 targets
 team
-teams
 teamed
+teams
 teleport = teleportation
 teleported
 teleporting
-teleporting
+teleports
 temperature
 temperatures
 temporal
@@ -1115,6 +1114,10 @@ test
 tested
 testing
 tests
+thank
+thanked
+thanking
+thanks
 that
 the
 theater
@@ -1295,10 +1298,7 @@ antimov
 array
 arrays
 asimov
-atmospherics
 awesome
-bar
-be
 beam
 beamed
 beaming
@@ -1329,8 +1329,6 @@ bombing
 bombs
 borer
 borers
-botanist
-botanists
 brain
 braindead
 braindeads
@@ -1338,8 +1336,6 @@ brains
 brawl
 brawled
 brawling
-bridge
-brig
 cage
 can
 canister
@@ -1369,8 +1365,6 @@ changer
 changes
 changing
 chaos
-chaplain
-chaplains
 chef
 chefs
 chemist
@@ -1421,8 +1415,6 @@ cyberhorrors = cyber horrors
 # Fixes SY BAHRG(S)
 cyborg = seye-borg
 cyborgs = seye-borgs
-dead
-death
 depart
 departed
 departing
@@ -1438,19 +1430,11 @@ desiring
 desk
 desks
 dioxide
-do
-doctor
-doctors
 dog
 dogs
-dorms
 dot
 dots
 dracula
-dying
-engineer
-engineering
-engineers
 entities
 entity
 equipment
@@ -1458,8 +1442,6 @@ every
 everywhere
 excellent
 execution
-fire
-fires
 firing
 fix
 fixes
@@ -1509,7 +1491,6 @@ halls
 hallway
 hallways
 happening
-harm
 holy
 honk
 honked
@@ -1540,23 +1521,15 @@ kidnapped
 kidnapping
 kidnaps
 kids
-killed
-killing
-kills
-kitchen
 krokodil = croc oh deal
 law
 laws
 lawyer
 lawyers
-live
 lived
 living
 lizard
 lizards
-lock
-locked
-locking
 look
 looked
 looking
@@ -1578,7 +1551,6 @@ machining
 machinist
 machinists
 malf
-malfunctioning
 me
 meat
 mech
@@ -1602,7 +1574,6 @@ mommi = mommy
 money
 monkey
 monkeys
-move
 mrclean = mister clean
 murder
 murderer
@@ -1631,14 +1602,11 @@ obtain
 obtained
 obtaining
 obtains
-of
-oof
+
 op = operative
 operate
 operated
 operates
-operating
-operative
 operatives
 ops = operatives
 or
@@ -1727,8 +1695,6 @@ roboticists
 robotics
 robots
 rogue
-rune
-runes
 sarah
 sasha
 savior
@@ -1793,7 +1759,6 @@ swears
 syndicate
 tajaran = tah-har-ran
 tajarans = tah-har-rans
-talk
 talked
 talking
 tamper
@@ -1834,8 +1799,6 @@ updated
 updating
 upload
 vampire
-vampire
-vampires
 vampires
 virologist
 virologists
@@ -1847,7 +1810,6 @@ wanker
 wankers
 warden
 wardens
-we
 weed
 welcome
 were
@@ -1908,6 +1870,7 @@ wow
 epic
 awful
 mythic
+oof
 
 # TG uses an s prefix to denote SFX, here I'm going to use _ so it's less confusing.
 _airhorn = @samples/airhorn.ogg
