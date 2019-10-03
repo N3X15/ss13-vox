@@ -6,6 +6,9 @@
 # Do not specify a directory if you want it to go to sounds/vox_fem/.
 #
 
+############
+## OLD_VOX
+############
 # Ignore these, they are just SFX from oldvox.
 ,
 .
@@ -17,8 +20,42 @@ dadeda
 doop
 woop
 
+############
+## SFX
+############
+# New SFX are just raw sounds piped through the same process as words.
+_airhorn = @samples/airhorn.ogg
+_excellent = @samples/billandted-excellent-trimmed.wav
+_fart = @samples/fart.ogg
+_honk = @samples/bikehorn.ogg
+
+
+voxtest = Ass Blast U.S.A.
+# Beepsky's famous emag line:
+voxtest2 = Fuck your cunt you shit eating cocksucker. Man, eat a dong, fucking ass-ramming shit-fuck. Eat penises in your fuck face, and shit out abortions of fuck, and do shit in your ass, you cockfuck shit monkey ass-wanker from the depths of shit!
+vox_420 = Smoke weed every day.
+# TODO: festival has a singing feature, but I last fucked with this in 2017, I couldn't get it working.
+voxtest3 = You.  You got what I neeeeeeeed.  But you say he's just a friend. But you say he's just a friend.
+gasthevox = Gas the vox, race war now!
+cracktheack = Crack the ack.
+voxtest4 = The humans are dead.  The humans are dead.  We used poisonous gasses, and we poisoned their asses.
+
+############
+## NONE
+############
 a = Ay
 aac = Ay Ay See
+abduction
+abductions
+abortion
+abortions
+abstain
+abstained
+abstaining
+abstains
+abuse
+abused
+abusing
 accelerating
 accelerator
 accepted
@@ -41,9 +78,11 @@ advise
 advised
 advises
 advising
+aft
 after
 agent
 agents
+ai = A.I.
 air
 airalarm = Air Alarm
 airalarms = Air Alarms
@@ -53,6 +92,7 @@ alarm
 alert
 alien
 aligned
+alive
 all
 alpha
 am
@@ -61,6 +101,9 @@ amigos
 ammunition
 an
 and
+andy
+animal
+animals
 announcement
 announcements
 anomalous
@@ -70,6 +113,7 @@ answering
 answers
 antenna
 antennae
+antimov
 any
 apc = Ay Pee See
 apprehend
@@ -80,8 +124,15 @@ arm
 armed
 armor
 armory
+array
+arrays
 arrest
+asimov
 ass
+# ass is in the original list.
+asses
+asshole
+assholes
 assist
 assistant
 assistants
@@ -99,6 +150,8 @@ authorize
 authorized
 automatic
 away
+awesome
+awful
 b = B.\
 babies
 baby
@@ -117,31 +170,70 @@ bartender
 bartenders
 base
 based
-basing
 bases
+basing
 bay
 bays
 be
+beam
+beamed
+beaming
+beams
 bear
+bee
 been
+bees
 before
+being
+beings
+bellmont
+beware
 beyond
 biohazard
 biohazards
 biological
+biomass
+biomasses
+birb
+birbs
+bishop
+bishops
+bitch
+bitches
 # Goon sound we don't have.
 #birdwell
 black
 blast
+bleed
+bleeding
+bleeds
+blizzard
+blizzards
+blob
+blobs
 blocked
+blood
 blue
+bomb
+bombed
+bombing
+bombs
+bone
+boned
+borer
+borers
 botanist
 botanists
 botany
 bottom
-bone
-boned
+brain
+braindead
+braindeads
+brains
 bravo
+brawl
+brawled
+brawling
 breach
 breached
 break
@@ -150,17 +242,49 @@ brig
 bust
 but
 button
+buttons
 bypass
+bypassed
+bypasses
+bypassing
 c = C.
 cable
+cage
+caged
+cages
+caging
 call
 called
+can
 canal
+cancer
+cancerous
+canister
+canned
+canning
+cans
 cap
 captain
 capture
+car
+carbon
+carbons
+cargo
+cat
+catbeast = cat beast
+# yes, also a verb now
+catbeasted = cat beasted
+catbeasting = cat beasting
+catbeasts = cat beasts
+cats
+ce = Chief Engineer
+cease
+ceased
+ceases
+ceasing
 ceiling
 celsius
+centcomm
 center
 centi
 central
@@ -168,6 +292,14 @@ challenge
 challenged
 challenges
 chamber
+change
+changed
+changeling
+changelings
+changer
+changes
+changing
+chaos
 chapel
 chapels
 chaplain
@@ -181,54 +313,101 @@ checkmarks
 checkpoint
 checkpoints
 checks
+chef
+chefs
 chemical
 chemicals
+chemist
+chemists
+chicken
+chickens
 chief
+christ
+chuckle
+circuit
+circuits
 cleanup
 clear
 clearance
+clockwork
 close
+clown
+clowned
+clowning
+clowns
+cmo = See Em O.
+cocaine
 code
 coded
+codeine
 codes
 coding
-collider
-colliders
 cold
 colder
+coldest
+collider
+colliders
+comdom
+come
+comes
+coming
 command
-commands
 commanded
 commanding
+commands
 communication
 communications
 complex
+complied
+complies
+comply
 computer
 computers
 condition
 conditions
+conflict
+conflicts
+connor
+console
+consoles
 construct
 constructing
 constructs
 containment
 contamination
+contraband
 control
 controls
 cook
 cooked
 cooking
 cooks
+cool
 coolant
+cooler
+coolest
 #coomer ???
 core
 cores
 corgi = kor gee
+corporation
+corporations
 correct
 corrected
 correcting
 corrects
 corridor
 corridors
+could
+couldnt = couldn't
+court
+cow
+coward
+cowards
+cower
+cowering
+cowers
+cows
 crate
 crates
 create
@@ -239,17 +418,33 @@ creature
 creatures
 crew
 crews
+critical
+criticality
 cross
 crosses
 cryogenic
+crystal
+crystalline
+crystals
+cult
 cultconstruct = kahnstruct
 cultconstructs = kahnstructs
+cultist
+cultists
+cults
+cunt
+cunts
+cyberhorror = cyber horror
+cyberhorrors = cyber horrors
+# Fixes SY BAHRG(S)
+cyborg = seye-borg
+cyborgs = seye-borgs
 d = D.
-damn
 damage
 damaged
 damages
 damaging
+damn
 danger
 dangerous
 dangers
@@ -271,10 +466,24 @@ demons
 denied
 denies
 deny
+depart
+departed
+departing
+department
+departments
+departs
+departure
+departures
 deploy
 deployed
 deploying
 deploys
+desire
+desired
+desires
+desiring
+desk
+desks
 destroy
 destroyed
 destroying
@@ -297,6 +506,7 @@ did
 die
 dies
 dimensional
+dioxide
 director
 directorate
 directors
@@ -327,6 +537,8 @@ doctor
 doctored
 doctoring
 doctors
+dog
+dogs
 doom
 doomed
 doomsday
@@ -335,8 +547,11 @@ doors
 dormitories
 dormitory
 dorms
+dot
+dots
 down
 downs
+dracula
 drone
 drones
 dual
@@ -377,12 +592,18 @@ engineering
 engineers
 engines
 enter
-enters
+entered
 entering
+enters
+entities
+entity
 entries
 entry
 environment
 environments
+epic
+epics
+equipment
 error
 escape
 escaped
@@ -393,10 +614,17 @@ evacuate
 evacuated
 evacuates
 evacuating
+every
+everywhere
+excellent
 exchange
 exchanged
 exchanges
 exchanging
+executed
+executes
+executing
+execution
 exit
 exited
 exiting
@@ -418,9 +646,9 @@ explosive
 explosives
 exposure
 exterminate
-exterminating
-exterminates
 exterminated
+exterminates
+exterminating
 extermination
 extinguish
 extinguisher
@@ -451,15 +679,27 @@ final
 fine
 fines
 fire
+fired
 fires
+firing
 first
 five
+fix
+fixed
+fixes
+fixing
+fixitfixitfixit = fix it fix it fix it
 flood
 flooded
 flooding
 floods
 floor
 flora
+fluke
+fly
+flygirl = fly-girl
+flyman = fly-man
+flymen = fly-men
 fool
 fooling
 fools
@@ -469,6 +709,7 @@ force
 forced
 forces
 forcing
+fore = four
 form
 formed
 forming
@@ -493,11 +734,38 @@ friends
 from
 front
 frozen
+fuck
+fucking
+fucks
 fuel
+fun
+funny
 furries
 furry
 g = G.
+gang
+gangs
+gas
+gassed
+gasses
+gassing
+geese
+gene
+generate
+generated
+generates
+generating
+generator
+genes
+genetic
+geneticist
+geneticists
+genetics
 get
+gibbed
+gibbing
+gibs
+glory
 # This is fucked.  I do not know how to fix it.  I have tried many variations and lexicon entries.
 go
 god
@@ -508,6 +776,9 @@ golem
 golems
 good
 goodbye
+goose
+goosed
+goosing
 gordon
 got
 gotta
@@ -516,6 +787,13 @@ grant
 granted
 granting
 grants
+grave
+graves
+gravity
+gray
+grayshit
+graytide
+graytiding
 great
 green
 grenade
@@ -526,13 +804,24 @@ guarding
 guards
 gulf
 gun
-guns
 gunman
 gunmen
+guns
 guthrie
 h = H.
+hacker
+hackers
+hacking
+hall
+halls
+hallway
+hallways
 handling
 hangar
+happen
+happened
+happening
+happens
 harm
 harmed
 harmful
@@ -571,28 +860,48 @@ his
 hit
 hole
 holes
+holy
+honk
+honked
+honking
+honks
+hop = Head of Personnel
+hos = Head of Security
 hostile
 hostiles
 hot
-hotter
-how
 hotel
+hotter
 hour
 hours
+how
+hug
+hugged
+hugging
+hugs
+human
+humanoid
+humanoids
+humans
 hundred
+hunger
 hydro
+hydroponics
 i = I.
+iaa = internal affairs agent
+ian
 idiot
 idiots
+if
 illegal
 illegals
 immediate
 immediately
+immortal
+immortals
 impossibilities
 impossibility
 impossible
-immortal
-immortals
 in
 inch
 inches
@@ -603,10 +912,16 @@ inspected
 inspection
 inspector
 inspects
-internal
-internals
-internalize
+interchangable
 interchange
+interchanged
+interchanging
+internal
+internalize
+internalized
+internalizes
+internalizing
+internals
 intrude
 intruded
 intruder
@@ -621,6 +936,10 @@ is
 it
 its
 j = J.
+janitor
+janitorial
+janitors
+jesus
 job
 jobs
 johnson
@@ -631,6 +950,12 @@ key
 keys
 khorn = corn
 khornate = corn-it
+kid
+kidnap
+kidnapped
+kidnapping
+kidnaps
+kids
 kill
 killed
 killing
@@ -639,6 +964,7 @@ kilo
 kit
 kitchen
 kits
+krokodil = croc oh deal
 kudzu
 l = L.
 lab
@@ -651,6 +977,10 @@ launch
 launched
 launches
 launching
+law
+laws
+lawyer
+lawyers
 leak
 leaked
 leaking
@@ -680,7 +1010,11 @@ lima
 liquid
 liquids
 live
+lived
 lives
+living
+lizard
+lizards
 loading
 locate
 located
@@ -695,17 +1029,38 @@ lockout
 lockouts
 locks
 long
+look
+looked
+looking
+looks
+loop
+looped
+looping
+loops
+loose
+lord
+lorded
+lording
+lords
 lot
 lots
+love
 lower
 lowers
 lowest
+lsd = L S D
 lusty
 m = M.
+machine
+machines
+machining
+machinist
+machinists
 magic
 magnetic
 main
 maintenance
+malf
 malfunction
 malfunctioned
 malfunctioning
@@ -719,21 +1074,29 @@ material
 materials
 maximum
 may
+me
+meat
+mech
+mechanic
+mechanics
+mechs
+medbay
 medical = Medickul
+mega
+megafauna
 men
 mercies
 mercy
 mesa
 message
-messaged = messaged
+messaged
 messages
 messaging
 meter
-meters
-metering
 metered
-mega
-megafauna
+metering
+meters
+mice
 micro
 middle
 mike
@@ -743,18 +1106,33 @@ military
 milli
 million
 millions
-minefield
-minimum
-minute
-minutes
 mime
 mimed
 mimes
 miming
+mine
+mined
+minefield
+miner
+miners
+mines
+minimum
+mining
+minus
+minute
+minutes
 mister
-mice
 mode
 modes
+modification
+modifications
+modified
+modifies
+modifying
+mommi = mommy
+money
+monkey
+monkeys
 more
 moron
 moronic
@@ -762,6 +1140,10 @@ morons
 mortal
 mortality
 mortals
+moth
+motherfucker = mother-fucker
+motherfuckers = mother-fuckers
+moths
 motor
 motorpool
 motors
@@ -772,16 +1154,35 @@ mouthing
 mouths
 move
 moves
+mrclean = mister clean
 multitude
 multitudes
+murder
+murderer
+murderers
+murdering
 must
+mutant
+mutants
+my
+mysteries
+mystery
+mythic
 n = N.
+nanite
+nanites
+nanotrasen
+narsie = nar-see
 near
 nearest
+need
+negative
 nice
 nine
 nineteen
 ninety
+ninja
+ninjas
 nitrogen
 nitrous
 no
@@ -791,6 +1192,12 @@ north
 not
 november
 now
+ntcoin = n t coin
+ntcoins = n t coins
+nuke
+nukeop = Nuclear Operative
+nukeops = Nuclear Operatives
+nukes
 number
 numbers
 nurgle
@@ -800,19 +1207,31 @@ objective
 objectives
 observation
 observations
+obtain
+obtained
+obtaining
+obtains
 of
 office
-offices
 officer
 officers
+offices
 ok = O.K.
 on
 one
+oof
+op = operative
 open
+operate
+operated
+operates
 operating
 operations
 operative
+operatives
+ops = operatives
 option
+or
 order
 organic
 oscar
@@ -821,12 +1240,16 @@ outbreak
 outbreaks
 outside
 over
+overdose
+overdosed
+overdosing
 overload
-overloads
-overloading
 overloaded
+overloading
+overloads
 override
 overrides
+oxygen
 p = P.
 pacification
 pacified
@@ -857,8 +1280,19 @@ piss
 pissed
 pisses
 pissing
+place
+placed
+places
+placing
+plague
+plagues
 plant
 plants
+plasma
+plasmagirl = plasma-girl
+plasmagirls = plasma-girls
+plasmaman = plasma-man
+plasmamen = plasma-men
 platform
 platforms
 plausible
@@ -868,10 +1302,28 @@ point
 pointed
 pointing
 points
+poison
+poisoned
+poisoning
+poisonous
+poisons
+poly = polly
+pomfcoin = pomf-coin
+pomfcoins = pomf-coins
+port
 portal
 portals
+ports
+possibilities
+possibility
+possible
+post
+posted
+posting
+posts
 power
 powercreep
+pox
 presence
 press
 pressure
@@ -899,13 +1351,27 @@ propulsion
 prosecute
 prosecuting
 protective
+punch
+punched
+punches
+punching
+punpun = pun-pun
 push
 pushed
 pushes
 pushing
+put
+puts
+putting
 q = Q.
+qm = quartermaster
 quantum
+quarantine
+quarter
+quartermaster
+quarters
 quebec
+queen
 question
 questionable
 questioned
@@ -917,19 +1383,34 @@ r = R.
 radiation
 radioactive
 rads
+rage
+raid
+raided
+raider
+raiders
+raiding
+raids
 ran
 rapid
+rd = Research Director
 reach
 reached
 reactor
+recommend
+recommends
 red
 relay
 released
 remaining
+removal
 renegade
 repair
 report
 reports
+request
+requested
+requesting
+requests
 require
 required
 requires
@@ -938,10 +1419,36 @@ research
 reservoir
 reservoirs
 resistance
+respond
+responded
+responding
+responds
+response
+rest
+rested
+resting
 restoration
+rests
+retard
+retarded
+retards
+revolution
+revolutionaries
+revolutionary
 right
+riot
+rioted
+rioting
+riots
+robot
+robotic
+roboticist
+roboticists
+robotics
+robots
 rocket
 roger
+rogue
 romeo
 room
 round
@@ -960,17 +1467,20 @@ safer
 safest
 safeties
 safety
+sarah
+sasha
 satellite
 save
 saved
 saving
+savior
+saviors
 science
 sciences
 scientist
 scientists
 scream
 screamed
-sergeant
 screaming
 screams
 screen
@@ -991,51 +1501,87 @@ security
 select
 selected
 selecting
+self
+sell
+sells
+sensors
+sergeant
+server
+servers
 service
 services
 servicing
-server
-servers
 seven
 seventeen
 seventy
 severe
 sewage
 sewer
+shaft
+shafts
+shard
+shards
+shat
 she
 shield
 shipment
+shirt
+shirts
+shit
+shitcurity
+shitlord = shit-lord
+shits
+shitting
 shock
 shoot
 shower
 shut
+shuttle
+sick
+sickened
+sickening
+sickly
 side
 sides
 sierra
 sight
-silo
-siloes
 silicon
 silicons
+silo
+siloes
+singularities
+singularity
 six = sih-icks
 sixteen
 sixty
+skeleton
+skeletons
+skipjack
 slaughter
 slaughtered
 slaughtering
 slaughters
 slime
-slimes
 slimegirl = slime girl
 slimeguy = slime guy
+slimes
 slip
 slipped
 slippery
 slipping
 slips
 slow
+sm = super-matter
+small
+smaller
+smoke
+smoked
+smokes
+smoking
 snow
 snowing
+solar
+solars
 soldier
 soldiers
 some
@@ -1044,15 +1590,29 @@ something
 son
 sons
 sorry
+sound
+sounds
 south
+space
+spaced
+spaces
+spacing
 squad
 squads
 square
+ss13 = Space Station Thirteen
 staff
 stairway
 stairways
+starboard
+station
+stations
 status
 staves
+stay
+stayed
+staying
+stays
 sterile
 sterilization
 stop
@@ -1061,13 +1621,26 @@ stopping
 stops
 storage
 storing
+storm
+stormed
+storming
+strong
+stronger
+stuck
 sub
 subsurface
+suck
+sucked
+sucking
+sucks
 sudden
+suffer
+suffering
 suit
 suits
 superconducting
 supercooled
+supermatter
 supplies
 supply
 surface
@@ -1079,10 +1652,19 @@ surrendering
 surrenders
 surround
 surrounded
+swear
+swearing
+swears
+sweat
+sweating
+sweats
+sweet
 switch
 switched
 switches
 switching
+swore
+syndicate
 system
 systems
 t = T.
@@ -1091,8 +1673,16 @@ tabled
 tables
 tabling
 tactical
+tajaran = tah-har-ran
+tajarans = tah-har-rans
 take
 talk
+talked
+talking
+tamper
+tampered
+tampering
+tampers
 tango
 tank
 tanks
@@ -1103,6 +1693,10 @@ targets
 team
 teamed
 teams
+tech
+technologies
+technology
+telecomms
 teleport = teleportation
 teleported
 teleporting
@@ -1125,6 +1719,11 @@ test
 tested
 testing
 tests
+texas
+text
+texted
+texting
+texts
 thank
 thanked
 thanking
@@ -1148,6 +1747,13 @@ threat
 threats
 three
 through
+tickle
+tickled
+tickling
+tide
+tided = tyed-ed
+tides
+tiding
 time
 times
 to = two
@@ -1158,32 +1764,48 @@ touched
 touches
 touching
 towards
+toxic
+toxin
+toxins
 track
 tracked
 tracking
 tracks
+trader
+traders
 train
 trained
 training
 trains
+traitor
+traitors
 transport
 transportation
 transported
 transporting
 transports
+trigger
+triggered
+triggering
+triggers
+trip
+tripped
+tripping
+trips
 truck
 trucks
 true
 tunnel
+tunneled
 tunneling
 tunnels
-tunneled
 turn
 turret
 turrets
 twelve
 twenty
 two
+tzeench
 u = U.
 ugh = ug
 unable
@@ -1200,6 +1822,10 @@ unlocks
 unsafe
 until
 up
+update
+updated
+updating
+upload
 upper
 uranium
 us
@@ -1209,11 +1835,13 @@ used
 user
 using
 v = V.
-vacuum
 vacate
 vacating
+vacuum
 valid
 valids
+vampire
+vampires
 vapor
 vapors
 vend
@@ -1234,20 +1862,30 @@ violated
 violates
 violating
 violation
+virologist
+virologists
+virology
+virus
+viruses
 vital
 vitals
 volt
 voltage
 volts
+vox
 w = W.
 walk
 walkies = walk ees
 walking
 walks
 wall
+wanker
+wankers
 want
 wanted
 war
+warden
+wardens
 warm
 warn
 warning
@@ -1261,15 +1899,41 @@ watts
 we
 weak
 weapon
+weed
+welcome
+were
 west
+wew = woo
+what
+when
+where
 whiskey
 white
+why
+wiggle
 wilco
 will
+wing
+wings
+wire
+wired
+wires
+wiring
 with
 without
+wizard
+wizarding
+wizards
+wood
+woody = wood E.
+would
+wouldnt = wouldn't
+wow
 x = X.
 xeno
+xenobiology
+xenomorph
+xenomorphs
 xenos
 y = Y.
 yankee
@@ -1284,617 +1948,9 @@ your
 yourself
 z = Z.
 zero
+zombie
+zombies
 zone
 zones
 zulu
-zombie
-zombies
 
-abduction
-abductions
-abstain
-abstained
-abstaining
-abstains
-abuse
-abused
-abusing
-aft
-ai = A.I.
-alive
-andy
-animal
-animals
-antimov
-array
-arrays
-asimov
-awesome
-beam
-beamed
-beaming
-beams
-bee
-bees
-being
-beings
-bellmont
-beware
-biomass
-biomasses
-birb
-birbs
-bishop
-bishops
-bleed
-bleeding
-bleeds
-blizzard
-blizzards
-blob
-blobs
-blood
-bomb
-bombed
-bombing
-bombs
-borer
-borers
-brain
-braindead
-braindeads
-brains
-brawl
-brawled
-brawling
-cage
-can
-canister
-cans
-car
-carbon
-carbons
-cargo
-cat
-catbeast = cat beast
-# yes, also a verb now
-catbeasted = cat beasted
-catbeasting = cat beasting
-catbeasts = cat beasts
-cats
-ce = Chief Engineer
-cease
-ceased
-ceases
-ceasing
-centcomm
-change
-changed
-changeling
-changelings
-changer
-changes
-changing
-chaos
-chef
-chefs
-chemist
-chemists
-chicken
-chickens
-christ
-chuckle
-circuit
-circuits
-clockwork
-clown
-clowned
-clowning
-clowns
-cmo = See Em O.
-cocaine
-codeine
-comdom
-come
-complied
-complies
-comply
-conflict
-conflicts
-connor
-console
-consoles
-contraband
-cool
-corporation
-could
-couldnt = couldn't
-court
-cow
-cows
-critical
-criticality
-crystal
-crystalline
-crystals
-cult
-cultist
-cultists
-cults
-cyberhorror = cyber horror
-cyberhorrors = cyber horrors
-# Fixes SY BAHRG(S)
-cyborg = seye-borg
-cyborgs = seye-borgs
-depart
-departed
-departing
-department
-departments
-departs
-departure
-departures
-desire
-desired
-desires
-desiring
-desk
-desks
-dioxide
-dog
-dogs
-dot
-dots
-dracula
-entities
-entity
-equipment
-every
-everywhere
-excellent
-execution
-firing
-fix
-fixes
-fixed
-fixing
-fixitfixitfixit = fix it fix it fix it
-fluke
-fly
-flyman = fly man
-flymen = fly men
-flygirl = fly girl
-fore = four
-gang
-gangs
-gas
-gassed
-gasses
-gassing
-gene
-genes
-generate
-generated
-generates
-generating
-generator
-genetic
-geneticist
-geneticists
-genetics
-gibbed
-gibbing
-gibs
-glory
-goose
-grave
-graves
-gravity
-gray
-grayshit
-graytide
-graytiding
-hacker
-hackers
-hacking
-hall
-halls
-hallway
-hallways
-happening
-holy
-honk
-honked
-honking
-honks
-hop = Head of Personnel
-hos = Head of Security
-hug
-hugged
-hugging
-hugs
-human
-humans
-humanoid
-humanoids
-hunger
-hydroponics
-iaa = internal affairs agent
-if
-ian
-janitor
-janitorial
-janitors
-jesus
-kid
-kidnap
-kidnapped
-kidnapping
-kidnaps
-kids
-krokodil = croc oh deal
-law
-laws
-lawyer
-lawyers
-lived
-living
-lizard
-lizards
-look
-looked
-looking
-looks
-loop
-looped
-looping
-loops
-loose
-lord
-lorded
-lording
-lords
-love
-lsd = L S D
-machine
-machines
-machining
-machinist
-machinists
-malf
-me
-meat
-mech
-mechanic
-mechanics
-mechs
-medbay
-mine
-mined
-miner
-miners
-mines
-mining
-minus
-modification
-modifications
-modified
-modifies
-modifying
-mommi = mommy
-money
-monkey
-monkeys
-mrclean = mister clean
-murder
-murderer
-murderers
-murdering
-mutant
-mutants
-my
-mysteries
-mystery
-nanite
-nanites
-nanotrasen
-narsie = nar-see
-need
-negative
-ninja
-ninjas
-ntcoin = n t coin
-ntcoins = n t coins
-nuke
-nukeop = Nuclear Operative
-nukeops = Nuclear Operatives
-nukes
-obtain
-obtained
-obtaining
-obtains
-
-op = operative
-operate
-operated
-operates
-operatives
-ops = operatives
-or
-overdose
-overdosed
-overdosing
-oxygen
-place
-placed
-places
-placing
-plague
-plagues
-plasma
-plasmagirl = plasma girl
-plasmaman = plasma man
-plasmamen = plasma men
-poison
-poisoned
-poisoning
-poisonous
-poisons
-poly = polly
-pomfcoin = pomf coin
-pomfcoins = pomf coins
-port
-ports
-possibilities
-possibility
-possible
-post
-posted
-posting
-posts
-pox
-punpun = pun pun
-punch
-punched
-punching
-punches
-put
-qm = quartermaster
-quarantine
-quarter
-quartermaster
-quarters
-queen
-rage
-raid
-raided
-raider
-raiders
-raiding
-raids
-rd = Research Director
-recommend
-recommends
-removal
-request
-requested
-requesting
-requests
-respond
-responded
-responding
-responds
-response
-rest
-rested
-resting
-rests
-retard
-retarded
-retards
-revolution
-revolutionaries
-revolutionary
-riot
-rioting
-rioted
-riots
-robot
-robotic
-roboticist
-roboticists
-robotics
-robots
-rogue
-sarah
-sasha
-savior
-saviors
-self
-sell
-sells
-sensors
-shaft
-shafts
-shard
-shards
-shirt
-shirts
-shitcurity
-shitlord = shit lord
-shuttle
-sick
-singularities
-singularity
-skipjack
-skeleton
-skeletons
-small
-smaller
-sm = super matter
-smoke
-smoked
-smokes
-smoking
-solar
-solars
-sound
-sounds
-space
-ss13 = Space Station Thirteen
-starboard
-station
-stations
-stay
-storm
-stormed
-storming
-strong
-stronger
-stuck
-suck
-sucked
-sucking
-sucks
-suffer
-suffering
-supermatter
-sweet
-sweat
-sweats
-sweating
-swear
-swearing
-swore
-swears
-syndicate
-tajaran = tah-har-ran
-tajarans = tah-har-rans
-talked
-talking
-tamper
-tampered
-tampering
-tampers
-tech
-technologies
-technology
-telecomms
-texas
-text
-texted
-texting
-texts
-tickle
-tickled
-tickling
-tide
-toxic
-toxin
-toxins
-trader
-traders
-traitor
-traitors
-trigger
-triggered
-triggering
-triggers
-trip
-tripped
-tripping
-trips
-tzeench
-update
-updated
-updating
-upload
-vampire
-vampires
-virologist
-virologists
-virology
-virus
-viruses
-vox
-wanker
-wankers
-warden
-wardens
-weed
-welcome
-were
-what
-when
-where
-why
-wing
-wings
-wire
-wired
-wires
-wiring
-wizard
-wizarding
-wizards
-wood
-woody = wood E.
-would
-wouldnt = wouldn't
-xenobiology
-xenomorph
-xenomorphs
-
-abortion
-abortions
-asshole
-assholes
-# ass is in the original list.
-asses
-bitch
-bitches
-cancer
-cancerous
-coward
-cowards
-cowering
-cunt
-cunts
-fuck
-fucking
-fucks
-fun
-funny
-moth
-moths
-motherfucker = mother fucker
-motherfuckers = mother fuckers
-shat
-shit
-shits
-shitting
-wiggle
-
-# Stupid memey shit that TG added
-wew = woo
-wow
-epic
-awful
-mythic
-oof
-
-# TG uses an s prefix to denote SFX, here I'm going to use _ so it's less confusing.
-_airhorn = @samples/airhorn.ogg
-_excellent = @samples/billandted-excellent-trimmed.wav
-_fart = @samples/fart.ogg
-_honk = @samples/bikehorn.ogg
-
-voxtest = Ass Blast U.S.A.
-# Beepsky's famous emag line:
-voxtest2 = Fuck your cunt you shit eating cocksucker. Man, eat a dong, fucking ass-ramming shit-fuck. Eat penises in your fuck face, and shit out abortions of fuck, and do shit in your ass, you cockfuck shit monkey ass-wanker from the depths of shit!
-vox_420 = Smoke weed every day.
-# TODO: festival has a singing feature, but I last fucked with this in 2017, I couldn't get it working.
-voxtest3 = You.  You got what I neeeeeeeed.  But you say he's just a friend. But you say he's just a friend.
-gasthevox = Gas the vox, race war now!
-cracktheack = Crack the ack.
-voxtest4 = The humans are dead.  The humans are dead.  We used poisonous gasses, and we poisoned their asses.
