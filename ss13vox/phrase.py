@@ -11,15 +11,23 @@ class EPhraseFlags(IntFlag):
 
 class Phrase(object):
     def __init__(self):
+        #: Unique ID of the phrase. _honk, ass, voxtest, etc.
         self.id: str = ''
+        #: Word count. Not entirely accurate since some phrases use multiple words to work around festival fuckups.
         self.wordlen: int = 0
+        #: Textual representation of the phrase, as fed to festival. SFX phrases use this as the filename.
         self.phrase: str = ''
+        #: Parsed representation of the phrase.  None in SFX.
         self.parsed_phrase: Optional[List[str]] = None
+        #: Output filename.
         self.filename: str = ''
+        #: Any comments before this line.
         self.comments_before: List[str] = []
         self.flags: EPhraseFlags = EPhraseFlags.NONE
 
+        #: File in which this phrase was defined.
         self.deffile: str = ''
+        #: Line in which this phrase was defined.
         self.defline: int = 0
 
     def parsePhrase(self, phrase: str) -> None:
@@ -38,6 +46,9 @@ class Phrase(object):
         self.wordlen = len(self.parsed_phrase)
 
     def hasFlag(self, flag: EPhraseFlags) -> bool:
+        '''
+        Convenient shortcut.
+        '''
         return (self.flags & flag) == flag
 
     def serialize(self) -> dict:
