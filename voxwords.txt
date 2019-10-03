@@ -6,6 +6,17 @@
 # Do not specify a directory if you want it to go to sounds/vox_fem/.
 #
 
+# Ignore these, they are just SFX from oldvox.
+,
+.
+# Is this a misspelling of the below?
+bizwarn
+bloop
+buzwarn
+dadeda
+doop
+woop
+
 a = Ay
 aac = Ay Ay See
 accelerating

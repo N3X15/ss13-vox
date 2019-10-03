@@ -35,6 +35,7 @@ class Phrase(object):
             self.phrase = self.phrase[1:]
 
         self.parsed_phrase = self.phrase.split(' ')
+        self.wordlen = len(self.parsed_phrase)
 
     def hasFlag(self, flag: EPhraseFlags) -> bool:
         return (self.flags & flag) == flag
@@ -49,6 +50,7 @@ class Phrase(object):
             o['input-filename'] = self.phrase
         else:
             o['phrase'] = self.parsed_phrase
+        return o
 
 def ParsePhraseListFrom(filename: str) -> List[Phrase]:
     phrases = []

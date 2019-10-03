@@ -281,10 +281,11 @@ def main():
         else:
             phrase.filename = NUVOX_SOUND.format(ID=phrase.id)
             if phrase.id in OLD_SFX:
-                phrase.id.flags |= EPhraseFlags.OLD_VOX
-                phrase.id.filename = PREEX_SOUND.format(ID=phrase.id)
+                phrase.flags |= EPhraseFlags.OLD_VOX
+                phrase.filename = PREEX_SOUND.format(ID=phrase.id)
 
-        GenerateForWord(phrase, args)
+        if not phrase.hasFlag(EPhraseFlags.OLD_VOX):
+            GenerateForWord(phrase, args)
 
         soundsToKeep.add(os.path.join(DIST_DIR, phrase.filename))
 
@@ -293,7 +294,7 @@ def main():
     with log.info('Writing sound list to %s...', vox_sounds_path):
         os_utils.ensureDirExists(os.path.dirname(vox_sounds_path))
         with open(vox_sounds_path, 'w') as f:
-            f.write(templ.render(WORDS=phrases))
+            f.write(templ.render(WORDS=[p for p in phrases if not p.hasFlag(EPhraseFlags.NOT_VOX)]))
     soundsToKeep.add(vox_sounds_path)
 
     os_utils.ensureDirExists(DATA_DIR)
