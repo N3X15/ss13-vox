@@ -38,7 +38,7 @@ def organizeFile(filename: str) -> None:
     #phrases.sort(key=lambda x: x.id)
     with open(filename+'.sorted', 'w') as w:
         for section, sectionPhrases in phrases.items():
-            w.write(f'\n############\n## {section.name}\n############\n')
+            w.write(f'\n############\n## {section.name}\n############\n\n')
             for phrase in sorted(sectionPhrases, key=lambda x: x.id):
                 for comm in phrase.comments_before:
                     comm = comm.rstrip()

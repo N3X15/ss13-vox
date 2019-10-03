@@ -11,9 +11,9 @@
 // For vim
 // :%s/\(\(.*\)\.ogg\)/"\2" = 'sound\/vox_fem\/\1',/g
 GLOBAL_LIST_INIT(vox_sounds, list(
-  {% for word in WORDS -%}
+  {%- for word in WORDS %}
   "{{- word.id -}}" = '{{- word.filename -}}',
-  {% endfor %}
+  {%- endfor %}
 ))
 
 // I don't think TG uses this shit
