@@ -1,0 +1,17 @@
+# Path policies for various codebases.
+
+tg:
+  vox_data: code/vox_data.json
+  vox_sounds:
+    path: code/modules/mob/living/silicon/ai/vox_sounds.dm
+    template: tglist.jinja
+  sound: &standard
+    old-vox: sound/vox/{ID}.wav
+    new-vox: sound/vox_fem/{ID}.ogg
+vg:
+  vox_data: code/vox_data.json
+  vox_sounds:
+    path: code/defines/vox_sounds.dm
+    template: vglist.jinja
+  sound:
+    <<: *standard
