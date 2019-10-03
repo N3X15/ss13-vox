@@ -9,10 +9,11 @@
 ############
 ## OLD_VOX
 ############
-# Ignore these, they are just SFX from oldvox.
+# Ignore these, they are just SFX from oldvox (HL VOX).
+
 ,
 .
-# Is this a misspelling of the below?
+# Is this a misspelling of buzwarn?
 bizwarn
 bloop
 buzwarn
@@ -24,11 +25,16 @@ woop
 ## SFX
 ############
 # New SFX are just raw sounds piped through the same process as words.
+
 _airhorn = @samples/airhorn.ogg
 _excellent = @samples/billandted-excellent-trimmed.wav
 _fart = @samples/fart.ogg
 _honk = @samples/bikehorn.ogg
 
+
+################
+## PHRASES
+################
 
 voxtest = Ass Blast U.S.A.
 # Beepsky's famous emag line:
@@ -43,6 +49,7 @@ voxtest4 = The humans are dead.  The humans are dead.  We used poisonous gasses,
 ############
 ## NONE
 ############
+
 a = Ay
 aac = Ay Ay See
 abduction
@@ -189,6 +196,12 @@ beings
 bellmont
 beware
 beyond
+bill
+billed
+billing
+billion
+billions
+bills
 biohazard
 biohazards
 biological
@@ -196,10 +209,14 @@ biomass
 biomasses
 birb
 birbs
+bird
+birds
 bishop
 bishops
 bitch
+bitched
 bitches
+bitching
 # Goon sound we don't have.
 #birdwell
 black
@@ -271,11 +288,11 @@ carbon
 carbons
 cargo
 cat
-catbeast = cat beast
+catbeast = cat-beast
 # yes, also a verb now
-catbeasted = cat beasted
-catbeasting = cat beasting
-catbeasts = cat beasts
+catbeasted = cat-beasted
+catbeasting = cat-beasting
+catbeasts = cat-beasts
 cats
 ce = Chief Engineer
 cease
@@ -1953,4 +1970,3 @@ zombies
 zone
 zones
 zulu
-
