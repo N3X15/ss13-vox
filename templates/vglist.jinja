@@ -3,16 +3,20 @@
 // Dynamically loading it has bad results with sounds overtaking each other, even with the wait variable.
 
 var/list/vox_sounds = list(
-  {%- for word in WORDS %}
-  "{{- word.id -}}" = '{{- word.filename -}}',
+  {%- for sex, phrases in SEXES.items() %}
+  "{{- sex -}}" = list(
+    {%- for phrase in phrases %}
+    "{{- phrase.id -}}" = '{{- phrase.files[sex] -}}',
+    {%- endfor %}
+  ),
   {%- endfor %}
 )
 
-// How long each "word" really is (in words).  Single-word phrases are skipped for brevity.
+// How long each phrase is (in words).  Single-word phrases are skipped for brevity.
 var/list/vox_wordlen = list(
-  {%- for word in WORDS -%}
-  {%- if word.wordlen > 1 %}
-  "{{- word.id -}}" = {{ word.wordlen }},
+  {%- for phrase in PHRASES -%}
+  {%- if phrase.wordlen > 1 %}
+  "{{- phrase.id -}}" = {{ phrase.wordlen }},
   {%- endif -%}
   {%- endfor %}
 )

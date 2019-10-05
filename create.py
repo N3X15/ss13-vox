@@ -140,6 +140,11 @@ def GenerateForWord(phrase: Phrase, voice: Voice, writtenfiles: set, args: Optio
     oggfile = os.path.abspath(os.path.join('dist', filename))
     cachefile = os.path.abspath(os.path.join('cache', phrase.id.replace(os.sep, '_').replace('.', '') + voice.ID + '.dat'))
 
+    def commitWritten():
+        nonlocal phrase, voice, oggfile, writtenfiles
+        phrase.files[voice.assigned_sex]=os.path.relpath(oggfile, 'dist')
+        writtenfiles.add(os.path.abspath(oggfile))
+
     parent = os.path.dirname(oggfile)
     if not os.path.isdir(parent):
         os.makedirs(parent)
@@ -155,7 +160,7 @@ def GenerateForWord(phrase: Phrase, voice: Voice, writtenfiles: set, args: Optio
                 old_md5 = md5f.read()
         if old_md5 == md5:
             log.info('Skipping {0} for {1} (exists)'.format(filename, voice.ID))
-            writtenfiles.add(os.path.abspath(oggfile))
+            commitWritten()
             return
     log.info('Generating {0} for {1} ({2!r})'.format(filename, voice.ID, phrase.phrase))
     text2wave = None
@@ -191,7 +196,7 @@ def GenerateForWord(phrase: Phrase, voice: Voice, writtenfiles: set, args: Optio
             log.error("File '{0}' doesn't exist, command '{1}' probably failed!".format(cfn, command))
             sys.exit(1)
 
-    writtenfiles.add(os.path.abspath(oggfile))
+    commitWritten()
 
 def main():
     argp = argparse.ArgumentParser(description='Generation script for ss13-vox.')
@@ -299,7 +304,17 @@ def main():
     with log.info('Writing sound list to %s...', vox_sounds_path):
         os_utils.ensureDirExists(os.path.dirname(vox_sounds_path))
         with open(vox_sounds_path, 'w') as f:
-            f.write(templ.render(WORDS=[p for p in phrases if not p.hasFlag(EPhraseFlags.NOT_VOX)]))
+            sexes = {
+                'fem': [],
+                'mas': [],
+                'default': [],
+            }
+            for p in phrases:
+                if p.hasFlag(EPhraseFlags.NOT_VOX):
+                    continue
+                for k in p.files.keys():
+                    sexes[k].append(p)
+            f.write(templ.render(SEXES=sexes, PHRASES=[p for p in phrases if not p.hasFlag(EPhraseFlags.NOT_VOX)]))
     soundsToKeep.add(os.path.abspath(vox_sounds_path))
 
     os_utils.ensureDirExists(DATA_DIR)

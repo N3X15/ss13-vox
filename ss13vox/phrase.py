@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import List, Optional, Dict
 from enum import IntFlag
 
 __ALL__ = ['EPhraseFlags', 'Phrase', 'ParsePhraseListFrom']
@@ -26,6 +26,8 @@ class Phrase(object):
         self.flags: EPhraseFlags = EPhraseFlags.NONE
         # What voices we were built with
         self.voices: List[str] = []
+        #: Output filename.
+        self.files: Dict[str, str] = {}
 
         #: File in which this phrase was defined.
         self.deffile: str = ''
@@ -56,7 +58,7 @@ class Phrase(object):
     def serialize(self) -> dict:
         o = {
             'wordlen':  self.wordlen,
-            'filename': self.filename,
+            'files': self.files,
             'flags': [x.name.lower().replace('_', '-') for x in list(EPhraseFlags) if x.value > 0 and (self.flags & x) == x]
         }
         if self.flags & EPhraseFlags.SFX:

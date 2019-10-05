@@ -4,25 +4,23 @@
 
 // NOTE:  After 10-2-2019, a machine-readable JSON file is available in data/vox_data.json.
 // You should no longer need to parse this for third-party tools.
-
-// Regex for collecting a list of ogg files
-// (([a-zA-Z,.]+)\.ogg)
-
-// For vim
-// :%s/\(\(.*\)\.ogg\)/"\2" = 'sound\/vox_fem\/\1',/g
 GLOBAL_LIST_INIT(vox_sounds, list(
-  {%- for word in WORDS %}
-  "{{- word.id -}}" = '{{- word.filename -}}',
+  {%- for sex, phrases in SEXES.items() %}
+  "{{- sex -}}" = list(
+    {%- for phrase in phrases %}
+    "{{- phrase.id -}}" = '{{- phrase.files[sex] -}}',
+    {%- endfor %}
+  ),
   {%- endfor %}
 ))
 
 // I don't think TG uses this shit
-// How long each "word" really is (in words).  Single-word phrases are skipped for brevity.
+// How long each phrase is (in words).  Single-word phrases are skipped for brevity.
 /*
 var/list/vox_wordlen = list(
-  {%- for word in WORDS -%}
-  {%- if word.wordlen > 1 %}
-  "{{- word.id -}}" = {{ word.wordlen }},
+  {%- for phrase in PHRASES -%}
+  {%- if phrase.wordlen > 1 %}
+  "{{- phrase.id -}}" = {{ phrase.wordlen }},
   {%- endif -%}
   {%- endfor %}
 )
