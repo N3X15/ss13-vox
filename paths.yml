@@ -7,7 +7,7 @@ tg:
     template: tglist.jinja
   sound: &standard
     old-vox: sound/vox/{ID}.wav
-    new-vox: sound/vox_fem/{ID}.ogg
+    new-vox: sound/vox_{SEX}/{ID}.ogg
 vg:
   vox_data: code/vox_data.json
   vox_sounds:

@@ -10,7 +10,7 @@ import subprocess
 import sys
 import time
 import multiprocessing
-from typing import Optional
+from typing import Optional, Dict, List
 from enum import IntFlag
 
 script_dir = os.path.dirname(os.path.realpath(__file__))
@@ -20,6 +20,7 @@ from buildtools.config import YAMLConfig, BaseConfig
 
 from ss13vox.phrase import Phrase, EPhraseFlags, ParsePhraseListFrom
 from ss13vox.pronunciation import Pronunciation, DumpLexiconScript, ParseLexiconText
+from ss13vox.voice import EVoiceSex, Voice, VoiceRegistry, USSLTFemale
 
 """
 Usage:
@@ -55,45 +56,6 @@ THE SOFTWARE.
 # CONFIG
 ###############################################
 
-CODEBASE = 'vg'
-
-# Voice you want to use
-# VOICE='rab_diphone'
-# This is the nitech-made ARCTIC voice, tut on how to install:
-# http://ubuntuforums.org/showthread.php?t=751169 ("Installing the enhanced Nitech HTS voices" section)
-# VOICE='nitech_us_bdl_arctic_hts'
-# VOICE='nitech_us_jmk_arctic_hts'
-# VOICE='nitech_us_awb_arctic_hts'
-VOICE = 'nitech_us_slt_arctic_hts'  # less bored US female
-# VOICE='nitech_us_clb_arctic_hts' # DEFAULT, bored US female (occasionally comes up with british pronunciations?!)
-# VOICE='nitech_us_rms_arctic_hts'
-
-# PHONESET='mrpa'
-PHONESET = ''
-
-MALE = False
-# What we do with SoX:
-if MALE:
-    VOICE = 'nitech_us_slt_arctic_hts'  # less bored US female
-    # VOICE='cmu_us_slt_arctic_hts'
-    SOX_ARGS = 'pitch -500'
-    SOX_ARGS += ' stretch 1.2'  # Starts the gravelly sound, lowers pitch a bit.
-    SOX_ARGS += ' synth sine amod 60'
-    SOX_ARGS += ' chorus 0.7 0.9 55 0.4 0.25 2 -t'
-    SOX_ARGS += ' phaser 0.9 0.85 4 0.23 1.3 -s'
-else:
-    VOICE = 'nitech_us_clb_arctic_hts'  # DEFAULT, bored US female (occasionally comes up with british pronunciations?!)
-    SOX_ARGS = 'stretch 1.1'
-    SOX_ARGS += ' chorus 0.7 0.9 55 0.4 0.25 2 -t'
-    SOX_ARGS += ' phaser 0.9 0.85 4 0.23 1.3 -s'
-SOX_ARGS += ' bass -40'
-SOX_ARGS += ' highpass 22 highpass 22'
-SOX_ARGS += ' compand 0.01,1 -90,-90,-70,-70,-60,-20,0,0 -5 -20'  # Dynamic range compression.
-# SOX_ARGS += ' echos 0.8 0.5 100 0.25 10 0.25' # Good with stretch, otherwise sounds like bees.
-SOX_ARGS += ' echos 0.3 0.5 100 0.25 10 0.25'  # Good with stretch, otherwise sounds like bees.
-#SOX_ARGS += ' delay 0.5'
-SOX_ARGS += ' norm'
-
 # Direct from TG's PR (https://github.com/tgstation/tgstation/pull/36492)
 # May bump up quality and rate slightly...
 RECOMPRESS_ARGS = [
@@ -108,8 +70,8 @@ RECOMPRESS_ARGS = [
     # Playback speed
     '-speed',   '0',
     # Number of threads to use.  This works OK on my laptop, but you may need fewer
-    #'-threads', '8',
     # Now specified in -j.
+    #'-threads', '8',
     # Force overwrite
     '-y']
 
@@ -146,8 +108,8 @@ def md5sum(filename):
             md5.update(chunk)
     return md5.hexdigest()
 
-def GenerateForWord(phrase: Phrase, args: Optional[argparse.Namespace] = None):
-    global PHRASELENGTHS, OLD_SFX, SOX_ARGS, KNOWN_PHONEMES, OTHERSOUNDS
+def GenerateForWord(phrase: Phrase, voice: Voice, writtenfiles: set, args: Optional[argparse.Namespace] = None):
+    global PHRASELENGTHS, OLD_SFX, KNOWN_PHONEMES, OTHERSOUNDS
     my_phonemes = {}
     if phrase.hasFlag(EPhraseFlags.OLD_VOX):
         log.info('Skipping %s.ogg (Marked as OLD_VOX)', phrase.id)
@@ -161,17 +123,22 @@ def GenerateForWord(phrase: Phrase, args: Optional[argparse.Namespace] = None):
             if _word in KNOWN_PHONEMES:
                 my_phonemes[_word] = KNOWN_PHONEMES[_word].toLisp().replace('\n', '')
 
+
+    filename = phrase.filename.format(ID=phrase.id, SEX=voice.assigned_sex)
+
+    sox_args = voice.genSoxArgs(args)
+
     md5 = phrase.phrase
     md5 += '\n'.join(my_phonemes.values())
-    md5 += SOX_ARGS + PRE_SOX_ARGS + ''.join(RECOMPRESS_ARGS)
-    md5 += VOICE + PHONESET
-    md5 += phrase.filename
+    md5 += ''.join(sox_args) + PRE_SOX_ARGS + ''.join(RECOMPRESS_ARGS)
+    md5 += voice.ID
+    md5 += filename
 
-    #phrase.filename = os.path.join('sound', 'vox_fem', phrase.id + '.ogg')
+    #filename = os.path.join('sound', 'vox_fem', phrase.id + '.ogg')
     #if '/' in phrase.id:
-    #    phrase.filename = os.path.join(phrase.id + '.ogg')
-    oggfile = os.path.abspath(os.path.join('dist', phrase.filename))
-    cachefile = os.path.abspath(os.path.join('cache', phrase.id.replace(os.sep, '_').replace('.', '') + '.dat'))
+    #    filename = os.path.join(phrase.id + '.ogg')
+    oggfile = os.path.abspath(os.path.join('dist', filename))
+    cachefile = os.path.abspath(os.path.join('cache', phrase.id.replace(os.sep, '_').replace('.', '') + voice.ID + '.dat'))
 
     parent = os.path.dirname(oggfile)
     if not os.path.isdir(parent):
@@ -187,9 +154,10 @@ def GenerateForWord(phrase: Phrase, args: Optional[argparse.Namespace] = None):
             with open(cachefile, 'r') as md5f:
                 old_md5 = md5f.read()
         if old_md5 == md5:
-            log.info('Skipping {0}.ogg (exists)'.format(phrase.id))
+            log.info('Skipping {0} for {1} (exists)'.format(filename, voice.ID))
+            writtenfiles.add(os.path.abspath(oggfile))
             return
-    log.info('Generating {0}.ogg ({1})'.format(phrase.id, repr(phrase.phrase)))
+    log.info('Generating {0} for {1} ({2!r})'.format(filename, voice.ID, phrase.phrase))
     text2wave = None
     if phrase.hasFlag(EPhraseFlags.SFX):
         text2wave = 'ffmpeg -i '+phrase.phrase+' tmp/VOX-word.wav'
@@ -202,47 +170,72 @@ def GenerateForWord(phrase: Phrase, args: Optional[argparse.Namespace] = None):
             text2wave = 'text2wave -eval tmp/VOXdict.lisp tmp/VOX-word.txt -o tmp/VOX-word.wav'
     with open(cachefile, 'w') as wf:
         wf.write(md5)
-    for fn in ('tmp/VOX-word.wav', 'tmp/VOX-soxpre-word.wav', 'tmp/VOX-sox-word.wav'):
+    for fn in ('tmp/VOX-word.wav', 'tmp/VOX-soxpre-word.wav', 'tmp/VOX-sox-word.wav', 'tmp/VOX-encoded.ogg'):
         if os.path.isfile(fn):
             os.remove(fn)
 
     cmds = []
     cmds += [(text2wave.split(' '), 'tmp/VOX-word.wav')]
     cmds += [(['sox', 'tmp/VOX-word.wav', 'tmp/VOX-soxpre-word.wav'] + PRE_SOX_ARGS.split(' '), 'tmp/VOX-soxpre-word.wav')]
-    cmds += [(['sox', 'tmp/VOX-soxpre-word.wav', 'tmp/VOX-sox-word.wav'] + SOX_ARGS.split(' '), 'tmp/VOX-sox-word.wav')]
+    cmds += [(['sox', 'tmp/VOX-soxpre-word.wav', 'tmp/VOX-sox-word.wav'] + sox_args, 'tmp/VOX-sox-word.wav')]
     cmds += [(['oggenc', 'tmp/VOX-sox-word.wav', '-o', 'tmp/VOX-encoded.ogg'], 'tmp/VOX-encoded.ogg')]
     cmds += [(['ffmpeg', '-i', 'tmp/VOX-encoded.ogg']+RECOMPRESS_ARGS+['-threads',args.threads]+[oggfile], oggfile)]
     for command_spec in cmds:
         (command, cfn) = command_spec
         with os_utils.TimeExecution(command[0]):
             os_utils.cmd(command, echo=False, critical=True, show_output=False)
+
     for command_spec in cmds:
         (command, cfn) = command_spec
         if not os.path.isfile(fn):
             log.error("File '{0}' doesn't exist, command '{1}' probably failed!".format(cfn, command))
             sys.exit(1)
 
+    writtenfiles.add(os.path.abspath(oggfile))
+
 def main():
     argp = argparse.ArgumentParser(description='Generation script for ss13-vox.')
-    argp.add_argument('--codebase', choices=['vg', 'tg'], default='vg', help='Which codebase to generate for. (Affects output code and paths.)')
+    #argp.add_argument('--codebase', choices=['vg', 'tg'], default='vg', help='Which codebase to generate for. (Affects output code and paths.)')
     argp.add_argument('--threads', '-j', type=int, default=multiprocessing.cpu_count(), help='How many threads to use in ffmpeg.')
-    argp.add_argument('phrasefiles', nargs='+', type=str, help='A list of phrase files.')
+    #argp.add_argument('phrasefiles', nargs='+', type=str, help='A list of phrase files.')
     args = argp.parse_args()
 
     if not os.path.isdir('tmp'):
         os.makedirs('tmp')
 
     DIST_DIR = 'dist'
-    CODE_DIR = ''
     PREEX_SOUND = 'sound/vox/{ID}.wav'
-    NUVOX_SOUND = 'sound/vox_fem/{ID}.ogg'
+    NUVOX_SOUND = 'sound/vox_{SEX}/{ID}.wav'
+    voices = []
     vox_sounds_path = ''
     templatefile = ''
 
+    config = BaseConfig()
+    config.cfg = YAMLConfig('config.yml')
     pathcfg = BaseConfig()
-    pathcfg.cfg = YAMLConfig('paths.yml').cfg[args.codebase]
+    pathcfg.cfg = YAMLConfig('paths.yml').cfg[config.get('codebase', 'vg')]
+
     PREEX_SOUND = pathcfg.get('sound.old-vox', PREEX_SOUND)
-    NUVOX_SOUND = pathcfg.get('sound.new-vox', PREEX_SOUND)
+    NUVOX_SOUND = pathcfg.get('sound.new-vox', NUVOX_SOUND)
+
+    voice_assignments = {}
+    all_voices = []
+    default_voice: Voice = VoiceRegistry.Get(USSLTFemale.ID)
+    configured_voices: Dict[str, dict] = {}
+    for sexID, voiceid in config.get('voices', {'fem': USSLTFemale.ID}).items():
+        voice = VoiceRegistry.Get(voiceid)
+        assert sexID != ''
+        voice.assigned_sex = sexID
+        if sexID in ('fem', 'mas'):
+            sex = EVoiceSex(sexID)
+            assert voice.SEX == sex
+            voices += [voice]
+        elif sexID == 'default':
+            default_voice = voice
+        voice_assignments[voice.assigned_sex] = []
+        all_voices += [voice]
+        configured_voices[sexID] = voice.serialize()
+
     vox_sounds_path = os.path.join(DIST_DIR, pathcfg.get('vox_sounds.path'))
     templatefile = pathcfg.get('vox_sounds.template')
     vox_data_path = os.path.join(DIST_DIR, pathcfg.get('vox_data'))
@@ -251,12 +244,11 @@ def main():
     os_utils.ensureDirExists(DATA_DIR)
     with log.info('Parsing lexicon...'):
         lexicon = ParseLexiconText('lexicon.txt')
-        DumpLexiconScript(VOICE, lexicon.values(), 'tmp/VOXdict.lisp')
 
     phrases=[]
     phrasesByID = {}
     broked = False
-    for filename in args.phrasefiles:
+    for filename in config.get('phrasefiles', ['announcements.txt', 'voxwords.txt']):
         for p in ParsePhraseListFrom(filename):
             if p.id in phrasesByID:
                 duplicated = phrasesByID[p.id]
@@ -275,19 +267,32 @@ def main():
     phrases.sort(key=lambda x: x.id)
 
     for phrase in phrases:
+        phrase_voices = list(voices)
         # If it has a path, it's being manually specified.
         if '/' in phrase.id:
             phrase.filename = phrase.id + '.ogg'
+            phrase_voices = [default_voice]
+            soundsToKeep.add(os.path.abspath(os.path.join(DIST_DIR, phrase.filename)))
         else:
-            phrase.filename = NUVOX_SOUND.format(ID=phrase.id)
+            phrase.filename = ''+NUVOX_SOUND
             if phrase.id in OLD_SFX:
+                phrase_voices = [default_voice]
                 phrase.flags |= EPhraseFlags.OLD_VOX
                 phrase.filename = PREEX_SOUND.format(ID=phrase.id)
+                soundsToKeep.add(os.path.abspath(os.path.join(DIST_DIR, phrase.filename)))
 
         if not phrase.hasFlag(EPhraseFlags.OLD_VOX):
-            GenerateForWord(phrase, args)
+            log.info('%s - %r', phrase.id, [x.assigned_sex for x in phrase_voices])
+            for v in phrase_voices:
+                voice_assignments[v.assigned_sex].append(phrase)
 
-        soundsToKeep.add(os.path.join(DIST_DIR, phrase.filename))
+    #sys.exit(1)
+    for voice in all_voices:
+        print(voice.ID, voice.assigned_sex)
+        DumpLexiconScript(voice.FESTIVAL_VOICE_ID, lexicon.values(), 'tmp/VOXdict.lisp')
+        for phrase in voice_assignments[voice.assigned_sex]:
+            GenerateForWord(phrase, voice, soundsToKeep, args)
+            soundsToKeep.add(os.path.abspath(os.path.join(DIST_DIR, phrase.filename)))
 
     jenv = jinja2.Environment(loader=jinja2.FileSystemLoader(['./templates']))
     templ = jenv.get_template(templatefile)
@@ -295,24 +300,26 @@ def main():
         os_utils.ensureDirExists(os.path.dirname(vox_sounds_path))
         with open(vox_sounds_path, 'w') as f:
             f.write(templ.render(WORDS=[p for p in phrases if not p.hasFlag(EPhraseFlags.NOT_VOX)]))
-    soundsToKeep.add(vox_sounds_path)
+    soundsToKeep.add(os.path.abspath(vox_sounds_path))
 
     os_utils.ensureDirExists(DATA_DIR)
     with open(os.path.join(DATA_DIR, 'vox_data.json'), 'w') as f:
         data = {
-            'version': 1,
+            'version': 2,
             'compiled': time.time(),
-            'voice': VOICE,
-            'phoneset': PHONESET,
-            #'phonemes': KNOWN_PHONEMES,
+            'voices': configured_voices,
             'words': collections.OrderedDict({w.id: w.serialize() for w in phrases if '/' not in w.id}),
         }
         json.dump(data, f, indent=2)
-    soundsToKeep.add(os.path.join(DATA_DIR, 'vox_data.json'))
+    soundsToKeep.add(os.path.abspath(os.path.join(DATA_DIR, 'vox_data.json')))
 
-    for root, dirs, files in os.walk(DIST_DIR, topdown=False):
+    with open('tmp/written.txt', 'w') as f:
+        for filename in sorted(soundsToKeep):
+            f.write(f'{filename}\n')
+
+    for root, _, files in os.walk(DIST_DIR, topdown=False):
         for name in files:
-            filename = os.path.join(root, name)
+            filename = os.path.abspath(os.path.join(root, name))
             if filename not in soundsToKeep:
                 log.warning('Removing {0} (no longer defined)'.format(filename))
                 os.remove(filename)

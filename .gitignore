@@ -13,7 +13,6 @@
 /hts_tmp
 /tmp
 /tools
-config.yml
 dist/
 sound/
 upload.sh

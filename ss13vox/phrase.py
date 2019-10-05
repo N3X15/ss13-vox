@@ -24,6 +24,8 @@ class Phrase(object):
         #: Any comments before this line.
         self.comments_before: List[str] = []
         self.flags: EPhraseFlags = EPhraseFlags.NONE
+        # What voices we were built with
+        self.voices: List[str] = []
 
         #: File in which this phrase was defined.
         self.deffile: str = ''

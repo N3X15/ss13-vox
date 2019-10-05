@@ -1,1 +1,1 @@
-python3.6 create.py announcements.txt voxwords.txt
+python3.6 create.py
