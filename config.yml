@@ -1,14 +1,15 @@
 codebase: vg
 # ALL AVAILABLE VOICES (so far)
-# 'us-slt' - US Female (Nitech ARCTIC)
+# 'us-clb' - US Female (Nitech ARCTIC)
+# 'us-slt' - US Female (Nitech ARCTIC; Midwestern)
 # 'us-rms' - US Male (Nitech ARCTIC)
 voices:
   # Feminine voiceset
-  fem:     us-slt
+  fem:     us-clb
   # Masculine voiceset
   mas:     us-rms
   # Non-AI announcements (like vox_login, etc)
-  default: us-slt
+  default: us-clb
 phrasefiles:
   - announcements.txt
   - voxwords.txt

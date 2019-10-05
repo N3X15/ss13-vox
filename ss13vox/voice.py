@@ -101,7 +101,9 @@ VoiceRegistry.Register(USRMSMale)
 
 class USSLTFemale(Voice):
     '''
-    SLT US Female: Currently used by default on /vg/station.
+    SLT US Female: More midwestern voice, talks faster, but buggy and occasionally drops into British.
+
+    Needs work, gravellation of voice is wrong.
     '''
     ID = 'us-slt'
     SEX = EVoiceSex.FEMININE
@@ -113,3 +115,18 @@ class USSLTFemale(Voice):
         ]
         return sox_args + super().genSoxArgs(args)
 VoiceRegistry.Register(USSLTFemale)
+
+class USCLBFemale(Voice):
+    '''
+    CLB US Female: The /vg/station original vox_fem voice. Enunciates clearly, practically no bugs.
+    '''
+    ID = 'us-clb'
+    SEX = EVoiceSex.FEMININE
+    FESTIVAL_VOICE_ID = 'nitech_us_clb_arctic_hts'
+    def genSoxArgs(self, args) -> List[str]:
+        sox_args = [
+            # Starts the gravelly sound, lowers pitch a bit.
+            'stretch', '1.1',
+        ]
+        return sox_args + super().genSoxArgs(args)
+VoiceRegistry.Register(USCLBFemale)
