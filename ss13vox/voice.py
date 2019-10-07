@@ -16,6 +16,7 @@ from enum import IntEnum, IntFlag, Enum
 class EVoiceSex(Enum):
     MASCULINE = 'mas'
     FEMININE = 'fem'
+    SFX = 'sfx'
 
 class VoiceRegistry(object):
     ALL = {}
@@ -40,6 +41,8 @@ class Voice(object):
 
     def __init__(self):
         self.assigned_sex: str = '' #e.g. fem, mas, default
+        self.chorus:bool = True
+        self.phaser:bool = True
 
     def genSoxArgs(self, args) -> List[str]:
         '''
@@ -48,12 +51,19 @@ class Voice(object):
         See the SoX(1) manpage for more information.
         '''
         # Standard SOX transformations used on all voices:
-        sox_args = [
-            # Chorus adds harmonics, which makes it sound like multiple people are talking at once.
-            # It also removes some of the monotone, and makes the voice sound more "natural".
-            'chorus', '0.7', '0.9', '55', '0.4', '0.25', '2', '-t',
-            # Phaser distorts the sound a bit, making it sound more "digital" and "spacey"
-            'phaser', '0.9', '0.85', '4', '0.23', '1.3', '-s',
+        sox_args = []
+        if self.chorus:
+            sox_args += [
+                # Chorus adds harmonics, which makes it sound like multiple people are talking at once.
+                # It also removes some of the monotone, and makes the voice sound more "natural".
+                'chorus', '0.7', '0.9', '55', '0.4', '0.25', '2', '-t',
+            ]
+        if self.phaser:
+            sox_args += [
+                # Phaser distorts the sound a bit, making it sound more "digital" and "spacey"
+                'phaser', '0.9', '0.85', '4', '0.23', '1.3', '-s',
+            ]
+        sox_args += [
             # Attenuate bass
             'bass', '-40',
             # Pass frequencies above whatever this is
@@ -130,3 +140,20 @@ class USCLBFemale(Voice):
         ]
         return sox_args + super().genSoxArgs(args)
 VoiceRegistry.Register(USCLBFemale)
+
+class SFXVoice(Voice):
+    '''
+    Voice used for SFX. Not usable otherwise.
+    '''
+    ID = 'sfx'
+    SEX = EVoiceSex.SFX
+    FESTIVAL_VOICE_ID = None
+    def __init__(self):
+        super().__init__()
+        self.assigned_sex = 'sfx'
+        self.chorus = self.phaser = False
+
+    def genSoxArgs(self, args) -> List[str]:
+        # Just echos and DRC
+        return super().genSoxArgs(args)
+#VoiceRegistry.Register(NullVoice)

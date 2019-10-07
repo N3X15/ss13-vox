@@ -20,7 +20,7 @@ from buildtools.config import YAMLConfig, BaseConfig
 
 from ss13vox.phrase import Phrase, EPhraseFlags, ParsePhraseListFrom
 from ss13vox.pronunciation import Pronunciation, DumpLexiconScript, ParseLexiconText
-from ss13vox.voice import EVoiceSex, Voice, VoiceRegistry, USSLTFemale
+from ss13vox.voice import EVoiceSex, Voice, VoiceRegistry, USSLTFemale, SFXVoice
 
 """
 Usage:
@@ -226,6 +226,7 @@ def main():
     voice_assignments = {}
     all_voices = []
     default_voice: Voice = VoiceRegistry.Get(USSLTFemale.ID)
+    sfx_voice: SFXVoice = SFXVoice()
     configured_voices: Dict[str, dict] = {}
     for sexID, voiceid in config.get('voices', {'fem': USSLTFemale.ID}).items():
         voice = VoiceRegistry.Get(voiceid)
@@ -240,6 +241,10 @@ def main():
         voice_assignments[voice.assigned_sex] = []
         all_voices += [voice]
         configured_voices[sexID] = voice.serialize()
+
+    voice_assignments[sfx_voice.assigned_sex] = []
+    all_voices += [sfx_voice]
+    configured_voices[sfx_voice.assigned_sex] = sfx_voice.serialize()
 
     vox_sounds_path = os.path.join(DIST_DIR, pathcfg.get('vox_sounds.path'))
     templatefile = pathcfg.get('vox_sounds.template')
@@ -286,6 +291,10 @@ def main():
                 phrase.filename = PREEX_SOUND.format(ID=phrase.id)
                 soundsToKeep.add(os.path.abspath(os.path.join(DIST_DIR, phrase.filename)))
 
+
+        if phrase.hasFlag(EPhraseFlags.SFX):
+            phrase_voices = [sfx_voice]
+
         if not phrase.hasFlag(EPhraseFlags.OLD_VOX):
             log.info('%s - %r', phrase.id, [x.assigned_sex for x in phrase_voices])
             for v in phrase_voices:
@@ -308,6 +317,7 @@ def main():
                 'fem': [],
                 'mas': [],
                 'default': [],
+                'sfx': [],
             }
             for p in phrases:
                 if p.hasFlag(EPhraseFlags.NOT_VOX):
