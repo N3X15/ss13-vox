@@ -27,10 +27,10 @@ woop
 # New SFX are just raw sounds piped through the same process as words.
 
 _airhorn = @samples/airhorn.ogg
+_doorstuck = @samples/door-stuck.wav
 _excellent = @samples/billandted-excellent-trimmed.wav
 _fart = @samples/fart.ogg
 _honk = @samples/bikehorn.ogg
-_doorstuck = @samples/door-stuck.wav
 
 
 ################
