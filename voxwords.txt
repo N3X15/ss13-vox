@@ -252,6 +252,10 @@ botanist
 botanists
 botany
 bottom
+box
+boxed
+boxes
+boxing
 boy
 brain
 braindead
@@ -319,6 +323,7 @@ centcomm
 center
 centi
 central
+chad
 challenge
 challenged
 challenges
@@ -492,6 +497,7 @@ decompression
 decontamination
 #deeoo WHAT
 defense
+deff = deaf
 degrees
 delta
 demon
@@ -1177,6 +1183,7 @@ message
 messaged
 messages
 messaging
+meta
 meter
 metered
 metering
@@ -1359,6 +1366,7 @@ pacified
 pacifies
 pacify
 pacifying
+packed
 page
 pain
 pains
@@ -1610,6 +1618,7 @@ screamed
 screaming
 screams
 screen
+scrungularity
 search
 searched
 searches
@@ -2029,6 +2038,7 @@ violated
 violates
 violating
 violation
+virgin
 virologist
 virologists
 virology
