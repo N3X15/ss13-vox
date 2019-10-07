@@ -30,6 +30,7 @@ _airhorn = @samples/airhorn.ogg
 _excellent = @samples/billandted-excellent-trimmed.wav
 _fart = @samples/fart.ogg
 _honk = @samples/bikehorn.ogg
+_doorstuck = @samples/door-stuck.wav
 
 
 ################
