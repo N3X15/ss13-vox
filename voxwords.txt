@@ -166,7 +166,7 @@ automatic
 away
 awesome
 awful
-b = B.\
+b = B.
 babies
 baby
 back
