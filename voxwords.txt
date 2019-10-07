@@ -56,6 +56,7 @@ abduction
 abductions
 abortion
 abortions
+about
 abstain
 abstained
 abstaining
@@ -72,9 +73,11 @@ acknowledged
 acquired
 acquisition
 across
+act
 activate
 activated
 activity
+add
 adios
 administration
 advance
@@ -87,6 +90,7 @@ advises
 advising
 aft
 after
+again
 agent
 agents
 ai = A.I.
@@ -102,6 +106,7 @@ aligned
 alive
 all
 alpha
+also
 am
 amigo
 amigos
@@ -134,7 +139,9 @@ armory
 array
 arrays
 arrest
+as
 asimov
+ask
 ass
 # ass is in the original list.
 asses
@@ -194,8 +201,10 @@ before
 being
 beings
 bellmont
+between
 beware
 beyond
+big
 bill
 billed
 billing
@@ -243,6 +252,7 @@ botanist
 botanists
 botany
 bottom
+boy
 brain
 braindead
 braindeads
@@ -256,10 +266,12 @@ breached
 break
 bridge
 brig
+build
 bust
 but
 button
 buttons
+by
 bypass
 bypassed
 bypasses
@@ -272,6 +284,7 @@ cages
 caging
 call
 called
+came
 can
 canal
 cancer
@@ -294,6 +307,7 @@ catbeasted = cat-beasted
 catbeasting = cat-beasting
 catbeasts = cat-beasts
 cats
+cause
 ce = Chief Engineer
 cease
 ceased
@@ -417,7 +431,9 @@ corridor
 corridors
 could
 couldnt = couldn't
+country
 court
+cover
 cow
 coward
 cowards
@@ -522,6 +538,7 @@ devils
 did
 die
 dies
+differ
 dimensional
 dioxide
 director
@@ -554,6 +571,7 @@ doctor
 doctored
 doctoring
 doctors
+does
 dog
 dogs
 doom
@@ -576,6 +594,8 @@ duct
 ducts
 dying
 e = E.
+each
+earth
 east
 echo
 ed
@@ -594,6 +614,7 @@ enable
 enabled
 enables
 enabling
+end
 enemies
 enemy
 energies
@@ -631,6 +652,7 @@ evacuate
 evacuated
 evacuates
 evacuating
+even
 every
 everywhere
 excellent
@@ -670,6 +692,7 @@ extermination
 extinguish
 extinguisher
 extreme
+eye
 f = F.
 facilities
 facility
@@ -685,6 +708,7 @@ failures
 false
 farthest
 fast
+father
 fauna
 feet
 field
@@ -693,6 +717,8 @@ fifteen
 fifth
 fifty
 final
+find
+finds
 fine
 fines
 fire
@@ -717,6 +743,11 @@ fly
 flygirl = fly-girl
 flyman = fly-man
 flymen = fly-men
+follow
+followed
+following
+food
+foods
 fool
 fooling
 fools
@@ -766,6 +797,7 @@ gas
 gassed
 gasses
 gassing
+gave
 geese
 gene
 generate
@@ -782,6 +814,8 @@ get
 gibbed
 gibbing
 gibs
+give
+giving
 glory
 # This is fucked.  I do not know how to fix it.  I have tried many variations and lexicon entries.
 go
@@ -815,6 +849,7 @@ great
 green
 grenade
 grenades
+grow
 guard
 guarded
 guarding
@@ -829,10 +864,12 @@ h = H.
 hacker
 hackers
 hacking
+had
 hall
 halls
 hallway
 hallways
+hand
 handling
 hangar
 happen
@@ -872,12 +909,14 @@ hides
 hiding
 high
 highest
+him
 himself
 his
 hit
 hole
 holes
 holy
+home
 honk
 honked
 honking
@@ -891,6 +930,7 @@ hotel
 hotter
 hour
 hours
+house
 how
 hug
 hugged
@@ -962,7 +1002,9 @@ jobs
 johnson
 johnsons
 juliet
+just
 k = K.
+keep
 key
 keys
 khorn = corn
@@ -978,15 +1020,22 @@ killed
 killing
 kills
 kilo
+kind
 kit
 kitchen
 kits
+knew
+know
+knowing
+knows
 krokodil = croc oh deal
 kudzu
 l = L.
 lab
 labs
 lambda
+land
+large
 laser
 lasers
 last
@@ -1002,6 +1051,10 @@ leak
 leaked
 leaking
 leaks
+learn
+learned
+learning
+learns
 leave
 left
 legal
@@ -1023,9 +1076,18 @@ light
 lighted
 lighting
 lights
+like
+liked
+likes
+liking
 lima
+line
+lined
+lines
+lining
 liquid
 liquids
+little
 live
 lived
 lives
@@ -1062,6 +1124,7 @@ lords
 lot
 lots
 love
+low
 lower
 lowers
 lowest
@@ -1073,10 +1136,14 @@ machines
 machining
 machinist
 machinists
+made
 magic
 magnetic
 main
 maintenance
+make
+makes
+making
 malf
 malfunction
 malfunctioned
@@ -1092,6 +1159,7 @@ materials
 maximum
 may
 me
+mean
 meat
 mech
 mechanic
@@ -1157,7 +1225,9 @@ morons
 mortal
 mortality
 mortals
+most
 moth
+mother
 motherfucker = mother-fucker
 motherfuckers = mother-fuckers
 moths
@@ -1172,6 +1242,7 @@ mouths
 move
 moves
 mrclean = mister clean
+much
 multitude
 multitudes
 murder
@@ -1186,6 +1257,10 @@ mysteries
 mystery
 mythic
 n = N.
+name
+named
+names
+naming
 nanite
 nanites
 nanotrasen
@@ -1194,6 +1269,9 @@ near
 nearest
 need
 negative
+never
+new
+news
 nice
 nine
 nineteen
@@ -1229,13 +1307,16 @@ obtained
 obtaining
 obtains
 of
+off
 office
 officer
 officers
 offices
 ok = O.K.
+old
 on
 one
+only
 oof
 op = operative
 open
@@ -1252,6 +1333,10 @@ or
 order
 organic
 oscar
+other
+others
+our
+ours
 out
 outbreak
 outbreaks
@@ -1266,6 +1351,7 @@ overloading
 overloads
 override
 overrides
+own
 oxygen
 p = P.
 pacification
@@ -1273,13 +1359,20 @@ pacified
 pacifies
 pacify
 pacifying
+page
 pain
 pains
 pal
 pals
 panel
 panting
+part
+parted
+parting
+parts
 pathetic
+people
+peoples
 percent
 perfect
 perfecting
@@ -1288,6 +1381,9 @@ perimeter
 permitted
 personal
 personnel
+picture
+pictures
+picturing
 pink
 pipe
 piped
@@ -1313,6 +1409,7 @@ plasmamen = plasma-men
 platform
 platforms
 plausible
+play
 please
 pleases
 point
@@ -1413,6 +1510,8 @@ rd = Research Director
 reach
 reached
 reactor
+read1 = reed
+read2 = red
 recommend
 recommends
 red
@@ -1484,6 +1583,8 @@ safer
 safest
 safeties
 safety
+said
+same
 sarah
 sasha
 satellite
@@ -1492,6 +1593,14 @@ saved
 saving
 savior
 saviors
+saw
+say
+saying
+says
+school
+schooled
+schooling
+schools
 science
 sciences
 scientist
@@ -1515,6 +1624,9 @@ sectors
 secure
 secured
 security
+see
+seeing
+sees
 select
 selected
 selecting
@@ -1522,12 +1634,17 @@ self
 sell
 sells
 sensors
+sentence
+sentenced
+sentences
+sentencing
 sergeant
 server
 servers
 service
 services
 servicing
+set
 seven
 seventeen
 seventy
@@ -1551,7 +1668,12 @@ shits
 shitting
 shock
 shoot
+should
+show
+showed
 shower
+showing
+shows
 shut
 shuttle
 sick
@@ -1597,6 +1719,7 @@ smokes
 smoking
 snow
 snowing
+so
 solar
 solars
 soldier
@@ -1614,6 +1737,11 @@ space
 spaced
 spaces
 spacing
+spell
+spelled
+spelling
+spells
+spelt
 squad
 squads
 square
@@ -1621,7 +1749,13 @@ ss13 = Space Station Thirteen
 staff
 stairway
 stairways
+stand
+standing
+stands
 starboard
+state
+states
+stating
 station
 stations
 status
@@ -1632,6 +1766,8 @@ staying
 stays
 sterile
 sterilization
+still
+stood
 stop
 stopped
 stopping
@@ -1644,8 +1780,12 @@ storming
 strong
 stronger
 stuck
+studied
+study
+studying
 sub
 subsurface
+such
 suck
 sucked
 sucking
@@ -1655,6 +1795,7 @@ suffer
 suffering
 suit
 suits
+sun
 superconducting
 supercooled
 supermatter
@@ -1718,6 +1859,7 @@ teleport = teleportation
 teleported
 teleporting
 teleports
+tell
 temperature
 temperatures
 temporal
@@ -1741,6 +1883,7 @@ text
 texted
 texting
 texts
+than
 thank
 thanked
 thanking
@@ -1748,11 +1891,16 @@ thanks
 that
 the
 theater
+their
 them
 then
 there
 these
 they
+thing
+things
+think
+thinks
 third
 thirteen
 thirty
@@ -1774,6 +1922,7 @@ tiding
 time
 times
 to = two
+too
 top
 topside
 touch
@@ -1812,6 +1961,7 @@ trips
 truck
 trucks
 true
+try
 tunnel
 tunneled
 tunneling
@@ -1909,23 +2059,32 @@ warning
 warred
 warring
 wars
+was
 waste
 water
 watt
 watts
+way
+ways
 we
 weak
 weapon
 weed
 welcome
+well
+went
 were
 west
 wew = woo
 what
 when
 where
+which
 whiskey
 white
+who
+whom
+whose
 why
 wiggle
 wilco
@@ -1943,9 +2102,22 @@ wizarding
 wizards
 wood
 woody = wood E.
+word
+worded
+wording
+words
+work
+worked
+working
+works
+world
 would
 wouldnt = wouldn't
 wow
+write
+writing
+written
+wrote
 x = X.
 xeno
 xenobiology
