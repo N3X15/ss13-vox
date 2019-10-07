@@ -142,7 +142,12 @@ def GenerateForWord(phrase: Phrase, voice: Voice, writtenfiles: set, args: Optio
 
     def commitWritten():
         nonlocal phrase, voice, oggfile, writtenfiles
-        phrase.files[voice.assigned_sex]=os.path.relpath(oggfile, 'dist')
+        if voice.ID == SFXVoice.ID:
+            # Both masculine and feminine voicepacks link to SFX.
+            for sex in ['fem', 'mas']:
+                phrase.files[sex]=os.path.relpath(oggfile, 'dist')
+        else:
+            phrase.files[voice.assigned_sex]=os.path.relpath(oggfile, 'dist')
         writtenfiles.add(os.path.abspath(oggfile))
 
     parent = os.path.dirname(oggfile)
@@ -317,7 +322,7 @@ def main():
                 'fem': [],
                 'mas': [],
                 'default': [],
-                'sfx': [],
+                #'sfx': [],
             }
             for p in phrases:
                 if p.hasFlag(EPhraseFlags.NOT_VOX):
