@@ -143,7 +143,6 @@ as
 asimov
 ask
 ass
-# ass is in the original list.
 asses
 asshole
 assholes
@@ -198,6 +197,9 @@ bee
 been
 bees
 before
+beg
+begging
+begs
 being
 beings
 bellmont
@@ -252,11 +254,18 @@ botanist
 botanists
 botany
 bottom
+bounce
+bounced
+bouncer
+bouncing
+bouncy
 box
 boxed
 boxes
 boxing
 boy
+boyfriend
+boyfriends
 brain
 braindead
 braindeads
@@ -541,6 +550,10 @@ device
 devices
 devil
 devils
+dick
+dicked
+dicking
+dicks
 did
 die
 dies
@@ -789,6 +802,7 @@ from
 front
 frozen
 fuck
+fucked
 fucking
 fucks
 fuel
@@ -820,6 +834,8 @@ get
 gibbed
 gibbing
 gibs
+girlfriend
+girlfriends
 give
 giving
 glory
@@ -939,6 +955,7 @@ hours
 house
 how
 hug
+huge
 hugged
 hugging
 hugs
@@ -946,6 +963,7 @@ human
 humanoid
 humanoids
 humans
+humongous
 hundred
 hunger
 hydro
@@ -1379,6 +1397,8 @@ parted
 parting
 parts
 pathetic
+penis
+penises
 people
 peoples
 percent
@@ -1482,6 +1502,10 @@ push
 pushed
 pushes
 pushing
+pussied
+pussies
+pussy
+pussying
 put
 puts
 putting
@@ -1773,9 +1797,18 @@ stay
 stayed
 staying
 stays
+steal
+steals
 sterile
 sterilization
+sterilized
+sterilizing
+stick
+sticking
+sticks
 still
+stole
+stolen
 stood
 stop
 stopped
@@ -1900,12 +1933,16 @@ thanks
 that
 the
 theater
+theft
 their
 them
 then
 there
 these
 they
+thief
+thieves
+thieving
 thing
 things
 think
@@ -1930,6 +1967,7 @@ tides
 tiding
 time
 times
+tiny
 to = two
 too
 top
@@ -2020,6 +2058,8 @@ vampire
 vampires
 vapor
 vapors
+vault
+vaults
 vend
 vended
 vending
