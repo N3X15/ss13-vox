@@ -119,6 +119,8 @@ amigos
 ammunition
 an
 and
+android
+androids
 andy
 animal
 animals
@@ -131,6 +133,7 @@ answering
 answers
 antenna
 antennae
+antimatter
 antimov
 any
 apc = Ay Pee See
@@ -158,6 +161,8 @@ assistants
 assisted
 assisting
 assists
+asteroid
+asteroids
 at
 atmospheric
 atmospherics
@@ -258,6 +263,7 @@ botanist
 botanists
 botany
 bottom
+bought
 bounce
 bounced
 bouncer
@@ -281,13 +287,19 @@ brawling
 breach
 breached
 break
+breaking
+breaks
 bridge
 brig
+broke
 build
 bust
 but
 button
 buttons
+buy
+buying
+buys
 by
 bypass
 bypassed
@@ -317,6 +329,7 @@ car
 carbon
 carbons
 cargo
+carp
 cat
 catbeast = cat-beast
 # yes, also a verb now
@@ -371,6 +384,8 @@ chemists
 chicken
 chickens
 chief
+chopper
+choppers
 christ
 chuckle
 circuit
@@ -422,6 +437,10 @@ consoles
 construct
 constructing
 constructs
+consume
+consumed
+consumes
+consuming
 containment
 contamination
 contraband
@@ -491,14 +510,17 @@ cyberhorrors = cyber horrors
 cyborg = seye-borg
 cyborgs = seye-borgs
 d = D.
+daddy
 damage
 damaged
 damages
 damaging
 damn
+dan
 danger
 dangerous
 dangers
+dans
 dat
 data
 day
@@ -506,6 +528,7 @@ days
 deactivated
 dead
 death
+deceased
 decompression
 decontamination
 #deeoo WHAT
@@ -562,7 +585,13 @@ did
 die
 dies
 differ
+difference
+differences
+different
+dimension
 dimensional
+dimensioned
+dimensions
 dioxide
 director
 directorate
@@ -572,6 +601,10 @@ disable
 disabled
 disables
 disabling
+discount
+discounted
+discounting
+discounts
 disease
 diseased
 diseases
@@ -678,6 +711,11 @@ evacuating
 even
 every
 everywhere
+evolute
+evolution
+evolve
+evolves
+evolving
 excellent
 exchange
 exchanged
@@ -749,6 +787,9 @@ fired
 fires
 firing
 first
+fish
+fished
+fishing
 five
 fix
 fixed
@@ -835,6 +876,10 @@ geneticist
 geneticists
 genetics
 get
+ghost
+ghosted
+ghosting
+ghosts
 gibbed
 gibbing
 gibs
@@ -982,6 +1027,8 @@ idiots
 if
 illegal
 illegals
+imam
+imams
 immediate
 immediately
 immortal
@@ -1009,6 +1056,7 @@ internalized
 internalizes
 internalizing
 internals
+into
 intrude
 intruded
 intruder
@@ -1068,6 +1116,11 @@ large
 laser
 lasers
 last
+laugh
+laughed
+laughing
+laughs
+laughter
 launch
 launched
 launches
@@ -1180,6 +1233,9 @@ malfunctioning
 malfunctions
 man
 many
+mash
+mashed
+mashing
 mass
 massed
 masses
@@ -1245,9 +1301,18 @@ modified
 modifies
 modifying
 mommi = mommy
+mommy
 money
 monkey
 monkeys
+monolith
+monoliths
+monster
+monsters
+moon
+mooned
+mooning
+moons
 more
 moron
 moronic
@@ -1279,6 +1344,7 @@ murder
 murderer
 murderers
 murdering
+music
 must
 mutant
 mutants
@@ -1319,6 +1385,9 @@ november
 now
 ntcoin = n t coin
 ntcoins = n t coins
+nude
+nudes
+nudity
 nuke
 nukeop = Nuclear Operative
 nukeops = Nuclear Operatives
@@ -1417,6 +1486,8 @@ personnel
 picture
 pictures
 picturing
+pillar
+pillars
 pink
 pipe
 piped
@@ -1475,6 +1546,8 @@ presence
 press
 pressure
 pressures
+priest
+priests
 primaries
 primary
 prion
@@ -1503,6 +1576,10 @@ punched
 punches
 punching
 punpun = pun-pun
+purchase
+purchased
+purchases
+purchasing
 push
 pushed
 pushes
@@ -1531,6 +1608,8 @@ questions
 quick
 quit
 r = R.
+rabbi
+rabbis
 radiation
 radioactive
 rads
@@ -1555,6 +1634,12 @@ red
 relay
 released
 remaining
+remind
+reminded
+reminder
+reminders
+reminding
+reminds
 removal
 renegade
 repair
@@ -1600,6 +1685,8 @@ roboticists
 robotics
 robots
 rocket
+rod
+rods
 roger
 rogue
 romeo
@@ -1624,6 +1711,8 @@ said
 same
 sarah
 sasha
+satan
+satans
 satellite
 save
 saved
@@ -1671,7 +1760,11 @@ selecting
 self
 sell
 sells
+send
+sending
+sends
 sensors
+sent
 sentence
 sentenced
 sentences
@@ -1780,6 +1873,7 @@ spelled
 spelling
 spells
 spelt
+spooky
 squad
 squads
 square
@@ -2078,11 +2172,15 @@ venting
 vents
 very
 victor
+vine
+vines
 violate
 violated
 violates
 violating
 violation
+violence
+violent
 virgin
 virologist
 virologists
@@ -2091,6 +2189,10 @@ virus
 viruses
 vital
 vitals
+void
+voided
+voiding
+voids
 volt
 voltage
 volts
