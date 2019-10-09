@@ -17,3 +17,5 @@ dist/
 sound/
 upload.sh
 *.py[oic]
+node_modules/
+.build/
