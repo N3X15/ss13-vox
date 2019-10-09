@@ -10,6 +10,7 @@
 ## OLD_VOX
 ############
 # Ignore these, they are just SFX from oldvox (HL VOX).
+# I will slowly change these to SFX after I learn how to synth noises.
 
 ,
 .
@@ -31,20 +32,24 @@ _doorstuck = @samples/door-stuck.wav
 _excellent = @samples/billandted-excellent-trimmed.wav
 _fart = @samples/fart.ogg
 _honk = @samples/bikehorn.ogg
+_scream = @samples/wilhelm.ogg
+_woopwoop = @samples/woopwoop.ogg
+# FIXME: Goon sound we don't have.
+#_birdwell
 
 
 ################
 ## PHRASES
 ################
 
+cracktheack = Crack the ack.
+gasthevox = Gas the vox, race war now!
+vox_420 = Smoke weed every day.
 voxtest = Ass Blast U.S.A.
 # Beepsky's famous emag line:
 voxtest2 = Fuck your cunt you shit eating cocksucker. Man, eat a dong, fucking ass-ramming shit-fuck. Eat penises in your fuck face, and shit out abortions of fuck, and do shit in your ass, you cockfuck shit monkey ass-wanker from the depths of shit!
-vox_420 = Smoke weed every day.
 # TODO: festival has a singing feature, but I last fucked with this in 2017, I couldn't get it working.
 voxtest3 = You.  You got what I neeeeeeeed.  But you say he's just a friend. But you say he's just a friend.
-gasthevox = Gas the vox, race war now!
-cracktheack = Crack the ack.
 voxtest4 = The humans are dead.  The humans are dead.  We used poisonous gasses, and we poisoned their asses.
 
 ############
@@ -173,7 +178,7 @@ back
 bacteria
 bacterium
 bad
-# Fucked.  Tried bag, "b ae g", "b ae g g", baag
+# FIXME: Fucked.  Tried bag, "b ae g", "b ae g g", baag
 bag
 bags
 bailey
@@ -229,8 +234,6 @@ bitch
 bitched
 bitches
 bitching
-# Goon sound we don't have.
-#birdwell
 black
 blast
 bleed
@@ -840,7 +843,7 @@ girlfriends
 give
 giving
 glory
-# This is fucked.  I do not know how to fix it.  I have tried many variations and lexicon entries.
+# FIXME: This is fucked.  I do not know how to fix it.  I have tried many variations and lexicon entries.
 go
 god
 goddammit = god damn it
@@ -1013,7 +1016,6 @@ intruders
 intrudes
 intruding
 invalid
-# hurr
 invalids
 invasion
 is
