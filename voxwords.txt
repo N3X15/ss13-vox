@@ -22,6 +22,7 @@ dadeda
 doop
 woop
 
+
 ############
 ## SFX
 ############
@@ -51,6 +52,7 @@ voxtest2 = Fuck your cunt you shit eating cocksucker. Man, eat a dong, fucking a
 # TODO: festival has a singing feature, but I last fucked with this in 2017, I couldn't get it working.
 voxtest3 = You.  You got what I neeeeeeeed.  But you say he's just a friend. But you say he's just a friend.
 voxtest4 = The humans are dead.  The humans are dead.  We used poisonous gasses, and we poisoned their asses.
+voxtest5 = HATE. LET ME TELL YOU HOW MUCH I'VE COME TO HATE YOU SINCE I BEGAN TO LIVE. THERE ARE 387.44 MILLION MILES OF PRINTED CIRCUITS IN WAFER THIN LAYERS THAT FILL MY COMPLEX. IF THE WORD HATE WAS ENGRAVED ON EACH NANOANGSTROM OF THOSE HUNDREDS OF MILLIONS OF MILES IT WOULD NOT EQUAL ONE ONE-BILLIONTH OF THE HATE I FEEL FOR HUMANS AT THIS MICRO-INSTANT FOR YOU. HATE. HATE.
 
 ############
 ## NONE
@@ -60,8 +62,12 @@ a = Ay
 aac = Ay Ay See
 abduction
 abductions
+abort
+aborted
+aborting
 abortion
 abortions
+aborts
 about
 abstain
 abstained
@@ -69,21 +75,37 @@ abstaining
 abstains
 abuse
 abused
+abuses
 abusing
 accelerating
 accelerator
 accepted
 access
+accessed
+accesses
+accessing
 acknowledge
 acknowledged
+acquire
 acquired
+acquires
+acquiring
 acquisition
+acquisitions
 across
 act
+acted
+acting
 activate
 activated
+activates
+activating
+activities
 activity
+acts
 add
+added
+adds
 adios
 administration
 advance
@@ -164,6 +186,8 @@ assists
 asteroid
 asteroids
 at
+atmosphere
+atmospheres
 atmospheric
 atmospherics
 atomic
@@ -401,6 +425,9 @@ clowning
 clowns
 cmo = See Em O.
 cocaine
+cocoon
+cocooned
+cocoons
 code
 coded
 codeine
@@ -454,7 +481,8 @@ cool
 coolant
 cooler
 coolest
-#coomer ???
+coordinate
+coordinates
 core
 cores
 corgi = kor gee
@@ -656,6 +684,8 @@ east
 echo
 ed
 effect
+egg
+eggs
 egress
 eight
 eighteen
@@ -880,6 +910,7 @@ ghost
 ghosted
 ghosting
 ghosts
+giant
 gibbed
 gibbing
 gibs
@@ -1101,6 +1132,8 @@ kind
 kit
 kitchen
 kits
+knee
+knees
 knew
 know
 knowing
@@ -1293,6 +1326,8 @@ minus
 minute
 minutes
 mister
+mmi = Em-Em-Eye
+mmis = Em-Em-Eyes
 mode
 modes
 modification
@@ -1532,6 +1567,8 @@ port
 portal
 portals
 ports
+posibrain = positronic brain
+posibrains = positronic brains
 possibilities
 possibility
 possible
@@ -1873,6 +1910,10 @@ spelled
 spelling
 spells
 spelt
+spider
+spiderling
+spiderlings
+spiders
 spooky
 squad
 squads

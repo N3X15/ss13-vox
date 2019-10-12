@@ -294,7 +294,10 @@ def main():
                 phrase_voices = [default_voice]
                 phrase.flags |= EPhraseFlags.OLD_VOX
                 phrase.filename = PREEX_SOUND.format(ID=phrase.id)
+                for voice in ['fem', 'mas']:
+                    phrase.files[voice] = phrase.filename
                 soundsToKeep.add(os.path.abspath(os.path.join(DIST_DIR, phrase.filename)))
+                continue
 
 
         if phrase.hasFlag(EPhraseFlags.SFX):
