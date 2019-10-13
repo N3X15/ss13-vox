@@ -22,7 +22,7 @@ addError = (message) ->
 
 ###
 # Get rid of zero-length entries in the wordlist.
-# effectively words=words.filter(word => word.length > 0);
+# effectively words=words.filter(word => word && word.length > 0);
 # but LOL IE8
 ###
 removeEmpties = (arr) ->
@@ -81,6 +81,7 @@ $(document).ready ->
   $resetButton = $('#reset')
   $wordlen = $('#wordcount')
   # Set up autocomplete
+  # Note: /vg/ uses a fucking ancient version of jQuery, so we don't get on() and friends.
   $words = $('#words').autocomplete(
     lookup: window.availableWords
     delimiter: ' '

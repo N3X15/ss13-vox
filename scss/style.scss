@@ -55,10 +55,28 @@ button {
 		padding: 1px 4px;
 		margin: 0 2px 0 0;
 		cursor: default;
+
+		&:disabled {
+			color: #ffffff;
+			background: #999999;
+			border-color: #666666;
+		}
 	}
 }
 
-input[type=text] {
-	border: 1px solid #333;
 
+/* TODO: Move these to common.css? These elements look like ass without this. */
+hr {
+	border: 1px solid #666
+}
+fieldset {
+	border: 1px solid #666;
+}
+div.formline {
+	padding: 0.25em;
+}
+input[type=text] {
+	background: #fff;
+	border: 1px solid #333;
+	padding: 0.2em;
 }

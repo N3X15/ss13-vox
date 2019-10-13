@@ -14,7 +14,7 @@ bm: BuildMaestro = BuildMaestro()
 yarn = bm.add(YarnBuildTarget())
 def mkCoffee(basefilename):
     coffee = bm.add(CoffeeBuildTarget(os.path.join('dist', 'code', 'modules', 'html_interface', f'{basefilename}.js'), [os.path.join('coffee', f'{basefilename}.coffee')], dependencies=[yarn.target], coffee_executable=COFFEE))
-    coffee.coffee_opts += ['--transpile']
+    coffee.coffee_opts += ['--transpile'] # Babel
     bm.add(UglifyJSTarget(os.path.join('dist', 'code', 'modules', 'html_interface', f'{basefilename}.min.js'), coffee.target, uglify_executable=UGLIFY))
 mkCoffee('aivoice')
 bm.add(DartSCSSBuildTarget(os.path.join('dist', 'html', 'browser', 'aivoice.css'), [os.path.join('scss', 'style.scss')], dependencies=[yarn.target]))
