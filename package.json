@@ -1,0 +1,17 @@
+{
+  "name": "VOX",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:N3X15/ss13-vox.git",
+  "author": "Rob Nelson <nexisentertainment@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@babel/core": "^7.6.3",
+    "@babel/plugin-transform-arrow-functions": "^7.2.0",
+    "@babel/polyfill": "^7.6.0",
+    "@babel/preset-env": "^7.6.3",
+    "coffeescript": "^2.4.1",
+    "uglify-es": "^3.3.9"
+  }
+}
