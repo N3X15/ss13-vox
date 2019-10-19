@@ -35,6 +35,7 @@ _fart = @samples/fart.ogg
 _honk = @samples/bikehorn.ogg
 _scream = @samples/wilhelm.ogg
 _woopwoop = @samples/woopwoop.ogg
+
 # FIXME: Goon sound we don't have.
 #_birdwell
 
@@ -1053,7 +1054,7 @@ hundred
 hunger
 hydro
 hydroponics
-i = I.
+i = eye
 iaa = internal affairs agent
 ian
 idiot
@@ -1206,9 +1207,11 @@ lining
 liquid
 liquids
 little
-live
+live = liv
+live_ = live
 lived
-lives
+lives = livs
+lives_
 living
 lizard
 lizards
@@ -1363,6 +1366,7 @@ moth
 mother
 motherfucker = mother-fucker
 motherfuckers = mother-fuckers
+mothers
 moths
 motor
 motorpool
@@ -2074,7 +2078,8 @@ thanked
 thanking
 thanks
 that
-the
+# mas fucks this up (becomes they)
+the = thee
 theater
 theft
 their

@@ -33,6 +33,7 @@ help: noun "hh eh l" 'p'
 ion: noun "ay" 'aa n'
 laws: noun "l aa" 'aa z'
 lawyer: noun "l oy" 'y er'
+lives_: noun "l ay v z"
 medbay: noun "m eh d" 'b ey'
 medical: noin "m eh" 'd ih' 'k ah l'
 messaged: adjective "m eh s" 'ih jh' 'pau d'
