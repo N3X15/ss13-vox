@@ -38,6 +38,9 @@ _woopwoop = @samples/woopwoop.ogg
 # FIXME: Goon sound we don't have.
 #_birdwell
 
+#_nubloop = @samples/nubloop.wav
+#_nudoodeedoo = @samples/nudoodeedoo.wav
+
 
 ################
 ## PHRASES
