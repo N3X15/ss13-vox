@@ -40,3 +40,6 @@ sound/AI/supermatter_danger = Situation critical. Recommend immediate interventi
 sound/AI/supermatter_delam = De-lamination imminent.  All personnel: Evacuate area immediately.
 
 sound/AI/blob_confirmed = Alert!  Biohazard outbreak alert status up graded to level 9.  Station is now locked down, under directive 7 10, until further notice.
+
+sound/AI/trading_port_closed = The trading port has been locked down. Third party trader docking clearances rescinded.
+sound/AI/trading_port_open = The trading port lockdown has been lifted.
