@@ -62,6 +62,15 @@ voxtest5 = HATE. LET ME TELL YOU HOW MUCH I'VE COME TO HATE YOU SINCE I BEGAN TO
 ## NONE
 ############
 
+hate
+hates
+hating
+hated
+fat
+fats
+ugly
+uglies
+
 a = Ay
 aac = Ay Ay See
 abduction
