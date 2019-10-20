@@ -43,3 +43,41 @@ sound/AI/blob_confirmed = Alert!  Biohazard outbreak alert status up graded to l
 
 sound/AI/trading_port_closed = The trading port has been locked down. Third party trader docking clearances rescinded.
 sound/AI/trading_port_open = The trading port lockdown has been lifted.
+
+########################
+## NUMERICS
+########################
+
+sound/AI/one = one
+sound/AI/two = two
+sound/AI/three = three
+sound/AI/four = four
+sound/AI/five = five
+sound/AI/six = six
+sound/AI/seven = seven
+sound/AI/eight = eight
+sound/AI/nine = nine
+sound/AI/ten = ten
+sound/AI/eleven = eleven
+sound/AI/twelve = twelve
+sound/AI/thirteen = thirteen
+sound/AI/fourteen = fourteen
+sound/AI/fifteen = fifteen
+sound/AI/sixteen = sixteen
+sound/AI/seventeen = seventeen
+sound/AI/eighteen = eighteen
+sound/AI/nineteen = nineteen
+sound/AI/twenty = twenty
+sound/AI/thirty = thirty
+sound/AI/fourty = fourty
+sound/AI/fifty = fifty
+sound/AI/sixty = sixty
+sound/AI/seventy = seventy
+sound/AI/eighty = eighty
+sound/AI/ninety = ninety
+sound/AI/thousand = thousand
+sound/AI/million = million
+sound/AI/billion = billion
+sound/AI/zero = zero
+sound/AI/minus = minus
+sound/AI/hundred = hundred
