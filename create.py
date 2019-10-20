@@ -320,6 +320,8 @@ def main():
     templ = jenv.get_template(templatefile)
     with log.info('Writing sound list to %s...', vox_sounds_path):
         os_utils.ensureDirExists(os.path.dirname(vox_sounds_path))
+        assetcache={}
+        sound2id={}
         with open(vox_sounds_path, 'w') as f:
             sexes = {
                 'fem': [],
@@ -328,11 +330,18 @@ def main():
                 #'sfx': [],
             }
             for p in phrases:
+                for k in p.files.keys():
+                    assetcache[p.getAssetKey(k)] = p.files[k]
+                    sound2id[p.files[k]] = p.getAssetKey(k)
                 if p.hasFlag(EPhraseFlags.NOT_VOX):
                     continue
                 for k in p.files.keys():
                     sexes[k].append(p)
-            f.write(templ.render(SEXES=sexes, PHRASES=[p for p in phrases if not p.hasFlag(EPhraseFlags.NOT_VOX)]))
+            f.write(templ.render(
+                SEXES=sexes,
+                ASSETCACHE=assetcache,
+                SOUND2ID=sound2id,
+                PHRASES=[p for p in phrases if not p.hasFlag(EPhraseFlags.NOT_VOX)]))
     soundsToKeep.add(os.path.abspath(vox_sounds_path))
 
     os_utils.ensureDirExists(DATA_DIR)

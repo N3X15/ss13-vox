@@ -34,6 +34,9 @@ class Phrase(object):
         #: Line in which this phrase was defined.
         self.defline: int = 0
 
+    def getAssetKey(self, sex: str) -> str:
+        return f'{sex}.{self.id}.ogg'
+
     def parsePhrase(self, phrase: str) -> None:
         self.phrase = phrase
         # sound/ai/announcement_16.ogg = ...

@@ -1,6 +1,7 @@
 // AUTOMATICALLY @generated, DO NOT EDIT.
 // List is required to compile the resources into the game when it loads.
 // Dynamically loading it has bad results with sounds overtaking each other, even with the wait variable.
+// If you need to modify this for whatever reason, please modify the template at https://github.com/N3X15/ss13-vox/blob/master/templates/vglist.jinja
 
 var/list/vox_sounds = list(
   {%- for sex, phrases in SEXES.items() %}
@@ -11,6 +12,23 @@ var/list/vox_sounds = list(
   ),
   {%- endfor %}
 )
+
+{# Abandoned because it made lists so long it crashed the compiler.
+// For send_asset_list().
+/datum/asset/simple/vox_words/New()
+  assets = list(
+    {%- for k, f in ASSETCACHE.items() %}
+    "{{- k -}}" = '{{- f -}}',
+    {%- endfor %}
+  )
+
+// And the inverse:
+var/list/vox_soundfile2id = list(
+  {%- for f, k in SOUND2ID.items() %}
+  '{{- f -}}' = "{{- k -}}",
+  {%- endfor %}
+)
+#}
 
 // How long each phrase is (in words).  Single-word phrases are skipped for brevity.
 var/list/vox_wordlen = list(
