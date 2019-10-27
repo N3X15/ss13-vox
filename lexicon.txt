@@ -8,6 +8,7 @@
 # Phonemes are taken from here (must be lowercase): http://www.speech.cs.cmu.edu/cgi-bin/cmudict
 # pau = short pause
 #
+angstrom: noun "ae ng" 's t r aa m'
 aft: adjective 'ae f t'
 animes: noun 'ae' 'n ih' 'm ey s'
 array: noun 'ah r ey'

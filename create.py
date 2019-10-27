@@ -10,15 +10,16 @@ import subprocess
 import sys
 import time
 import multiprocessing
+
 from typing import Optional, Dict, List
 from enum import IntFlag
 
 script_dir = os.path.dirname(os.path.realpath(__file__))
 
-from buildtools import os_utils, log
+from buildtools import os_utils, log, utils
 from buildtools.config import YAMLConfig, BaseConfig
 
-from ss13vox.phrase import Phrase, EPhraseFlags, ParsePhraseListFrom
+from ss13vox.phrase import Phrase, EPhraseFlags, ParsePhraseListFrom, FileData
 from ss13vox.pronunciation import Pronunciation, DumpLexiconScript, ParseLexiconText
 from ss13vox.voice import EVoiceSex, Voice, VoiceRegistry, USSLTFemale, SFXVoice
 
@@ -78,17 +79,6 @@ RECOMPRESS_ARGS = [
 # Have to do the trimming seperately.
 PRE_SOX_ARGS = 'trim 0 -0.1'  # Trim off last 0.2s.
 
-# Shit we shouldn't change or overwrite. (Boops, pauses, etc)
-OLD_SFX = {
-    '.': 1,
-    ',': 1,
-    'bloop': 1,
-    'bizwarn': 1,  # Is this a misspelling of the below?
-    'buzwarn': 1,
-    'doop': 1,
-    'dadeda': 1,
-    'woop': 1,
-}
 
 ################################################
 # ROB'S AWFUL CODE BELOW (cleanup planned)
@@ -97,7 +87,7 @@ OLD_SFX = {
 
 OTHERSOUNDS = []
 KNOWN_PHONEMES = {}
-PHRASELENGTHS = dict(OLD_SFX.items())
+PHRASELENGTHS = {}
 ALL_WORDS={}
 
 
@@ -125,10 +115,9 @@ def GenerateForWord(phrase: Phrase, voice: Voice, writtenfiles: set, args: Optio
 
 
     filename = phrase.filename.format(ID=phrase.id, SEX=voice.assigned_sex)
-
     sox_args = voice.genSoxArgs(args)
 
-    md5 = phrase.phrase
+    md5 = json.dumps(phrase.serialize())
     md5 += '\n'.join(my_phonemes.values())
     md5 += ''.join(sox_args) + PRE_SOX_ARGS + ''.join(RECOMPRESS_ARGS)
     md5 += voice.ID
@@ -138,16 +127,22 @@ def GenerateForWord(phrase: Phrase, voice: Voice, writtenfiles: set, args: Optio
     #if '/' in phrase.id:
     #    filename = os.path.join(phrase.id + '.ogg')
     oggfile = os.path.abspath(os.path.join('dist', filename))
-    cachefile = os.path.abspath(os.path.join('cache', phrase.id.replace(os.sep, '_').replace('.', '') + voice.ID + '.dat'))
+    cachebase = os.path.abspath(os.path.join('cache', phrase.id.replace(os.sep, '_').replace('.', '')))
+    checkfile = cachebase + voice.ID + '.dat'
+    cachefile = cachebase + voice.ID + '.json'
+
+    fdata = FileData()
+    fdata.voice = voice.ID
+    fdata.filename = os.path.relpath(oggfile, 'dist')
 
     def commitWritten():
         nonlocal phrase, voice, oggfile, writtenfiles
         if voice.ID == SFXVoice.ID:
             # Both masculine and feminine voicepacks link to SFX.
             for sex in ['fem', 'mas']:
-                phrase.files[sex]=os.path.relpath(oggfile, 'dist')
+                phrase.files[sex]=fdata
         else:
-            phrase.files[voice.assigned_sex]=os.path.relpath(oggfile, 'dist')
+            phrase.files[voice.assigned_sex]=fdata
         writtenfiles.add(os.path.abspath(oggfile))
 
     parent = os.path.dirname(oggfile)
@@ -158,12 +153,17 @@ def GenerateForWord(phrase: Phrase, voice: Voice, writtenfiles: set, args: Optio
     if not os.path.isdir(parent):
         os.makedirs(parent)
 
-    if os.path.isfile(oggfile):
+    if os.path.isfile(oggfile) and os.path.isfile(cachefile):
         old_md5 = ''
-        if os.path.isfile(cachefile):
-            with open(cachefile, 'r') as md5f:
+        if os.path.isfile(checkfile):
+            with open(checkfile, 'r') as md5f:
                 old_md5 = md5f.read()
         if old_md5 == md5:
+            cachedata = {}
+            with open(cachefile, 'r') as cachef:
+                cachedata = json.load(cachef)
+            fdata.deserialize(cachedata)
+
             log.info('Skipping {0} for {1} (exists)'.format(filename, voice.ID))
             commitWritten()
             return
@@ -178,7 +178,7 @@ def GenerateForWord(phrase: Phrase, voice: Voice, writtenfiles: set, args: Optio
         text2wave = 'text2wave tmp/VOX-word.txt -o tmp/VOX-word.wav'
         if os.path.isfile('tmp/VOXdict.lisp'):
             text2wave = 'text2wave -eval tmp/VOXdict.lisp tmp/VOX-word.txt -o tmp/VOX-word.wav'
-    with open(cachefile, 'w') as wf:
+    with open(checkfile, 'w') as wf:
         wf.write(md5)
     for fn in ('tmp/VOX-word.wav', 'tmp/VOX-soxpre-word.wav', 'tmp/VOX-sox-word.wav', 'tmp/VOX-encoded.ogg'):
         if os.path.isfile(fn):
@@ -186,20 +186,30 @@ def GenerateForWord(phrase: Phrase, voice: Voice, writtenfiles: set, args: Optio
 
     cmds = []
     cmds += [(text2wave.split(' '), 'tmp/VOX-word.wav')]
-    cmds += [(['sox', 'tmp/VOX-word.wav', 'tmp/VOX-soxpre-word.wav'] + PRE_SOX_ARGS.split(' '), 'tmp/VOX-soxpre-word.wav')]
-    cmds += [(['sox', 'tmp/VOX-soxpre-word.wav', 'tmp/VOX-sox-word.wav'] + sox_args, 'tmp/VOX-sox-word.wav')]
-    cmds += [(['oggenc', 'tmp/VOX-sox-word.wav', '-o', 'tmp/VOX-encoded.ogg'], 'tmp/VOX-encoded.ogg')]
+    if not phrase.hasFlag(EPhraseFlags.NO_PROCESS):
+        cmds += [(['sox', 'tmp/VOX-word.wav', 'tmp/VOX-soxpre-word.wav'] + PRE_SOX_ARGS.split(' '), 'tmp/VOX-soxpre-word.wav')]
+        cmds += [(['sox', 'tmp/VOX-soxpre-word.wav', 'tmp/VOX-sox-word.wav'] + sox_args, 'tmp/VOX-sox-word.wav')]
+    cmds += [(['oggenc', cmds[-1][1], '-o', 'tmp/VOX-encoded.ogg'], 'tmp/VOX-encoded.ogg')]
     cmds += [(['ffmpeg', '-i', 'tmp/VOX-encoded.ogg']+RECOMPRESS_ARGS+['-threads',args.threads]+[oggfile], oggfile)]
     for command_spec in cmds:
         (command, cfn) = command_spec
         with os_utils.TimeExecution(command[0]):
             os_utils.cmd(command, echo=False, critical=True, show_output=False)
 
+    command = ['ffprobe', '-v', 'quiet', '-print_format', 'json', '-show_format', '-show_streams', oggfile]
+    with os_utils.TimeExecution(command[0]):
+        captured = os_utils.cmd_out(command, echo=False, critical=True)
+        fdata.fromJSON(json.loads(captured))
+        fdata.checksum = md5sum(oggfile)
+
     for command_spec in cmds:
         (command, cfn) = command_spec
         if not os.path.isfile(fn):
             log.error("File '{0}' doesn't exist, command '{1}' probably failed!".format(cfn, command))
             sys.exit(1)
+
+    with open(cachefile, 'w') as f:
+        json.dump(fdata.serialize(), f)
 
     commitWritten()
 
@@ -281,7 +291,10 @@ def main():
 
     phrases.sort(key=lambda x: x.id)
 
+    overrides = config.get('overrides', {})
     for phrase in phrases:
+        if phrase.id in overrides:
+            phrase.fromOverrides(overrides.get(phrase.id))
         phrase_voices = list(voices)
         # If it has a path, it's being manually specified.
         if '/' in phrase.id:
@@ -290,12 +303,15 @@ def main():
             soundsToKeep.add(os.path.abspath(os.path.join(DIST_DIR, phrase.filename)))
         else:
             phrase.filename = ''+NUVOX_SOUND
-            if phrase.id in OLD_SFX:
+            if phrase.hasFlag(EPhraseFlags.OLD_VOX):
                 phrase_voices = [default_voice]
-                phrase.flags |= EPhraseFlags.OLD_VOX
                 phrase.filename = PREEX_SOUND.format(ID=phrase.id)
                 for voice in ['fem', 'mas']:
-                    phrase.files[voice] = phrase.filename
+                    phrase.files[voice] = FileData()
+                    phrase.files[voice].filename = phrase.filename
+                    phrase.files[voice].checksum = ''
+                    phrase.files[voice].duration = phrase.override_duration or -1
+                    phrase.files[voice].size     = phrase.override_size or -1
                 soundsToKeep.add(os.path.abspath(os.path.join(DIST_DIR, phrase.filename)))
                 continue
 
@@ -331,8 +347,8 @@ def main():
             }
             for p in phrases:
                 for k in p.files.keys():
-                    assetcache[p.getAssetKey(k)] = p.files[k]
-                    sound2id[p.files[k]] = p.getAssetKey(k)
+                    assetcache[p.getAssetKey(k)] = p.files[k].filename
+                    sound2id[p.files[k].filename] = p.getAssetKey(k)
                 if p.hasFlag(EPhraseFlags.NOT_VOX):
                     continue
                 for k in p.files.keys():

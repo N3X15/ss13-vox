@@ -54,3 +54,4 @@ def organizeFile(filename: str) -> None:
                         w.write(f'{key}\n')
 
 organizeFile('voxwords.txt')
+organizeFile('vg-chemistry.txt')

@@ -5,13 +5,36 @@
 
 var/list/vox_sounds = list(
   {%- for sex, phrases in SEXES.items() %}
+  {%-   if phrases|length %}
   "{{- sex -}}" = list(
-    {%- for phrase in phrases %}
-    "{{- phrase.id -}}" = '{{- phrase.files[sex] -}}',
-    {%- endfor %}
+    {%-   for phrase in phrases %}
+    "{{- phrase.id -}}" = '{{- phrase.files[sex].filename -}}',
+    {%-   endfor %}
   ),
+  {%-   endif -%}
   {%- endfor %}
 )
+
+// How long each phrase is (in words).  Single-word phrases are skipped for brevity.
+var/list/vox_wordlen = list(
+  {%- for phrase in PHRASES -%}
+  {%- if phrase.wordlen > 1 %}
+  "{{- phrase.id -}}" = {{ phrase.wordlen }},
+  {%- endif -%}
+  {%- endfor %}
+)
+
+// How long each phrase is (in deciseconds)
+var/list/vox_sound_lengths = list()
+/__vox_sound_lengths_init/New()
+  {%- for sex, phrases in SEXES.items() %}
+  {%-   if phrases|length %}
+  vox_sound_lengths["{{- sex -}}"] = list()
+  {%-     for phrase in phrases %}
+  vox_sound_lengths["{{- sex -}}"]["{{- phrase.id -}}"] = {{ phrase.files[sex].getDurationInDS() }}
+  {%-     endfor -%}
+  {%-   endif -%}
+  {%- endfor %}
 
 {# Abandoned because it made lists so long it crashed the compiler.
 // For send_asset_list().
@@ -29,12 +52,4 @@ var/list/vox_soundfile2id = list(
   {%- endfor %}
 )
 #}
-
-// How long each phrase is (in words).  Single-word phrases are skipped for brevity.
-var/list/vox_wordlen = list(
-  {%- for phrase in PHRASES -%}
-  {%- if phrase.wordlen > 1 %}
-  "{{- phrase.id -}}" = {{ phrase.wordlen }},
-  {%- endif -%}
-  {%- endfor %}
-)
+/var/__vox_sound_lengths_init/__vox_sound_lengths_init_instance = new

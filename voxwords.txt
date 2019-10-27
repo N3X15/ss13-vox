@@ -12,8 +12,6 @@
 # Ignore these, they are just SFX from oldvox (HL VOX).
 # I will slowly change these to SFX after I learn how to synth noises.
 
-,
-.
 # Is this a misspelling of buzwarn?
 bizwarn
 bloop
@@ -28,6 +26,8 @@ woop
 ############
 # New SFX are just raw sounds piped through the same process as words.
 
+, = @samples/halfpause.ogg
+. = @samples/fullpause.ogg
 _airhorn = @samples/airhorn.ogg
 _doorstuck = @samples/door-stuck.wav
 _excellent = @samples/billandted-excellent-trimmed.wav
@@ -56,20 +56,11 @@ voxtest2 = Fuck your cunt you shit eating cocksucker. Man, eat a dong, fucking a
 # TODO: festival has a singing feature, but I last fucked with this in 2017, I couldn't get it working.
 voxtest3 = You.  You got what I neeeeeeeed.  But you say he's just a friend. But you say he's just a friend.
 voxtest4 = The humans are dead.  The humans are dead.  We used poisonous gasses, and we poisoned their asses.
-voxtest5 = HATE. LET ME TELL YOU HOW MUCH I'VE COME TO HATE YOU SINCE I BEGAN TO LIVE. THERE ARE 387.44 MILLION MILES OF PRINTED CIRCUITS IN WAFER THIN LAYERS THAT FILL MY COMPLEX. IF THE WORD HATE WAS ENGRAVED ON EACH NANOANGSTROM OF THOSE HUNDREDS OF MILLIONS OF MILES IT WOULD NOT EQUAL ONE ONE-BILLIONTH OF THE HATE I FEEL FOR HUMANS AT THIS MICRO-INSTANT FOR YOU. HATE. HATE.
+voxtest5 = HATE. LET ME TELL YOU HOW MUCH I'VE COME TO HATE YOU SINCE I BEGAN TO LIVE. THERE ARE 387.44 MILLION MILES OF PRINTED CIRCUITS IN WAFER THIN LAYERS THAT FILL MY COMPLEX. IF THE WORD HATE WAS ENGRAVED ON EACH NANO-ANGSTROM OF THOSE HUNDREDS OF MILLIONS OF MILES IT WOULD NOT EQUAL ONE ONE BILLIONTH OF THE HATE I FEEL FOR HUMANS AT THIS MICRO-INSTANT FOR YOU. HATE. HATE.
 
 ############
 ## NONE
 ############
-
-hate
-hates
-hating
-hated
-fat
-fats
-ugly
-uglies
 
 a = Ay
 aac = Ay Ay See
@@ -149,6 +140,7 @@ all
 alpha
 also
 am
+ame = A-M-E
 amigo
 amigos
 ammunition
@@ -178,11 +170,15 @@ are
 area
 arm
 armed
+arming
 armor
 armory
+arms
 array
 arrays
 arrest
+artifact
+artifacts
 as
 asimov
 ask
@@ -199,16 +195,22 @@ assists
 asteroid
 asteroids
 at
+ate
 atmosphere
 atmospheres
 atmospheric
 atmospherics
+atom
 atomic
+atoms
 attention
 authenticate
 authentication
 authorize
 authorized
+autism
+autistic
+autistics
 automatic
 away
 awesome
@@ -224,6 +226,8 @@ bad
 bag
 bags
 bailey
+banana
+bananas
 bar
 barracks
 bars
@@ -233,6 +237,10 @@ base
 based
 bases
 basing
+bat
+bath
+bathroom
+bats
 bay
 bays
 be
@@ -241,6 +249,7 @@ beamed
 beaming
 beams
 bear
+bears
 bee
 been
 bees
@@ -281,13 +290,21 @@ blast
 bleed
 bleeding
 bleeds
+blind
+blinded
+blinding
+blinds
 blizzard
 blizzards
 blob
 blobs
 blocked
 blood
+bloodied
+bloody
 blue
+bodies
+body
 bomb
 bombed
 bombing
@@ -316,6 +333,8 @@ boyfriends
 brain
 braindead
 braindeads
+brained
+braining
 brains
 bravo
 brawl
@@ -331,6 +350,8 @@ brig
 broke
 build
 bust
+# Because fuck your ears
+bustin = bust-in
 but
 button
 buttons
@@ -343,6 +364,8 @@ bypassed
 bypasses
 bypassing
 c = C.
+cabin
+cabins
 cable
 cage
 caged
@@ -360,6 +383,8 @@ canned
 canning
 cans
 cap
+capitalist
+capitalists
 captain
 capture
 car
@@ -427,17 +452,27 @@ christ
 chuckle
 circuit
 circuits
+clean
+cleaned
+cleaning
+cleans
 cleanup
 clear
 clearance
 clockwork
+clone
+cloned
+clones
+cloning
 close
+clothed
+clothes
+clothing
 clown
 clowned
 clowning
 clowns
 cmo = See Em O.
-cocaine
 cocoon
 cocooned
 cocoons
@@ -451,6 +486,8 @@ colder
 coldest
 collider
 colliders
+combat
+combative
 comdom
 come
 comes
@@ -459,8 +496,10 @@ command
 commanded
 commanding
 commands
+commie
 communication
 communications
+communist
 complex
 complied
 complies
@@ -498,9 +537,11 @@ coordinate
 coordinates
 core
 cores
-corgi = kor gee
+corgi = kor-gee
 corporation
 corporations
+corpse
+corpses
 correct
 corrected
 correcting
@@ -519,8 +560,16 @@ cower
 cowering
 cowers
 cows
+crack
+cracked
+cracking
+cracks
 crate
 crates
+crayon
+crayons
+crazies
+crazy
 create
 created
 creates
@@ -533,10 +582,16 @@ critical
 criticality
 cross
 crosses
+cryo
 cryogenic
+cryogenics
 crystal
 crystalline
 crystals
+cuff
+cuffed
+cuffing
+cuffs
 cult
 cultconstruct = kahnstruct
 cultconstructs = kahnstructs
@@ -545,6 +600,10 @@ cultists
 cults
 cunt
 cunts
+cure
+cured
+cures
+curing
 cyberhorror = cyber horror
 cyberhorrors = cyber horrors
 # Fixes SY BAHRG(S)
@@ -568,13 +627,20 @@ day
 days
 deactivated
 dead
+deadly
 death
+debris
 deceased
 decompression
 decontamination
 #deeoo WHAT
 defense
 deff = deaf
+defibrillate
+defibrillated
+defibrillates
+defibrillating
+degree
 degrees
 delta
 demon
@@ -624,6 +690,7 @@ dicking
 dicks
 did
 die
+died
 dies
 differ
 difference
@@ -633,7 +700,11 @@ dimension
 dimensional
 dimensioned
 dimensions
+diona = dye-o-nah
+dionae = dye-o-knee
 dioxide
+directive
+directives
 director
 directorate
 directors
@@ -663,6 +734,7 @@ distance
 distances
 distortion
 distortions
+divine
 do
 doctor
 doctored
@@ -686,6 +758,10 @@ downs
 dracula
 drone
 drones
+druid
+druids
+drunk
+drunks
 dual
 duct
 ducts
@@ -694,6 +770,9 @@ e = E.
 each
 earth
 east
+eat
+eating
+eats
 echo
 ed
 effect
@@ -708,7 +787,14 @@ electromagnetic
 elevator
 eleven
 eliminate
+emerge
+emerged
+emergence
+emergencies
 emergency
+emerging
+emitter
+emitters
 enable
 enabled
 enables
@@ -809,12 +895,20 @@ failed
 failing
 failure
 failures
+faith
+faithless
+faiths
 false
 farthest
+fascist
+fascists
 fast
+fat
 father
+fats
 fauna
 feet
+feminine
 field
 fields
 fifteen
@@ -838,7 +932,6 @@ fix
 fixed
 fixes
 fixing
-fixitfixitfixit = fix it fix it fix it
 flood
 flooded
 flooding
@@ -850,6 +943,10 @@ fly
 flygirl = fly-girl
 flyman = fly-man
 flymen = fly-men
+foam
+foamed
+foaming
+foams
 follow
 followed
 following
@@ -885,6 +982,7 @@ freezers
 freezes
 freezing
 friend
+friendly
 friends
 from
 front
@@ -905,6 +1003,8 @@ gas
 gassed
 gasses
 gassing
+gateway
+gateways
 gave
 geese
 gene
@@ -919,6 +1019,10 @@ geneticist
 geneticists
 genetics
 get
+gets
+getting
+ghetto
+ghettoes
 ghost
 ghosted
 ghosting
@@ -927,19 +1031,25 @@ giant
 gibbed
 gibbing
 gibs
+gigawatt
+gigawatts
 girlfriend
 girlfriends
 give
 giving
 glory
+glove
+gloves
 # FIXME: This is fucked.  I do not know how to fix it.  I have tried many variations and lexicon entries.
 go
 god
 goddammit = god damn it
 gods
+goes
 going
 golem
 golems
+gone
 good
 goodbye
 goose
@@ -987,6 +1097,10 @@ halls
 hallway
 hallways
 hand
+handcuff
+handcuffed
+handcuffing
+handcuffs
 handling
 hangar
 happen
@@ -999,12 +1113,17 @@ harmful
 harming
 harms
 has
+hate
+hated
+hates
+hating
 have
 hazard
 hazardous
 hazards
 he
 head
+headed
 heading
 heads
 health
@@ -1030,6 +1149,8 @@ him
 himself
 his
 hit
+hits
+hitting
 hole
 holes
 holy
@@ -1045,6 +1166,7 @@ hostiles
 hot
 hotel
 hotter
+hottest
 hour
 hours
 house
@@ -1077,6 +1199,10 @@ immediate
 immediately
 immortal
 immortals
+implant
+implanted
+implanting
+implants
 impossibilities
 impossibility
 impossible
@@ -1122,10 +1248,14 @@ job
 jobs
 johnson
 johnsons
+journalism
+journalist
+journalists
 juliet
 just
 k = K.
 keep
+kelvin
 key
 keys
 khorn = corn
@@ -1141,6 +1271,8 @@ killed
 killing
 kills
 kilo
+kilowatt
+kilowatts
 kind
 kit
 kitchen
@@ -1156,6 +1288,8 @@ kudzu
 l = L.
 lab
 labs
+lake
+lakes
 lambda
 land
 large
@@ -1185,7 +1319,9 @@ learning
 learns
 leave
 left
+leg
 legal
+legs
 level
 levelled
 levelling
@@ -1209,6 +1345,8 @@ liked
 likes
 liking
 lima
+limb
+limbs
 line
 lined
 lines
@@ -1280,7 +1418,9 @@ malfunctioned
 malfunctioning
 malfunctions
 man
+manly
 many
+masculine
 mash
 mashed
 mashing
@@ -1294,6 +1434,8 @@ may
 me
 mean
 meat
+meats
+meaty
 mech
 mechanic
 mechanics
@@ -1302,6 +1444,8 @@ medbay
 medical = Medickul
 mega
 megafauna
+megawatt
+megawatts
 men
 mercies
 mercy
@@ -1329,6 +1473,10 @@ mime
 mimed
 mimes
 miming
+mind
+minded
+minding
+minds
 mine
 mined
 minefield
@@ -1340,7 +1488,15 @@ mining
 minus
 minute
 minutes
+miss
+missed
+misses
+missing
 mister
+mix
+mixed
+mixes
+mixing
 mmi = Em-Em-Eye
 mmis = Em-Em-Eyes
 mode
@@ -1354,6 +1510,8 @@ mommi = mommy
 mommy
 money
 monkey
+monkeyed
+monkeying
 monkeys
 monolith
 monoliths
@@ -1364,6 +1522,7 @@ mooned
 mooning
 moons
 more
+morgue
 moron
 moronic
 morons
@@ -1404,6 +1563,7 @@ mysteries
 mystery
 mythic
 n = N.
+naked
 name
 named
 names
@@ -1416,6 +1576,9 @@ near
 nearest
 need
 negative
+nerd
+nerds
+nerdy
 never
 new
 news
@@ -1490,6 +1653,8 @@ ours
 out
 outbreak
 outbreaks
+outpost
+outposts
 outside
 over
 overdose
@@ -1519,9 +1684,12 @@ panel
 panting
 part
 parted
+parties
 parting
 parts
+party
 pathetic
+pda = P-D-A
 penis
 penises
 people
@@ -1548,6 +1716,8 @@ piss
 pissed
 pisses
 pissing
+pizza
+pizzas
 place
 placed
 places
@@ -1594,7 +1764,14 @@ posting
 posts
 power
 powercreep
+powered
+powering
+powers
 pox
+practice
+practiced
+practices
+practicing
 presence
 press
 pressure
@@ -1633,6 +1810,10 @@ purchase
 purchased
 purchases
 purchasing
+purge
+purged
+purges
+purging
 push
 pushed
 pushes
@@ -1665,6 +1846,7 @@ rabbi
 rabbis
 radiation
 radioactive
+radiological
 rads
 rage
 raid
@@ -1719,9 +1901,16 @@ rest
 rested
 resting
 restoration
+restrain
+restrained
+restraining
+restrains
+restraint
+restraints
 rests
 retard
 retarded
+retarding
 retards
 revolution
 revolutionaries
@@ -1739,6 +1928,8 @@ robotics
 robots
 rocket
 rod
+rodded
+rodding
 rods
 roger
 rogue
@@ -1751,6 +1942,9 @@ runes
 running
 runs
 runtime
+russian
+russians
+rust
 s = S.
 sabotage
 saboteur
@@ -1761,6 +1955,10 @@ safest
 safeties
 safety
 said
+salt
+salted
+salting
+salts
 same
 sarah
 sasha
@@ -1789,6 +1987,12 @@ screamed
 screaming
 screams
 screen
+scrub
+scrubbed
+scrubber
+scrubbers
+scrubbing
+scrubs
 scrungularity
 search
 searched
@@ -1847,6 +2051,8 @@ shirt
 shirts
 shit
 shitcurity
+shithead
+shitheads
 shitlord = shit-lord
 shits
 shitting
@@ -1856,6 +2062,7 @@ should
 show
 showed
 shower
+showers
 showing
 shows
 shut
@@ -1885,9 +2092,11 @@ slaughtered
 slaughtering
 slaughters
 slime
+slimed
 slimegirl = slime girl
 slimeguy = slime guy
 slimes
+sliming
 slip
 slipped
 slippery
@@ -1897,12 +2106,17 @@ slow
 sm = super-matter
 small
 smaller
+smes = S-M-E-S
 smoke
 smoked
 smokes
 smoking
 snow
 snowing
+snowmobile
+snowmobiles
+snowstorm
+snowstorms
 so
 solar
 solars
@@ -1981,6 +2195,7 @@ stuck
 studied
 study
 studying
+stupid
 sub
 subsurface
 such
@@ -2002,12 +2217,18 @@ supply
 surface
 surfaced
 surfaces
+surgery
+surgical
 surrender
 surrendered
 surrendering
 surrenders
 surround
 surrounded
+swap
+swapped
+swapping
+swaps
 swear
 swearing
 swears
@@ -2021,6 +2242,7 @@ switches
 switching
 swore
 syndicate
+syndicates
 system
 systems
 t = T.
@@ -2066,6 +2288,8 @@ tens
 tense
 tensed
 tensing
+terawatt
+terawatts
 terminal
 terminals
 terminated
@@ -2126,6 +2350,8 @@ time
 times
 tiny
 to = two
+toilet
+toilets
 too
 top
 topside
@@ -2154,6 +2380,8 @@ transportation
 transported
 transporting
 transports
+tree
+trees
 trigger
 triggered
 triggering
@@ -2166,11 +2394,16 @@ truck
 trucks
 true
 try
+tube
+tubes
 tunnel
 tunneled
 tunneling
 tunnels
 turn
+turned
+turning
+turns
 turret
 turrets
 twelve
@@ -2179,9 +2412,13 @@ two
 tzeench
 u = U.
 ugh = ug
+uglies
+ugly
 unable
 unauthorized
+unclothed
 under
+unholy
 uniform
 uniformed
 uniforms
@@ -2208,12 +2445,22 @@ using
 v = V.
 vacate
 vacating
+vaccine
+vaccines
 vacuum
 valid
 valids
 vampire
 vampires
+vandal
+vandalism
+vandalized
+vandalizing
+vandals
 vapor
+vaporize
+vaporized
+vaporizing
 vapors
 vault
 vaults
@@ -2315,6 +2562,10 @@ without
 wizard
 wizarding
 wizards
+wolf
+wolves
+woman
+women
 wood
 woody = wood E.
 word
@@ -2335,6 +2586,9 @@ written
 wrote
 x = X.
 xeno
+xenoarcheologist
+xenoarcheologists
+xenoarcheology
 xenobiology
 xenomorph
 xenomorphs
@@ -2347,6 +2601,8 @@ year
 years
 yellow
 yes
+yeti
+yetis
 you
 your
 yourself

@@ -2,12 +2,47 @@ from typing import List, Optional, Dict
 from enum import IntFlag
 
 __ALL__ = ['EPhraseFlags', 'Phrase', 'ParsePhraseListFrom']
-
+S_TO_DS = 10
 class EPhraseFlags(IntFlag):
     NONE     = 0
     OLD_VOX  = 1 # AKA preexisting
     SFX      = 2
     NOT_VOX  = 4 # Not used in VOX announcements (meaning stuff that doesn't go in sound/vox_fem/)
+    NO_PROCESS = 8 # No echos/reverb
+
+class FileData(object):
+    def __init__(self):
+        self.filename: str = ''
+        self.voice: str = ''
+        self.checksum: str = ''
+        self.duration: float = 0
+        self.size: int = 0
+
+    def fromJSON(self, data: dict) -> None:
+        self.size = int(data['format']['size'])
+        self.duration = float(data['format']['duration'])
+
+    def serialize(self) -> dict:
+        return {
+            'filename': self.filename,
+            'voice': self.voice,
+            'checksum': self.checksum,
+            'duration': self.duration,
+            'size': self.size
+        }
+
+    def deserialize(self, data: dict) -> None:
+        self.filename = data['filename']
+        self.voice = data['voice']
+        self.checksum = data['checksum']
+        self.duration = data['duration']
+        self.size = data['size']
+
+    def toBYOND(self) -> str:
+        return f'list("filename" = "{self.filename}", "checksum" = "{self.checksum}", "duration" = {self.duration*S_TO_DS}, "voice" = "{self.voice}", "size" = {self.size})'
+
+    def getDurationInDS(self) -> float:
+        return -1.0 if self.duration < 0 else self.duration * S_TO_DS
 
 class Phrase(object):
     def __init__(self):
@@ -27,7 +62,10 @@ class Phrase(object):
         # What voices we were built with
         self.voices: List[str] = []
         #: Output filename.
-        self.files: Dict[str, str] = {}
+        self.files: Dict[str, FileData] = {}
+
+        self.override_duration: Optional[float] = None
+        self.override_size: Optional[int] = None
 
         #: File in which this phrase was defined.
         self.deffile: str = ''
@@ -61,7 +99,7 @@ class Phrase(object):
     def serialize(self) -> dict:
         o = {
             'wordlen':  self.wordlen,
-            'files': self.files,
+            'files': {k:v.serialize() for k,v in self.files.items()},
             'flags': [x.name.lower().replace('_', '-') for x in list(EPhraseFlags) if x.value > 0 and (self.flags & x) == x]
         }
         if self.flags & EPhraseFlags.SFX:
@@ -69,6 +107,13 @@ class Phrase(object):
         else:
             o['phrase'] = self.parsed_phrase
         return o
+
+    def fromOverrides(self, data: dict) -> None:
+        self.wordlen = data.get('word-count', self.wordlen)
+        for f in data.get('flags', []):
+            self.flags |= EPhraseFlags[f.replace('-','_').upper()]
+        self.override_duration = data.get('duration')
+        self.override_size = data.get('size')
 
 def ParsePhraseListFrom(filename: str) -> List[Phrase]:
     phrases = []
