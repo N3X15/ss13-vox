@@ -3,7 +3,10 @@
 // Dynamically loading it has bad results with sounds overtaking each other, even with the wait variable.
 // If you need to modify this for whatever reason, please modify the template at https://github.com/N3X15/ss13-vox/blob/master/templates/vglist.jinja
 
+// A list of sounds
+// Structure: vox_sound["(fem|mas|default)"]["soundid"] = 'sound/vox_sex/soundid.ogg'
 var/list/vox_sounds = list(
+{#- too long now
   {%- for sex, phrases in SEXES.items() %}
   {%-   if phrases|length %}
   "{{- sex -}}" = list(
@@ -13,43 +16,57 @@ var/list/vox_sounds = list(
   ),
   {%-   endif -%}
   {%- endfor %}
+-#}
 )
 
 // How long each phrase is (in words).  Single-word phrases are skipped for brevity.
 var/list/vox_wordlen = list(
+{#-
   {%- for phrase in PHRASES -%}
-  {%- if phrase.wordlen > 1 %}
+  {%-   if phrase.wordlen > 1 %}
   "{{- phrase.id -}}" = {{ phrase.wordlen }},
-  {%- endif -%}
+  {%-   endif -%}
   {%- endfor %}
+-#}
 )
 
 // How long each phrase is (in deciseconds)
 var/list/vox_sound_lengths = list()
-/__vox_sound_lengths_init/New()
-  {%- for sex, phrases in SEXES.items() %}
-  {%-   if phrases|length %}
-  vox_sound_lengths["{{- sex -}}"] = list()
-  {%-     for phrase in phrases %}
-  vox_sound_lengths["{{- sex -}}"]["{{- phrase.id -}}"] = {{ phrase.files[sex].getDurationInDS() }}
-  {%-     endfor -%}
-  {%-   endif -%}
-  {%- endfor %}
+{# var/list/vox_sound_file2id = list() #}
 
-{# Abandoned because it made lists so long it crashed the compiler.
-// For send_asset_list().
-/datum/asset/simple/vox_words/New()
-  assets = list(
-    {%- for k, f in ASSETCACHE.items() %}
-    "{{- k -}}" = '{{- f -}}',
-    {%- endfor %}
-  )
+{%- set written = [] -%}
+{%- set initcls = InitClass() -%}
+{%- for sex, phrases in SEXES.items() %}
+{%-   if phrases|length %}
+{%-     do initcls.addInstruction("vox_sounds[\"{}\"] = list()".format(sex)) -%}
+{%-     for phrase in phrases -%}
+{%-       if phrase.files[sex].filename not in written -%}
+{%-         do initcls.addInstruction("vox_sounds[\"{}\"][\"{}\"] = '{}'".format(sex,phrase.id,phrase.files[sex].filename)) -%}
+{%-         do initcls.addInstruction("vox_sound_lengths['{}'] = {:0.4g}".format(phrase.files[sex].filename,phrase.files[sex].getDurationInDS())) -%}
+{%-         do written.append(phrase.files[sex].filename) or '' -%}
+{%-       endif -%}
+{%-     endfor -%}
+{%-   endif -%}
+{%- endfor -%}
+{%- for phrase in PHRASES -%}
+{%-   if phrase.wordlen > 1 -%}
+{%-     do initcls.addInstruction("vox_wordlen[\"{}\"] = {}".format(phrase.id,phrase.wordlen)) -%}
+{%-   endif -%}
+{%- endfor %}
 
-// And the inverse:
-var/list/vox_soundfile2id = list(
-  {%- for f, k in SOUND2ID.items() %}
-  '{{- f -}}' = "{{- k -}}",
-  {%- endfor %}
-)
-#}
-/var/__vox_sound_lengths_init/__vox_sound_lengths_init_instance = new
+// This class is necessary because we have so many assignments to take it crashes the compiler over a certain limit.
+// STATS:
+//  {{initcls.ninstructions}} instructions spread over {{initcls.procs.keys()|length}} procs.
+//
+/__vox_sound_meta_init/New()
+{%- for call in initcls.procs.keys() %}
+  src.{{- call -}}()
+{%- endfor %}
+{%- for proc in initcls.procs.values() %}
+/__vox_sound_meta_init/proc/{{- proc.name -}}()
+  {%- for instr in proc.instructions %}
+  {{ instr }}
+  {%- endfor -%}
+{%- endfor %}
+
+/var/__vox_sound_meta_init/__vox_sound_meta_instance = new

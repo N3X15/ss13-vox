@@ -19,6 +19,7 @@ script_dir = os.path.dirname(os.path.realpath(__file__))
 from buildtools import os_utils, log, utils
 from buildtools.config import YAMLConfig, BaseConfig
 
+from ss13vox.proc import InitClass
 from ss13vox.phrase import Phrase, EPhraseFlags, ParsePhraseListFrom, FileData
 from ss13vox.pronunciation import Pronunciation, DumpLexiconScript, ParseLexiconText
 from ss13vox.voice import EVoiceSex, Voice, VoiceRegistry, USSLTFemale, SFXVoice
@@ -186,9 +187,10 @@ def GenerateForWord(phrase: Phrase, voice: Voice, writtenfiles: set, args: Optio
 
     cmds = []
     cmds += [(text2wave.split(' '), 'tmp/VOX-word.wav')]
-    if not phrase.hasFlag(EPhraseFlags.NO_PROCESS):
+    if not phrase.hasFlag(EPhraseFlags.NO_PROCESS) or not phrase.hasFlag(EPhraseFlags.NO_TRIM):
         cmds += [(['sox', 'tmp/VOX-word.wav', 'tmp/VOX-soxpre-word.wav'] + PRE_SOX_ARGS.split(' '), 'tmp/VOX-soxpre-word.wav')]
-        cmds += [(['sox', 'tmp/VOX-soxpre-word.wav', 'tmp/VOX-sox-word.wav'] + sox_args, 'tmp/VOX-sox-word.wav')]
+    if not phrase.hasFlag(EPhraseFlags.NO_PROCESS):
+        cmds += [(['sox', cmds[-1][1], 'tmp/VOX-sox-word.wav'] + sox_args, 'tmp/VOX-sox-word.wav')]
     cmds += [(['oggenc', cmds[-1][1], '-o', 'tmp/VOX-encoded.ogg'], 'tmp/VOX-encoded.ogg')]
     cmds += [(['ffmpeg', '-i', 'tmp/VOX-encoded.ogg']+RECOMPRESS_ARGS+['-threads',args.threads]+[oggfile], oggfile)]
     for command_spec in cmds:
@@ -333,6 +335,7 @@ def main():
             soundsToKeep.add(os.path.abspath(os.path.join(DIST_DIR, phrase.filename)))
 
     jenv = jinja2.Environment(loader=jinja2.FileSystemLoader(['./templates']))
+    jenv.add_extension('jinja2.ext.do') # {% do ... %}
     templ = jenv.get_template(templatefile)
     with log.info('Writing sound list to %s...', vox_sounds_path):
         os_utils.ensureDirExists(os.path.dirname(vox_sounds_path))
@@ -354,6 +357,7 @@ def main():
                 for k in p.files.keys():
                     sexes[k].append(p)
             f.write(templ.render(
+                InitClass=InitClass,
                 SEXES=sexes,
                 ASSETCACHE=assetcache,
                 SOUND2ID=sound2id,

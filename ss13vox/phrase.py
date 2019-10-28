@@ -4,11 +4,12 @@ from enum import IntFlag
 __ALL__ = ['EPhraseFlags', 'Phrase', 'ParsePhraseListFrom']
 S_TO_DS = 10
 class EPhraseFlags(IntFlag):
-    NONE     = 0
-    OLD_VOX  = 1 # AKA preexisting
-    SFX      = 2
-    NOT_VOX  = 4 # Not used in VOX announcements (meaning stuff that doesn't go in sound/vox_fem/)
+    NONE       = 0
+    OLD_VOX    = 1 # AKA preexisting
+    SFX        = 2
+    NOT_VOX    = 4 # Not used in VOX announcements (meaning stuff that doesn't go in sound/vox_fem/)
     NO_PROCESS = 8 # No echos/reverb
+    NO_TRIM    = 16 # Don't remove silence
 
 class FileData(object):
     def __init__(self):
