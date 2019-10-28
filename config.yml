@@ -17,16 +17,18 @@ phrasefiles:
 overrides:
   '.':
     flags:
-      - old-vox
+      #- old-vox
       - no-process
-    duration: 0.431202
-    word-count: 1
+      - no-trim
+    #duration: 0.431202
+    #word-count: 1
   ',':
     flags:
-      - old-vox
+      #- old-vox
       - no-process
-    duration: 0.248889
-    word-count: 1
+      - no-trim
+    #duration: 0.248889
+    #word-count: 1
   bloop:
     flags:
       - old-vox
