@@ -13,12 +13,12 @@
 # I will slowly change these to SFX after I learn how to synth noises.
 
 # Is this a misspelling of buzwarn?
-bizwarn
-bloop
-buzwarn
-dadeda
-doop
-woop
+_bizwarn
+_bloop
+_buzwarn
+_dadeda
+_doop
+_woop
 
 
 ############

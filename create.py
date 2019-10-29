@@ -137,13 +137,13 @@ def GenerateForWord(phrase: Phrase, voice: Voice, writtenfiles: set, args: Optio
     fdata.filename = os.path.relpath(oggfile, 'dist')
 
     def commitWritten():
-        nonlocal phrase, voice, oggfile, writtenfiles
+        nonlocal phrase, voice, oggfile, writtenfiles, fdata
         if voice.ID == SFXVoice.ID:
             # Both masculine and feminine voicepacks link to SFX.
             for sex in ['fem', 'mas']:
-                phrase.files[sex]=fdata
+                phrase.files[sex] = fdata
         else:
-            phrase.files[voice.assigned_sex]=fdata
+            phrase.files[voice.assigned_sex] = fdata
         writtenfiles.add(os.path.abspath(oggfile))
 
     parent = os.path.dirname(oggfile)
@@ -314,9 +314,9 @@ def main():
                     phrase.files[voice].checksum = ''
                     phrase.files[voice].duration = phrase.override_duration or -1
                     phrase.files[voice].size     = phrase.override_size or -1
+                    #voice_assignments[voice].append(phrase)
                 soundsToKeep.add(os.path.abspath(os.path.join(DIST_DIR, phrase.filename)))
                 continue
-
 
         if phrase.hasFlag(EPhraseFlags.SFX):
             phrase_voices = [sfx_voice]
@@ -325,14 +325,16 @@ def main():
             log.info('%s - %r', phrase.id, [x.assigned_sex for x in phrase_voices])
             for v in phrase_voices:
                 voice_assignments[v.assigned_sex].append(phrase)
-
+                #phrase.files[v.assigned_sex] = fd
     #sys.exit(1)
     for voice in all_voices:
         print(voice.ID, voice.assigned_sex)
         DumpLexiconScript(voice.FESTIVAL_VOICE_ID, lexicon.values(), 'tmp/VOXdict.lisp')
         for phrase in voice_assignments[voice.assigned_sex]:
             GenerateForWord(phrase, voice, soundsToKeep, args)
-            soundsToKeep.add(os.path.abspath(os.path.join(DIST_DIR, phrase.filename)))
+            sexes=set()
+            for vk, fd in phrase.files.items():
+                soundsToKeep.add(os.path.abspath(os.path.join(DIST_DIR, fd.filename)))
 
     jenv = jinja2.Environment(loader=jinja2.FileSystemLoader(['./templates']))
     jenv.add_extension('jinja2.ext.do') # {% do ... %}
@@ -355,7 +357,12 @@ def main():
                 if p.hasFlag(EPhraseFlags.NOT_VOX):
                     continue
                 for k in p.files.keys():
-                    sexes[k].append(p)
+                    if p.hasFlag(EPhraseFlags.SFX):
+                        for sid in ('fem', 'mas'):
+                            if p not in sexes[sid]:
+                                sexes[sid].append(p)
+                    else:
+                        sexes[k].append(p)
             f.write(templ.render(
                 InitClass=InitClass,
                 SEXES=sexes,

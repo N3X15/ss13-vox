@@ -34,17 +34,13 @@ var/list/vox_wordlen = list(
 var/list/vox_sound_lengths = list()
 {# var/list/vox_sound_file2id = list() #}
 
-{%- set written = [] -%}
 {%- set initcls = InitClass() -%}
 {%- for sex, phrases in SEXES.items() %}
 {%-   if phrases|length %}
 {%-     do initcls.addInstruction("vox_sounds[\"{}\"] = list()".format(sex)) -%}
 {%-     for phrase in phrases -%}
-{%-       if phrase.files[sex].filename not in written -%}
-{%-         do initcls.addInstruction("vox_sounds[\"{}\"][\"{}\"] = '{}'".format(sex,phrase.id,phrase.files[sex].filename)) -%}
-{%-         do initcls.addInstruction("vox_sound_lengths['{}'] = {:0.4g}".format(phrase.files[sex].filename,phrase.files[sex].getDurationInDS())) -%}
-{%-         do written.append(phrase.files[sex].filename) or '' -%}
-{%-       endif -%}
+{%-       do initcls.addInstruction("vox_sounds[\"{}\"][\"{}\"] = '{}'".format(sex,phrase.id,phrase.files[sex].filename)) -%}
+{%-       do initcls.addInstruction("vox_sound_lengths['{}'] = {:0.4g}".format(phrase.files[sex].filename,phrase.files[sex].getDurationInDS())) -%}
 {%-     endfor -%}
 {%-   endif -%}
 {%- endfor -%}
