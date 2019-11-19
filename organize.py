@@ -4,41 +4,34 @@ from buildtools import log
 from ss13vox.phrase import Phrase, EPhraseFlags, ParsePhraseListFrom
 from ss13vox.pronunciation import Pronunciation, DumpLexiconScript, ParseLexiconText
 
-# Shit we shouldn't change or overwrite. (Boops, pauses, etc)
-OLD_SFX = {
-    '.': 1,
-    ',': 1,
-    'bloop': 1,
-    'bizwarn': 1,  # Is this a misspelling of the below?
-    'buzwarn': 1,
-    'doop': 1,
-    'dadeda': 1,
-    'woop': 1,
-}
 def organizeFile(filename: str) -> None:
-    phrases: Dict[EPhraseFlags, List[Phrase]] = collections.OrderedDict({
-        EPhraseFlags.OLD_VOX: [],
+    phrases: Dict[str, List[Phrase]] = collections.OrderedDict({
+        EPhraseFlags.OLD_VOX.name: [],
         #EPhraseFlags.NOT_VOX: [],
-        EPhraseFlags.SFX:     [],
-        EPhraseFlags.NONE:    [],
+        EPhraseFlags.SFX.name:     [],
     })
     phrasesByID = {}
     for p in ParsePhraseListFrom(filename):
         if p.id in phrasesByID:
             log.warning('Skipping duplicate %s...', p.id)
             continue
-        assignTo = EPhraseFlags.NONE
+        assignTo = ''
         if p.hasFlag(EPhraseFlags.SFX):
-            assignTo = EPhraseFlags.SFX
-        elif p.id in OLD_SFX:
-            assignTo = EPhraseFlags.OLD_VOX
+            assignTo = EPhraseFlags.SFX.name
+        elif p.hasFlag(EPhraseFlags.OLD_VOX):
+            assignTo = EPhraseFlags.OLD_VOX.name
+        else:
+            assignTo = p.category
         phrasesByID[p.id] = p
+        if assignTo not in phrases:
+            phrases[assignTo] = []
         phrases[assignTo] += [p]
 
     #phrases.sort(key=lambda x: x.id)
     with open(filename+'.sorted', 'w') as w:
         for section, sectionPhrases in phrases.items():
-            w.write(f'\n############\n## {section.name}\n############\n\n')
+            if section != '':
+                w.write(f'\n############\n## {section}\n############\n\n')
             for phrase in sorted(sectionPhrases, key=lambda x: x.id):
                 for comm in phrase.comments_before:
                     comm = comm.rstrip()
@@ -53,5 +46,6 @@ def organizeFile(filename: str) -> None:
                     else:
                         w.write(f'{key}\n')
 
-organizeFile('voxwords.txt')
-organizeFile('vg-chemistry.txt')
+organizeFile('wordlists/common.txt')
+organizeFile('wordlists/vg/chemistry.txt')
+organizeFile('wordlists/vg/misc.txt')

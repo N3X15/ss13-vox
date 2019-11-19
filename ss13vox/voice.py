@@ -109,6 +109,55 @@ class USRMSMale(Voice):
         return sox_args + super().genSoxArgs(args)
 VoiceRegistry.Register(USRMSMale)
 
+class ScotAWBMale(Voice):
+    '''
+    AWB Scottish Male: Sounds a bit like DECTalk (Stephen Hawking).  Uses US pronunciations.
+    '''
+    ID = 'scot-awb'
+    SEX = EVoiceSex.MASCULINE
+    FESTIVAL_VOICE_ID = 'nitech_us_awb_arctic_hts'
+    def genSoxArgs(self, args) -> List[str]:
+        sox_args = [
+            # Drop pitch a bit.
+            #'pitch', '-200',
+            # Starts the gravelly sound, lowers pitch a bit.
+            #'stretch', '1.1',
+
+            # This was supposed to make it sound like the HL VOX by increasing the gravelly
+            #  quality by "gating" the incoming stream, but it interferes with the voice's
+            #  synth wave and causes problems like noise spikes and dead spots.
+            #'synth', 'sine', 'amod', '55'
+        ]
+        return sox_args + super().genSoxArgs(args)
+VoiceRegistry.Register(ScotAWBMale)
+
+"""
+BROKEN - Uses MRPA phoneset.
+
+class RabDiphoneMale(Voice):
+    '''
+    RAB Diphone Male: British DECTalk, kinda.
+    '''
+    ID = 'rab-diphone'
+    SEX = EVoiceSex.MASCULINE
+    FESTIVAL_VOICE_ID = 'rab_diphone'
+    def genSoxArgs(self, args) -> List[str]:
+        sox_args = [
+            # Drop pitch a bit.
+            #'pitch', '-200',
+            # Starts the gravelly sound, lowers pitch a bit.
+            #'stretch', '1.1',
+            'stretch', '1.2',
+
+            # This was supposed to make it sound like the HL VOX by increasing the gravelly
+            #  quality by "gating" the incoming stream, but it interferes with the voice's
+            #  synth wave and causes problems like noise spikes and dead spots.
+            #'synth', 'sine', 'amod', '55'
+        ]
+        return sox_args + super().genSoxArgs(args)
+VoiceRegistry.Register(RabDiphoneMale)
+"""
+
 class USSLTFemale(Voice):
     '''
     SLT US Female: More midwestern voice, talks faster, but buggy and occasionally drops into British.

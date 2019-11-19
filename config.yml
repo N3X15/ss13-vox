@@ -9,11 +9,19 @@ voices:
   # Masculine voiceset
   mas:     us-rms
   # Non-AI announcements (like vox_login, etc)
-  default: us-clb
+  default: us-clb # Current /vg/ default
+  #default: scot-awb # Scottish voice, absolutely fucking hilarious
+#Plug in your own wordlists here.
 phrasefiles:
-  - announcements.txt
-  - vg-chemistry.txt
-  - voxwords.txt
+  # /vg/-specific announcements
+  - wordlists/vg/announcements.txt
+  # /vg/-specific chemistry
+  - wordlists/vg/chemistry.txt
+  # /vg/-specific miscellaneous shit
+  - wordlists/vg/misc.txt
+  # Common wordlists for all stations
+  - wordlists/common.txt
+# Here, we can override the autodetected defaults for each phrase.
 overrides:
   '.':
     flags:

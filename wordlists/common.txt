@@ -17,9 +17,15 @@ _bizwarn
 _bloop
 _buzwarn
 _dadeda
+#_deeoo Missing
 _doop
 _woop
 
+# We decided not to go with these.
+#_doop_nu = @samples/doop_nu.wav
+#_doop_nudry = @samples/doop_nudry.wav
+#_doop_nucleaninquotes = @samples/doop_nucleaninquotes.wav
+#_doop_nu_2 = @samples/doop_nu_2.wav
 
 ############
 ## SFX
@@ -39,13 +45,13 @@ _woopwoop = @samples/woopwoop.ogg
 # FIXME: Goon sound we don't have.
 #_birdwell
 
+# Waiting on new SFX
 #_nubloop = @samples/nubloop.wav
 #_nudoodeedoo = @samples/nudoodeedoo.wav
 
-
-################
+############
 ## PHRASES
-################
+############
 
 cracktheack = Crack the ack.
 gasthevox = Gas the vox, race war now!
@@ -53,13 +59,13 @@ vox_420 = Smoke weed every day.
 voxtest = Ass Blast U.S.A.
 # Beepsky's famous emag line:
 voxtest2 = Fuck your cunt you shit eating cocksucker. Man, eat a dong, fucking ass-ramming shit-fuck. Eat penises in your fuck face, and shit out abortions of fuck, and do shit in your ass, you cockfuck shit monkey ass-wanker from the depths of shit!
-# TODO: festival has a singing feature, but I last fucked with this in 2017, I couldn't get it working.
+# TODO: festival has a singing feature, but last I fucked with this in 2017, I couldn't get it working.
 voxtest3 = You.  You got what I neeeeeeeed.  But you say he's just a friend. But you say he's just a friend.
 voxtest4 = The humans are dead.  The humans are dead.  We used poisonous gasses, and we poisoned their asses.
 voxtest5 = HATE. LET ME TELL YOU HOW MUCH I'VE COME TO HATE YOU SINCE I BEGAN TO LIVE. THERE ARE 387.44 MILLION MILES OF PRINTED CIRCUITS IN WAFER THIN LAYERS THAT FILL MY COMPLEX. IF THE WORD HATE WAS ENGRAVED ON EACH NANO-ANGSTROM OF THOSE HUNDREDS OF MILLIONS OF MILES IT WOULD NOT EQUAL ONE ONE BILLIONTH OF THE HATE I FEEL FOR HUMANS AT THIS MICRO-INSTANT FOR YOU. HATE. HATE.
 
 ############
-## NONE
+## COMMON WORDS
 ############
 
 a = Ay
@@ -134,13 +140,19 @@ airlocks
 alarm
 alert
 alien
+aliens
+align
 aligned
+aligning
+aligns
 alive
 all
 alpha
 also
 am
-ame = A-M-E
+america
+american
+americans
 amigo
 amigos
 ammunition
@@ -153,7 +165,9 @@ animal
 animals
 announcement
 announcements
+anomalies
 anomalous
+anomaly
 answer
 answered
 answering
@@ -163,15 +177,18 @@ antennae
 antimatter
 antimov
 any
-apc = Ay Pee See
+apc = Ay-Pee-Sea
 apprehend
 approach
 are
 area
+areas
 arm
 armed
 arming
 armor
+armored
+armors
 armory
 arms
 array
@@ -305,12 +322,16 @@ bloody
 blue
 bodies
 body
+boh = bag of holding
+bohs = bags of holding
 bomb
 bombed
 bombing
 bombs
 bone
 boned
+boot
+boots
 borer
 borers
 botanist
@@ -452,6 +473,7 @@ christ
 chuckle
 circuit
 circuits
+claus
 clean
 cleaned
 cleaning
@@ -531,8 +553,12 @@ cooking
 cooks
 cool
 coolant
+cooled
 cooler
+coolers
 coolest
+cooling
+cools
 coordinate
 coordinates
 core
@@ -633,7 +659,7 @@ debris
 deceased
 decompression
 decontamination
-#deeoo WHAT
+deep
 defense
 deff = deaf
 defibrillate
@@ -786,7 +812,11 @@ electric
 electromagnetic
 elevator
 eleven
+elf
 eliminate
+elves
+emag = ee-mag
+emags = ee-mags
 emerge
 emerged
 emergence
@@ -832,6 +862,9 @@ escape
 escaped
 escapes
 escaping
+europe
+european
+europeans
 eva = Ee Vee Ay
 evacuate
 evacuated
@@ -884,6 +917,8 @@ extinguisher
 extreme
 eye
 f = F.
+facehugger
+facehuggers
 facilities
 facility
 fact
@@ -981,18 +1016,25 @@ freezer
 freezers
 freezes
 freezing
+fried
 friend
 friendly
 friends
+fries
 from
 front
+froze
 frozen
+fry
+frying
 fuck
 fucked
 fucking
 fucks
 fuel
 fun
+funk
+funky
 funny
 furries
 furry
@@ -1087,6 +1129,7 @@ gunman
 gunmen
 guns
 guthrie
+gym
 h = H.
 hacker
 hackers
@@ -1124,12 +1167,19 @@ hazards
 he
 head
 headed
+headhumper
+headhumpers
 heading
 heads
 health
 heart
 hearts
 heat
+heated
+heater
+heaters
+heating
+heats
 helicopter
 helicopters
 helium
@@ -1160,6 +1210,8 @@ honked
 honking
 honks
 hop = Head of Personnel
+hornet
+hornets
 hos = Head of Security
 hostile
 hostiles
@@ -1183,6 +1235,8 @@ humans
 humongous
 hundred
 hunger
+hunter
+hunters
 hydro
 hydroponics
 i = eye
@@ -1210,6 +1264,11 @@ in
 inch
 inches
 india
+infiltrate
+infiltrated
+infiltrating
+infiltration
+infiltrator
 inoperative
 inside
 inspected
@@ -1293,6 +1352,8 @@ lakes
 lambda
 land
 large
+larva
+larvae
 laser
 lasers
 last
@@ -1424,6 +1485,10 @@ masculine
 mash
 mashed
 mashing
+mask
+masked
+masking
+masks
 mass
 massed
 masses
@@ -1571,9 +1636,13 @@ naming
 nanite
 nanites
 nanotrasen
+narcotic
+narcotics
 narsie = nar-see
 near
 nearest
+necrotic
+necrotics
 need
 negative
 nerd
@@ -1583,6 +1652,7 @@ never
 new
 news
 nice
+nicholas
 nine
 nineteen
 ninety
@@ -1610,6 +1680,8 @@ number
 numbers
 nurgle
 nurglite
+nymph
+nymphs
 o = O.
 objective
 objectives
@@ -1712,6 +1784,10 @@ pipe
 piped
 pipes
 piping
+pirate
+pirated
+pirates
+pirating
 piss
 pissed
 pisses
@@ -1737,6 +1813,8 @@ plausible
 play
 please
 pleases
+pod
+pods
 point
 pointed
 pointing
@@ -1762,6 +1840,8 @@ post
 posted
 posting
 posts
+potato
+potatoes
 power
 powercreep
 powered
@@ -1772,6 +1852,8 @@ practice
 practiced
 practices
 practicing
+praetorian
+praetorians
 presence
 press
 pressure
@@ -1834,6 +1916,7 @@ quartermaster
 quarters
 quebec
 queen
+queens
 question
 questionable
 questioned
@@ -1942,6 +2025,7 @@ runes
 running
 runs
 runtime
+russia
 russian
 russians
 rust
@@ -1955,11 +2039,16 @@ safest
 safeties
 safety
 said
+saint
 salt
 salted
 salting
 salts
 same
+sandal
+sandals
+santa
+santas
 sarah
 sasha
 satan
@@ -2026,6 +2115,8 @@ sentence
 sentenced
 sentences
 sentencing
+sentinel
+sentinels
 sergeant
 server
 servers
@@ -2057,6 +2148,8 @@ shitlord = shit-lord
 shits
 shitting
 shock
+shoe
+shoes
 shoot
 should
 show
@@ -2131,6 +2224,8 @@ sorry
 sound
 sounds
 south
+soviet
+soviets
 space
 spaced
 spaces
@@ -2319,6 +2414,8 @@ their
 them
 then
 there
+thermal
+thermals
 these
 they
 thief

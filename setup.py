@@ -13,7 +13,15 @@ from buildtools.bt_logging import IndentLogger
 
 REQUIRED_PACKAGES = [
 	# Festival stuff
-	'festival','festlex-cmu','festlex-poslex','festlex-oald','libestools2.5','unzip',
+	'festival',
+	'festlex-cmu',
+	'festlex-poslex',
+	'festlex-oald',
+	'festvox-rablpc16k',
+
+	# Needed by festival
+	'libestools2.5',
+	'unzip',
 
 	# For our own nefarious purposes.
 	'sox',

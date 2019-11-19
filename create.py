@@ -196,7 +196,7 @@ def GenerateForWord(phrase: Phrase, voice: Voice, writtenfiles: set, args: Optio
     for command_spec in cmds:
         (command, cfn) = command_spec
         with os_utils.TimeExecution(command[0]):
-            os_utils.cmd(command, echo=False, critical=True, show_output=False)
+            os_utils.cmd(command, echo=True, critical=True, show_output=command[0] in ('text2wave',))
 
     command = ['ffprobe', '-v', 'quiet', '-print_format', 'json', '-show_format', '-show_streams', oggfile]
     with os_utils.TimeExecution(command[0]):

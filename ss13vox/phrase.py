@@ -64,6 +64,8 @@ class Phrase(object):
         self.voices: List[str] = []
         #: Output filename.
         self.files: Dict[str, FileData] = {}
+        #: Used for organize.py.
+        self.category: str = ''
 
         self.override_duration: Optional[float] = None
         self.override_size: Optional[int] = None
@@ -119,10 +121,13 @@ class Phrase(object):
 def ParsePhraseListFrom(filename: str) -> List[Phrase]:
     phrases = []
     comments_before = []
+    in_cat = ''
     with open(filename, 'r') as f:
         ln = 0
         for line in f:
             ln += 1
+            if line.startswith("## "):
+                in_cat = line.strip()[2:].strip()
             if line.startswith("#"):
                 comments_before += [line[1:]]
                 continue
@@ -137,6 +142,7 @@ def ParsePhraseListFrom(filename: str) -> List[Phrase]:
                 p.id = wordfile.strip()
                 p.parsePhrase(phrase.strip())
                 p.comments_before = comments_before
+                p.category = in_cat
                 comments_before = []
                 phrases += [p]
             elif line != '' and ' ' not in line and len(line) > 0:
@@ -146,6 +152,7 @@ def ParsePhraseListFrom(filename: str) -> List[Phrase]:
                 p.id = line.strip()
                 p.parsePhrase(p.id)
                 p.comments_before = comments_before
+                p.category = in_cat
                 comments_before = []
                 phrases += [p]
     return phrases
