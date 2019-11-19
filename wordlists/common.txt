@@ -522,6 +522,10 @@ commie
 communication
 communications
 communist
+complete
+completed
+completes
+completing
 complex
 complied
 complies
@@ -769,6 +773,8 @@ doctors
 does
 dog
 dogs
+doing
+done
 doom
 doomed
 doomsday
@@ -954,6 +960,10 @@ find
 finds
 fine
 fines
+finish
+finished
+finishes
+finishing
 fire
 fired
 fires
@@ -1269,6 +1279,11 @@ infiltrated
 infiltrating
 infiltration
 infiltrator
+initialization
+initialize
+initialized
+initializes
+initializing
 inoperative
 inside
 inspected
