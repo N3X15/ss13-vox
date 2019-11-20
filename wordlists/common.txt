@@ -122,6 +122,7 @@ advance
 advanced
 advances
 advancing
+advent
 advise
 advised
 advises
@@ -253,6 +254,8 @@ bartenders
 base
 based
 bases
+# Saint Basil's day
+basil
 basing
 bat
 bath
@@ -470,6 +473,7 @@ chief
 chopper
 choppers
 christ
+christmas
 chuckle
 circuit
 circuits
@@ -862,6 +866,8 @@ environment
 environments
 epic
 epics
+epiphanies
+epiphany
 equipment
 error
 escape
@@ -876,6 +882,7 @@ evacuate
 evacuated
 evacuates
 evacuating
+eve
 even
 every
 everywhere
@@ -944,10 +951,17 @@ farthest
 fascist
 fascists
 fast
+fasted
+fasting
+fasts
 fat
 father
 fats
 fauna
+feast
+feasted
+feasting
+feasts
 feet
 feminine
 field
@@ -1156,6 +1170,7 @@ handcuffing
 handcuffs
 handling
 hangar
+hanukkah
 happen
 happened
 happening
@@ -1211,6 +1226,7 @@ his
 hit
 hits
 hitting
+hogswatch = Hog's Watch
 hole
 holes
 holy
@@ -1357,8 +1373,11 @@ knew
 know
 knowing
 knows
+kolaida
+krampusnacht
 krokodil = croc oh deal
 kudzu
+kwanzaa
 l = L.
 lab
 labs
@@ -1371,6 +1390,7 @@ larva
 larvae
 laser
 lasers
+lasposadas = Las Posadas
 last
 laugh
 laughed
@@ -1451,6 +1471,10 @@ locking
 lockout
 lockouts
 locks
+log
+logged
+logging
+logs
 long
 look
 looked
@@ -1473,6 +1497,8 @@ lower
 lowers
 lowest
 lsd = L S D
+# Saint Lucia's Day
+lucia
 lusty
 m = M.
 machine
@@ -1668,6 +1694,9 @@ new
 news
 nice
 nicholas
+# Saint Nick
+nick
+night
 nine
 nineteen
 ninety
@@ -1870,6 +1899,10 @@ practicing
 praetorian
 praetorians
 presence
+present
+presented
+presenting
+presents
 press
 pressure
 pressures
@@ -1953,6 +1986,7 @@ raider
 raiders
 raiding
 raids
+ramadan
 ran
 rapid
 rd = Research Director
@@ -2062,6 +2096,7 @@ salts
 same
 sandal
 sandals
+sanguinala
 santa
 santas
 sarah
@@ -2420,6 +2455,7 @@ thank
 thanked
 thanking
 thanks
+thanksgiving
 that
 # mas fucks this up (becomes they)
 the = thee
@@ -2508,10 +2544,13 @@ true
 try
 tube
 tubes
+tubishvat = Tu Bishvat
 tunnel
 tunneled
 tunneling
 tunnels
+turkey
+turkeys
 turn
 turned
 turning
@@ -2665,6 +2704,7 @@ wilco
 will
 wing
 wings
+winterveil = Winter Veil
 wire
 wired
 wires
@@ -2718,6 +2758,7 @@ yetis
 you
 your
 yourself
+yule
 z = Z.
 zero
 zombie
