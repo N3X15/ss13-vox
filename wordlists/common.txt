@@ -146,6 +146,8 @@ align
 aligned
 aligning
 aligns
+alium
+aliums
 alive
 all
 alpha
@@ -222,6 +224,7 @@ atom
 atomic
 atoms
 attention
+aunt
 authenticate
 authentication
 authorize
@@ -234,6 +237,8 @@ away
 awesome
 awful
 b = B.
+babbies
+babby
 babies
 baby
 back
@@ -244,6 +249,12 @@ bad
 bag
 bags
 bailey
+bait
+baited
+baiting
+baits
+ball
+balls
 banana
 bananas
 bar
@@ -270,8 +281,10 @@ beaming
 beams
 bear
 bears
+because
 bee
 been
+beer
 bees
 before
 beg
@@ -290,6 +303,7 @@ billing
 billion
 billions
 bills
+bingo
 biohazard
 biohazards
 biological
@@ -314,6 +328,11 @@ blind
 blinded
 blinding
 blinds
+bling
+blitz
+blitzed
+blitzes
+blitzing
 blizzard
 blizzards
 blob
@@ -323,23 +342,40 @@ blood
 bloodied
 bloody
 blue
+board
+boarded
+boarding
+boards
 bodies
 body
 boh = bag of holding
 bohs = bags of holding
+bolt
+bolted
+bolting
+bolts
 bomb
 bombed
 bombing
 bombs
 bone
 boned
+boobies
+booby
+boom
 boot
 boots
+bored
+boredom
 borer
 borers
 botanist
 botanists
 botany
+bother
+bothered
+bothering
+bothers
 bottom
 bought
 bounce
@@ -371,7 +407,12 @@ breaking
 breaks
 bridge
 brig
+bro
 broke
+bronze
+bros
+brother
+brothers
 build
 bust
 # Because fuck your ears
@@ -400,6 +441,10 @@ called
 came
 can
 canal
+cancel
+cancelled
+cancelling
+cancels
 cancer
 cancerous
 canister
@@ -416,6 +461,12 @@ carbon
 carbons
 cargo
 carp
+cash
+cashed
+cashes
+cashing
+casino
+casinos
 cat
 catbeast = cat-beast
 # yes, also a verb now
@@ -435,11 +486,19 @@ centcomm
 center
 centi
 central
+chaching = chuh-ching
 chad
 challenge
 challenged
 challenges
 chamber
+champ
+champed
+# champing at the bit
+champing
+champion
+champions
+champs
 change
 changed
 changeling
@@ -485,6 +544,10 @@ cleans
 cleanup
 clear
 clearance
+clock
+clocked
+clocking
+clocks
 clockwork
 clone
 cloned
@@ -536,11 +599,16 @@ complies
 comply
 computer
 computers
+con
 condition
 conditions
 conflict
 conflicts
+congratulations
+conned
+conning
 connor
+cons
 console
 consoles
 construct
@@ -555,6 +623,12 @@ contamination
 contraband
 control
 controls
+convict = kunvict
+convict_ = kahnvict
+convicted
+convicting
+convicts = kunvicts
+convicts_ = kahnvicts
 cook
 cooked
 cooking
@@ -586,6 +660,8 @@ could
 couldnt = couldn't
 country
 court
+cousin
+cousins
 cover
 cow
 coward
@@ -614,6 +690,8 @@ crew
 crews
 critical
 criticality
+cronies
+crony
 cross
 crosses
 cryo
@@ -634,6 +712,8 @@ cultists
 cults
 cunt
 cunts
+cup
+cups
 cure
 cured
 cures
@@ -677,10 +757,14 @@ defibrillating
 degree
 degrees
 delta
+delusion
+delusional
+delusions
 demon
 demons
 denied
 denies
+dense
 deny
 depart
 departed
@@ -730,10 +814,13 @@ differ
 difference
 differences
 different
+dime
 dimension
 dimensional
 dimensioned
 dimensions
+dimes
+dimitri = dmitri
 diona = dye-o-nah
 dionae = dye-o-knee
 dioxide
@@ -769,6 +856,7 @@ distances
 distortion
 distortions
 divine
+dmitri
 do
 doctor
 doctored
@@ -998,6 +1086,10 @@ floods
 floor
 flora
 fluke
+flush
+flushed
+flushes
+flushing
 fly
 flygirl = fly-girl
 flyman = fly-man
@@ -1113,8 +1205,14 @@ goddammit = god damn it
 gods
 goes
 going
+gold
+golden
 golem
 golems
+golf
+golfed
+golfing
+golfs
 gone
 good
 goodbye
@@ -1125,6 +1223,7 @@ gordon
 got
 gotta
 government
+grand
 grant
 granted
 granting
@@ -1159,6 +1258,7 @@ hacker
 hackers
 hacking
 had
+half
 hall
 halls
 hallway
@@ -1210,6 +1310,7 @@ helicopters
 helium
 hello
 help
+henry
 her
 here
 hers
@@ -1236,8 +1337,16 @@ honked
 honking
 honks
 hop = Head of Personnel
+hope
+hoped
+hopes
+hoping
 hornet
 hornets
+horse
+horsed
+horses
+horsing
 hos = Head of Security
 hostile
 hostiles
@@ -1263,6 +1372,10 @@ hundred
 hunger
 hunter
 hunters
+husk
+husked
+husking
+husks
 hydro
 hydroponics
 i = eye
@@ -1330,14 +1443,23 @@ is
 it
 its
 j = J.
+jack
+jane
 janitor
 janitorial
 janitors
 jesus
+jill
+jinkies
 job
 jobs
 johnson
 johnsons
+joke
+joked
+joker
+jokes
+joking
 journalism
 journalist
 journalists
@@ -1364,9 +1486,13 @@ kilo
 kilowatt
 kilowatts
 kind
+king
+kings
 kit
 kitchen
 kits
+kiwi
+kiwis
 knee
 knees
 knew
@@ -1381,11 +1507,19 @@ kwanzaa
 l = L.
 lab
 labs
+lad
+lads
 lake
 lakes
 lambda
 land
+lap
+laps
 large
+larp
+larped
+larping
+larps
 larva
 larvae
 laser
@@ -1405,15 +1539,25 @@ law
 laws
 lawyer
 lawyers
+lead = led
+lead_ = leed
+leader
+leading
+leads
 leak
 leaked
 leaking
 leaks
+leap
+leaping
+leaps
+leapt
 learn
 learned
 learning
 learns
 leave
+led
 left
 leg
 legal
@@ -1428,6 +1572,7 @@ librarian
 librarians
 library
 lie
+lied
 lies
 lieutenant
 life
@@ -1458,7 +1603,10 @@ lives_
 living
 lizard
 lizards
+load
+loaded
 loading
+loads
 locate
 located
 locates
@@ -1499,7 +1647,9 @@ lowest
 lsd = L S D
 # Saint Lucia's Day
 lucia
+lucy
 lusty
+lying
 m = M.
 machine
 machines
@@ -1507,6 +1657,8 @@ machining
 machinist
 machinists
 made
+maggot
+maggots
 magic
 magnetic
 main
@@ -1519,9 +1671,14 @@ malfunction
 malfunctioned
 malfunctioning
 malfunctions
+mama
 man
+mandy
 manly
 many
+marathon
+marathons
+mary
 masculine
 mash
 mashed
@@ -1546,6 +1703,10 @@ mech
 mechanic
 mechanics
 mechs
+medal
+medallion
+medallions
+medals
 medbay
 medical = Medickul
 mega
@@ -1696,6 +1857,7 @@ nice
 nicholas
 # Saint Nick
 nick
+nigh
 night
 nine
 nineteen
@@ -1743,6 +1905,8 @@ officers
 offices
 ok = O.K.
 old
+olympic
+olympics
 on
 one
 only
@@ -1790,7 +1954,10 @@ pacified
 pacifies
 pacify
 pacifying
+pack
 packed
+packing
+packs
 page
 pain
 pains
@@ -1798,6 +1965,7 @@ pal
 pals
 panel
 panting
+papa
 part
 parted
 parties
@@ -1808,6 +1976,8 @@ pathetic
 pda = P-D-A
 penis
 penises
+pennies
+penny
 people
 peoples
 percent
@@ -1818,11 +1988,16 @@ perimeter
 permitted
 personal
 personnel
+petty
 picture
 pictures
 picturing
 pillar
 pillars
+ping
+pinged
+pinging
+pings
 pink
 pipe
 piped
@@ -1877,6 +2052,8 @@ portals
 ports
 posibrain = positronic brain
 posibrains = positronic brains
+posse
+posses
 possibilities
 possibility
 possible
@@ -1910,6 +2087,10 @@ priest
 priests
 primaries
 primary
+print
+printed
+printing
+prints
 prion
 prions
 priorities
@@ -1926,6 +2107,7 @@ processed
 processes
 processing
 progress
+pronto
 proper
 propulsion
 prosecute
@@ -1957,6 +2139,10 @@ puts
 putting
 q = Q.
 qm = quartermaster
+quake
+quaked
+quakes
+quaking
 quantum
 quarantine
 quarter
@@ -1989,15 +2175,22 @@ raids
 ramadan
 ran
 rapid
+rapidly
 rd = Research Director
 reach
 reached
 reactor
 read1 = reed
 read2 = red
+ready
 recommend
 recommends
+record = reckerd
+record_ = reekord
 red
+regret
+regrets
+regretting
 relay
 released
 remaining
@@ -2010,6 +2203,7 @@ reminds
 removal
 renegade
 repair
+repent
 report
 reports
 request
@@ -2044,9 +2238,19 @@ retard
 retarded
 retarding
 retards
+retire
+retired
+retiree
+retirees
+retires
+retiring
 revolution
 revolutionaries
 revolutionary
+rid
+riddance
+riddle
+riddles
 right
 riot
 rioted
@@ -2065,9 +2269,14 @@ rodding
 rods
 roger
 rogue
+roid
+roids
 romeo
 room
 round
+royal
+royally
+royalty
 run
 rune
 runes
@@ -2186,6 +2395,7 @@ shard
 shards
 shat
 she
+she'll
 shield
 shipment
 shirt
@@ -2222,13 +2432,28 @@ silicon
 silicons
 silo
 siloes
+silver
+silvered
+silvers
+simple
+simplicity
+simply
+single
+singles
+singling
 singularities
 singularity
+sister
+sisters
 six = sih-icks
 sixteen
 sixty
 skeleton
 skeletons
+skellies
+skellington
+skellingtons
+skelly
 skipjack
 slaughter
 slaughtered
@@ -2289,6 +2514,7 @@ spider
 spiderling
 spiderlings
 spiders
+splendid
 spooky
 squad
 squads
@@ -2381,6 +2607,14 @@ sweat
 sweating
 sweats
 sweet
+swipe
+swiped
+swipes
+swiping
+swirl
+swirled
+swirling
+swirls
 switch
 switched
 switches
@@ -2409,6 +2643,10 @@ tampers
 tango
 tank
 tanks
+tap
+tapped
+tapping
+taps
 target
 targeted
 targeting
@@ -2419,6 +2657,8 @@ teams
 tech
 technologies
 technology
+teen
+teens
 telecomms
 teleport = teleportation
 teleported
@@ -2469,6 +2709,7 @@ thermal
 thermals
 these
 they
+thick
 thief
 thieves
 thieving
@@ -2494,12 +2735,27 @@ tide
 tided = tyed-ed
 tides
 tiding
+tight
+tighten
+tightened
+tightening
+tightens
+timber
+timbers
 time
+timed
 times
+timing
 tiny
+tired
+tiresome
 to = two
+toil
+toiled
 toilet
 toilets
+toiling
+toils
 too
 top
 topside
@@ -2508,6 +2764,8 @@ touched
 touches
 touching
 towards
+towel
+towels
 toxic
 toxin
 toxins
@@ -2528,6 +2786,10 @@ transportation
 transported
 transporting
 transports
+trap
+trapped
+trapping
+traps
 tree
 trees
 trigger
@@ -2557,9 +2819,15 @@ turning
 turns
 turret
 turrets
+tux
+tuxedo
+tuxedoes
+tuxes
 twelve
 twenty
 two
+typo
+typoes
 tzeench
 u = U.
 ugh = ug
@@ -2567,6 +2835,7 @@ uglies
 ugly
 unable
 unauthorized
+uncle
 unclothed
 under
 unholy
@@ -2601,6 +2870,7 @@ vaccines
 vacuum
 valid
 valids
+vamos
 vampire
 vampires
 vandal
@@ -2645,6 +2915,7 @@ virus
 viruses
 vital
 vitals
+vodka
 void
 voided
 voiding
@@ -2693,6 +2964,11 @@ what
 when
 where
 which
+while
+whirl
+whirled
+whirling
+whirls
 whiskey
 white
 who
@@ -2729,6 +3005,10 @@ worked
 working
 works
 world
+worried
+worries
+worry
+worrying
 would
 wouldnt = wouldn't
 wow
@@ -2760,9 +3040,17 @@ your
 yourself
 yule
 z = Z.
+zap
+zapped
+zapping
+zaps
 zero
 zombie
 zombies
 zone
 zones
+zoom
+zoomed
+zooming
+zooms
 zulu
