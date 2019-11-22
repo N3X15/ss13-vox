@@ -1254,9 +1254,12 @@ guns
 guthrie
 gym
 h = H.
+hack
+hacked
 hacker
 hackers
 hacking
+hacks
 had
 half
 hall
@@ -1444,6 +1447,9 @@ it
 its
 j = J.
 jack
+jacked
+jacking
+jacks
 jane
 janitor
 janitorial
