@@ -342,6 +342,10 @@ blood
 bloodied
 bloody
 blue
+bluespace
+bluespaced
+bluespaces
+bluespacing
 board
 boarded
 boarding
@@ -834,10 +838,12 @@ disable
 disabled
 disables
 disabling
+disc
 discount
 discounted
 discounting
 discounts
+discs
 disease
 diseased
 diseases
@@ -1881,13 +1887,16 @@ november
 now
 ntcoin = n t coin
 ntcoins = n t coins
+nuclear
 nude
 nudes
 nudity
 nuke
+nuked
 nukeop = Nuclear Operative
 nukeops = Nuclear Operatives
 nukes
+nuking
 number
 numbers
 nurgle
@@ -2304,6 +2313,8 @@ safeties
 safety
 said
 saint
+saiyan = cyan
+saiyans = cyans
 salt
 salted
 salting
@@ -2586,6 +2597,7 @@ suffering
 suit
 suits
 sun
+super
 superconducting
 supercooled
 supermatter
