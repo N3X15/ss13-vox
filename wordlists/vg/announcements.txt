@@ -15,7 +15,7 @@ sound/AI/vox_reminder9 = Reminder: Mobile M. M. Eyes are not asimov borgs.  Stop
 sound/AI/vox_reminder10 = Reminder: Do not try to catch pink snowflakes with your tongue.
 sound/AI/vox_reminder11 = Reminder: Knowing the difference between N 2 and N 2 O could save your life.
 sound/AI/vox_reminder12 = Reminder: Do not tickle the supermatter.
-sound/AI/vox_reminder13 = Remember: Tah har rans carry a load of diseases and are all untamed savages.  Kill cat beasts before they kill you.
+sound/AI/vox_reminder13 = Remember: Tah har rans are violent savages and carry a load of diseases.  Kill cat-beasts before they kill you.
 sound/AI/vox_reminder14 = Reminder: Purging Ay Eyes and Seye-borgs is a very bad idea, so use the planning frame when changing laws.
 sound/AI/vox_reminder15 = Reminder: Do not touch strange alien artefacts, use the clown instead
 sound/AI/vox_reminder16 = Reminder: Do not touch strange clowns, use the alien artefact instead
@@ -30,6 +30,8 @@ sound/AI/meteors = Meteors detected on collision course with the station. Seek s
 sound/AI/newroundsexy = You want to put a banging donk on it.
 sound/AI/radiation = High levels of radiation detected near the station. Please evacuate into one of the shielded maintenance tunnels.
 sound/AI/meteorround = A meteor storm has been detected in proximity of the station and is expected to strike within a few minutes.
+# pls add with tornado siren tyvm
+sound/AI/singuloose = Danger! Uncontained gravitational singularity detected.  Crew should evacuate immediately, and be aware of gravitational shifts and E M peas.
 
 sound/AI/outbreak_before = Confirmed outbreak of level
 sound/AI/outbreak_after  = biohazard aboard the station.  All personnel must contain the outbreak.
@@ -39,11 +41,12 @@ sound/AI/supermatter_integrity_after = percent.
 sound/AI/supermatter_danger = Situation critical. Recommend immediate intervention.
 sound/AI/supermatter_delam = De-lamination imminent.  All personnel: Evacuate area immediately.
 
-sound/AI/blob_confirmed = Alert!  Biohazard outbreak alert status up graded to level 9.  Station is now locked down, under directive 7 10, until further notice.
+sound/AI/blob_confirmed = Alert!  Biohazard outbreak alert status up graded to level 9.  Under Directive 7 10, the station is now locked down until further notice.
 
 sound/AI/trading_port_closed = The trading port has been locked down. Third party trader docking clearances rescinded.
 sound/AI/trading_port_open = The trading port lockdown has been lifted.
 
+# Requested
 sound/AI/connection_lost = Critical alert: Blue-space connection to Central Command has been lost. The shuttle is be unable to be called or recalled until further notice.
 sound/AI/connection_made = Link with Central Command has been re-established successfully. Emergency shuttle can now be called or recalled.
 

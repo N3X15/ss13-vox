@@ -290,6 +290,7 @@ before
 beg
 begging
 begs
+behind
 being
 beings
 bellmont
@@ -422,8 +423,10 @@ bust
 # Because fuck your ears
 bustin = bust-in
 but
+butt
 button
 buttons
+butts
 buy
 buying
 buys
@@ -722,6 +725,7 @@ cure
 cured
 cures
 curing
+cyan
 cyberhorror = cyber horror
 cyberhorrors = cyber horrors
 # Fixes SY BAHRG(S)
@@ -760,6 +764,10 @@ defibrillates
 defibrillating
 degree
 degrees
+delaminate
+delaminated
+delaminates
+delaminating
 delta
 delusion
 delusional
@@ -963,7 +971,10 @@ epics
 epiphanies
 epiphany
 equipment
+erred
+erring
 error
+errors
 escape
 escaped
 escapes
@@ -1145,6 +1156,7 @@ friends
 fries
 from
 front
+frost
 froze
 frozen
 fry
@@ -1345,6 +1357,8 @@ honk
 honked
 honking
 honks
+hood
+hoods
 hop = Head of Personnel
 hope
 hoped
@@ -1390,6 +1404,11 @@ hydroponics
 i = eye
 iaa = internal affairs agent
 ian
+ice
+iced
+ices
+icing
+icy
 idiot
 idiots
 if
@@ -1405,6 +1424,9 @@ implant
 implanted
 implanting
 implants
+implode
+implodes
+imploding
 impossibilities
 impossibility
 impossible
@@ -1606,6 +1628,7 @@ lines
 lining
 liquid
 liquids
+lit
 little
 live = liv
 live_ = live
@@ -1669,6 +1692,7 @@ machining
 machinist
 machinists
 made
+magenta
 maggot
 maggots
 magic
@@ -1690,6 +1714,7 @@ manly
 many
 marathon
 marathons
+maroon
 mary
 masculine
 mash
@@ -1880,6 +1905,7 @@ nitrogen
 nitrous
 no
 no2 = nitrous oxide
+noel
 nominal
 north
 not
@@ -1938,8 +1964,15 @@ operatives
 ops = operatives
 option
 or
+orange
+orbit
+orbited
+orbiting
+orbits
 order
 organic
+ornament
+ornaments
 oscar
 other
 others
@@ -2141,6 +2174,7 @@ purge
 purged
 purges
 purging
+purple
 push
 pushed
 pushes
@@ -2206,6 +2240,7 @@ red
 regret
 regrets
 regretting
+reindeer
 relay
 released
 remaining
@@ -2292,6 +2327,7 @@ round
 royal
 royally
 royalty
+rudolph
 run
 rune
 runes
@@ -2408,6 +2444,7 @@ sewage
 sewer
 shaft
 shafts
+shall
 shard
 shards
 shat
@@ -2423,6 +2460,8 @@ shithead
 shitheads
 shitlord = shit-lord
 shits
+shitter
+shitters
 shitting
 shock
 shoe
@@ -2548,6 +2587,8 @@ state
 states
 stating
 station
+stationed
+stationing
 stations
 status
 staves
@@ -2600,6 +2641,7 @@ sun
 super
 superconducting
 supercooled
+supergreen
 supermatter
 supplies
 supply
@@ -2764,6 +2806,7 @@ time
 timed
 times
 timing
+tinsel
 tiny
 tired
 tiresome
@@ -2916,6 +2959,10 @@ venting
 vents
 very
 victor
+village
+villager
+villagers
+villages
 vine
 vines
 violate
@@ -2925,6 +2972,7 @@ violating
 violation
 violence
 violent
+violet
 virgin
 virologist
 virologists
@@ -2957,7 +3005,10 @@ warden
 wardens
 warm
 warn
+warned
 warning
+warnings
+warns
 warred
 warring
 wars
@@ -3013,7 +3064,7 @@ wolves
 woman
 women
 wood
-woody = wood E.
+woody = wood-ee
 word
 worded
 wording
@@ -3030,6 +3081,8 @@ worrying
 would
 wouldnt = wouldn't
 wow
+wreath
+wreaths
 write
 writing
 written
@@ -3067,6 +3120,7 @@ zombie
 zombies
 zone
 zones
+zoning
 zoom
 zoomed
 zooming
