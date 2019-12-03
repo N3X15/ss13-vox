@@ -2,13 +2,20 @@ from typing import List, Optional, Dict
 from enum import IntFlag
 
 from buildtools import log
-import re, os
+import re, os, string
 __ALL__ = ['EPhraseFlags', 'Phrase', 'ParsePhraseListFrom']
 
 # https://docs.microsoft.com/en-us/windows/win32/fileio/naming-a-file
 WINDOZE_RESERVED = re.compile(r'^(CON|PRN|AUX|NUL|COM)[0-9]?$', re.IGNORECASE)
 
+ACCEPTABLE_FILECHARS = string.ascii_letters + string.digits + '_,.'
+REPL_FILECHAR = '_'
+
 S_TO_DS = 10
+
+def _fixChars(filename) -> str:
+    return ''.join([(c if c in ACCEPTABLE_FILECHARS else REPL_FILECHAR) for c in filename])
+
 class EPhraseFlags(IntFlag):
     NONE       = 0
     OLD_VOX    = 1 # AKA preexisting
@@ -96,6 +103,12 @@ class Phrase(object):
             fbn = f'{bn[0]}_{bn[1:]}'
             if not silent:
                 log.warning('%s is a reserved filename in Windows, changed to %s!', bn, fbn)
+            bn = fbn
+
+        fbn = _fixChars(bn)
+        if fbn != bn:
+            if not silent:
+                log.warning('%s had invalid chars, changed to %s!', bn, fbn)
             bn = fbn
 
         return os.path.join(dn, bn+ext)
