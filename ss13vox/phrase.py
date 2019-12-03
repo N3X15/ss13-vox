@@ -1,7 +1,13 @@
 from typing import List, Optional, Dict
 from enum import IntFlag
 
+from buildtools import log
+import re, os
 __ALL__ = ['EPhraseFlags', 'Phrase', 'ParsePhraseListFrom']
+
+# https://docs.microsoft.com/en-us/windows/win32/fileio/naming-a-file
+WINDOZE_RESERVED = re.compile(r'^(CON|PRN|AUX|NUL|COM)[0-9]?$', re.IGNORECASE)
+
 S_TO_DS = 10
 class EPhraseFlags(IntFlag):
     NONE       = 0
@@ -74,6 +80,25 @@ class Phrase(object):
         self.deffile: str = ''
         #: Line in which this phrase was defined.
         self.defline: int = 0
+
+    def getFinalFilename(self, sex: str, silent: bool = False) -> str:
+        # Final-ish filename
+        ffn = self.filename.format(ID=self.id, SEX=sex)
+
+        # Check for reserved filenames.
+        dn = os.path.dirname(ffn)
+        bn = os.path.basename(ffn)
+        bn, ext = os.path.splitext(bn)
+
+        m = WINDOZE_RESERVED.match(bn)
+        if m is not None:
+            # CON -> C_ON
+            fbn = f'{bn[0]}_{bn[1:]}'
+            if not silent:
+                log.warning('%s is a reserved filename in Windows, changed to %s!', bn, fbn)
+            bn = fbn
+
+        return os.path.join(dn, bn+ext)
 
     def getAssetKey(self, sex: str) -> str:
         return f'{sex}.{self.id}.ogg'

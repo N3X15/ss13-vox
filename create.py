@@ -115,7 +115,8 @@ def GenerateForWord(phrase: Phrase, voice: Voice, writtenfiles: set, args: Optio
                 my_phonemes[_word] = KNOWN_PHONEMES[_word].toLisp().replace('\n', '')
 
 
-    filename = phrase.filename.format(ID=phrase.id, SEX=voice.assigned_sex)
+    #filename = phrase.filename.format(ID=phrase.id, SEX=voice.assigned_sex)
+    filename = phrase.getFinalFilename(voice.assigned_sex)
     sox_args = voice.genSoxArgs(args)
 
     md5 = json.dumps(phrase.serialize())
@@ -196,7 +197,7 @@ def GenerateForWord(phrase: Phrase, voice: Voice, writtenfiles: set, args: Optio
     for command_spec in cmds:
         (command, cfn) = command_spec
         with os_utils.TimeExecution(command[0]):
-            os_utils.cmd(command, echo=True, critical=True, show_output=command[0] in ('text2wave',))
+            os_utils.cmd(command, echo=args.echo, critical=True, show_output=command[0] in ('text2wave',))
 
     command = ['ffprobe', '-v', 'quiet', '-print_format', 'json', '-show_format', '-show_streams', oggfile]
     with os_utils.TimeExecution(command[0]):
@@ -217,9 +218,8 @@ def GenerateForWord(phrase: Phrase, voice: Voice, writtenfiles: set, args: Optio
 
 def main():
     argp = argparse.ArgumentParser(description='Generation script for ss13-vox.')
-    #argp.add_argument('--codebase', choices=['vg', 'tg'], default='vg', help='Which codebase to generate for. (Affects output code and paths.)')
     argp.add_argument('--threads', '-j', type=int, default=multiprocessing.cpu_count(), help='How many threads to use in ffmpeg.')
-    #argp.add_argument('phrasefiles', nargs='+', type=str, help='A list of phrase files.')
+    argp.add_argument('--echo', '-e', action='store_true', default=False, help='Echo external commands to console.')
     args = argp.parse_args()
 
     if not os.path.isdir('tmp'):
