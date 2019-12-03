@@ -23,6 +23,8 @@ phrasefiles:
   - wordlists/common.txt
 # Here, we can override the autodetected defaults for each phrase.
 overrides:
+  # Silence for 0.5s (see resynth_sounds.sh)
+  # We can figure out the duration ourselves, and it counts as 1 word
   '.':
     flags:
       #- old-vox

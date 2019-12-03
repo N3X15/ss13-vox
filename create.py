@@ -121,7 +121,7 @@ def GenerateForWord(phrase: Phrase, voice: Voice, writtenfiles: set, args: Optio
     md5 = json.dumps(phrase.serialize())
     md5 += '\n'.join(my_phonemes.values())
     md5 += ''.join(sox_args) + PRE_SOX_ARGS + ''.join(RECOMPRESS_ARGS)
-    md5 += voice.ID
+    md5 += voice.fast_serialize()
     md5 += filename
 
     #filename = os.path.join('sound', 'vox_fem', phrase.id + '.ogg')

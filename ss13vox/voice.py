@@ -87,6 +87,9 @@ class Voice(object):
             'phoneset': self.PHONESET
         }
 
+    def fast_serialize(self) -> str:
+        return self.ID+str(self.SEX.value)+self.FESTIVAL_VOICE_ID+self.PHONESET
+
 class USRMSMale(Voice):
     '''
     RMS US Male: Sounds a bit like DECTalk (Stephen Hawking).  Uses US pronunciations.
