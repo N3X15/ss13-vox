@@ -40,32 +40,32 @@ var/list/vox_sound_lengths = list()
 {%- set initcls = InitClass() -%}
 {%- for sex, phrases in SEXES.items() %}
 {%-   if phrases|length %}
-{%-     do initcls.addInstruction("vox_sounds[\"{}\"] = list()".format(sex)) -%}
+{%-     do initcls.addInstruction("vox_sounds[\"{}\"] = list()".format(sex), cost=11) -%}
 {%-     for phrase in phrases -%}
-{%-       do initcls.addInstruction("vox_sounds[\"{}\"][\"{}\"] = '{}'".format(sex,phrase.id,phrase.files[sex].filename)) -%}
-{%-       do initcls.addInstruction("vox_sound_lengths['{}'] = {:0.4g}".format(phrase.files[sex].filename,phrase.files[sex].getDurationInDS())) -%}
+{%-       do initcls.addInstruction("vox_sounds[\"{}\"][\"{}\"] = '{}'".format(sex,phrase.id,phrase.files[sex].filename), cost=16) -%}
+{%-       do initcls.addInstruction("vox_sound_lengths['{}'] = {:0.4g}".format(phrase.files[sex].filename,phrase.files[sex].getDurationInDS()), cost=13) -%}
 {%-     endfor -%}
 {%-   endif -%}
 {%- endfor -%}
 {%- for phrase in PHRASES -%}
 {%-   if phrase.wordlen > 1 -%}
-{%-     do initcls.addInstruction("vox_wordlen[\"{}\"] = {}".format(phrase.id,phrase.wordlen)) -%}
+{%-     do initcls.addInstruction("vox_wordlen[\"{}\"] = {}".format(phrase.id,phrase.wordlen), cost=13) -%}
 {%-   endif -%}
 {%- endfor %}
 
 // This class is necessary because we have so many assignments to take it crashes the compiler over a certain limit.
 // STATS:
-//  {{initcls.ninstructions}} instructions spread over {{initcls.procs.keys()|length}} procs.
+//  {{initcls.instructions}} instructions spread over {{initcls.procs.keys()|length}} procs.
 //
 #ifndef DISABLE_VOX
 /__vox_sound_meta_init/New()
-{%- for call in initcls.procs.keys() %}
-  src.{{- call -}}()
+{%- for proc in initcls.procs.values() %}
+  src.{{- proc.name -}}() // {{ proc.instructions }} instructions
 {%- endfor %}
 {%- for proc in initcls.procs.values() %}
 /__vox_sound_meta_init/proc/{{- proc.name -}}()
-  {%- for instr in proc.instructions %}
-  {{ instr }}
+  {%- for line in proc.lines %}
+  {{ line }}
   {%- endfor -%}
 {%- endfor %}
 

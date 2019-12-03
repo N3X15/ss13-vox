@@ -88,7 +88,11 @@ class Voice(object):
         }
 
     def fast_serialize(self) -> str:
-        return self.ID+str(self.SEX.value)+self.FESTIVAL_VOICE_ID+self.PHONESET
+        assert self.ID is not None
+        assert self.SEX.value is not None
+        #assert self.FESTIVAL_VOICE_ID is not None
+        assert self.PHONESET is not None
+        return self.ID+str(self.SEX.value)+str(self.FESTIVAL_VOICE_ID)+self.PHONESET
 
 class USRMSMale(Voice):
     '''
