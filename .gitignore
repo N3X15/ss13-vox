@@ -20,3 +20,5 @@ upload.sh
 node_modules/
 .build/
 *.sorted
+/.venv/
+/cachesfx.*
