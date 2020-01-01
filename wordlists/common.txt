@@ -9,8 +9,6 @@
 ############
 ## OLD_VOX
 ############
-# Ignore these, they are just SFX from oldvox (HL VOX).
-# I will slowly change these to SFX after I learn how to synth noises.
 
 # Is this a misspelling of buzwarn?
 _bizwarn
@@ -45,10 +43,6 @@ _woopwoop = @samples/woopwoop.ogg
 # FIXME: Goon sound we don't have.
 #_birdwell
 
-# Waiting on new SFX
-#_nubloop = @samples/nubloop.wav
-#_nudoodeedoo = @samples/nudoodeedoo.wav
-
 ############
 ## PHRASES
 ############
@@ -79,6 +73,7 @@ abortion
 abortions
 aborts
 about
+above
 abstain
 abstained
 abstaining
@@ -245,6 +240,9 @@ back
 bacteria
 bacterium
 bad
+badder
+baddest
+badly
 # FIXME: Fucked.  Tried bag, "b ae g", "b ae g g", baag
 bag
 bags
@@ -294,6 +292,7 @@ behind
 being
 beings
 bellmont
+below
 between
 beware
 beyond
@@ -1052,6 +1051,8 @@ faith
 faithless
 faiths
 false
+far
+farther
 farthest
 fascist
 fascists
@@ -1659,6 +1660,8 @@ logged
 logging
 logs
 long
+longer
+longest
 look
 looked
 looking
@@ -1672,6 +1675,12 @@ lord
 lorded
 lording
 lords
+lose
+loser
+losers
+loses
+losing
+lost
 lot
 lots
 love
@@ -1890,6 +1899,7 @@ nerdy
 never
 new
 news
+next
 nice
 nicholas
 # Saint Nick
@@ -2206,6 +2216,9 @@ questioned
 questioning
 questions
 quick
+quicker
+quickest
+quickly
 quit
 r = R.
 rabbi
@@ -2232,6 +2245,7 @@ reactor
 read1 = reed
 read2 = red
 ready
+really
 recommend
 recommends
 record = reckerd
@@ -2551,6 +2565,9 @@ someone
 something
 son
 sons
+soon
+sooner
+soonest
 sorry
 sound
 sounds
@@ -2572,6 +2589,9 @@ spiderlings
 spiders
 splendid
 spooky
+spread
+spreading
+spreads
 squad
 squads
 square
