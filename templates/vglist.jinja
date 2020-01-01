@@ -8,30 +8,10 @@
 
 // A list of sounds
 // Structure: vox_sound["(fem|mas|default)"]["soundid"] = 'sound/vox_sex/soundid.ogg'
-var/list/vox_sounds = list(
-{#- too long now
-  {%- for sex, phrases in SEXES.items() %}
-  {%-   if phrases|length %}
-  "{{- sex -}}" = list(
-    {%-   for phrase in phrases %}
-    "{{- phrase.id -}}" = '{{- phrase.files[sex].filename -}}',
-    {%-   endfor %}
-  ),
-  {%-   endif -%}
-  {%- endfor %}
--#}
-)
+var/list/vox_sounds = list()
 
 // How long each phrase is (in words).  Single-word phrases are skipped for brevity.
-var/list/vox_wordlen = list(
-{#-
-  {%- for phrase in PHRASES -%}
-  {%-   if phrase.wordlen > 1 %}
-  "{{- phrase.id -}}" = {{ phrase.wordlen }},
-  {%-   endif -%}
-  {%- endfor %}
--#}
-)
+var/list/vox_wordlen = list()
 
 // How long each phrase is (in deciseconds)
 var/list/vox_sound_lengths = list()
