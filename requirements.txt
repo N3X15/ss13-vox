@@ -1,3 +1,1 @@
-git+https://gitlab.com/N3X15/python-build-tools.git
-pyyaml
-jinja2
+pybuildtools==0.2.3
