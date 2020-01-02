@@ -12,7 +12,7 @@ def organizeFile(filename: str) -> None:
     })
     phrasesByID = {}
     for p in ParsePhraseListFrom(filename):
-        if p.id in phrasesByID:
+        if p.id.lower() in phrasesByID:
             log.warning('Skipping duplicate %s...', p.id)
             continue
         assignTo = ''
@@ -22,7 +22,7 @@ def organizeFile(filename: str) -> None:
             assignTo = EPhraseFlags.OLD_VOX.name
         else:
             assignTo = p.category
-        phrasesByID[p.id] = p
+        phrasesByID[p.id.lower()] = p
         if assignTo not in phrases:
             phrases[assignTo] = []
         phrases[assignTo] += [p]
@@ -39,12 +39,12 @@ def organizeFile(filename: str) -> None:
                 key = phrase.id
                 value = phrase.phrase
                 if phrase.hasFlag(EPhraseFlags.SFX):
-                    w.write(f'{key} = @{value}\n')
+                    w.write(f'{key.lower()} = @{value}\n')
                 else:
                     if key != value:
-                        w.write(f'{key} = {value}\n')
+                        w.write(f'{key.lower()} = {value}\n')
                     else:
-                        w.write(f'{key}\n')
+                        w.write(f'{key.lower()}\n')
 
 organizeFile('wordlists/common.txt')
 organizeFile('wordlists/vg/chemistry.txt')

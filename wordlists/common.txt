@@ -65,11 +65,10 @@ voxtest5 = HATE. LET ME TELL YOU HOW MUCH I'VE COME TO HATE YOU SINCE I BEGAN TO
 'cause
 'tis
 'twas
-I'd
-I'll
-I'm
-#I'm'o
-I've
+i'd
+i'll
+i'm
+i've
 a = Ay
 aac = Ay Ay See
 abduction
@@ -1441,8 +1440,6 @@ husks
 hydro
 hydroponics
 i = eye
-i'll
-i'm
 iaa = internal affairs agent
 ian
 ice
