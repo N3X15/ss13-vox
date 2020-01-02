@@ -1,0 +1,10 @@
+bananium
+diamond
+diamonds
+gibtonite
+iron
+ore
+ores
+refineries
+refinery
+sand

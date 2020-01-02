@@ -47,8 +47,8 @@ sound/AI/trading_port_closed = The trading port has been locked down. Third part
 sound/AI/trading_port_open = The trading port lockdown has been lifted.
 
 # Requested
-sound/AI/connection_lost = Critical alert: Blue-space connection to Central Command has been lost. The shuttle is be unable to be called or recalled until further notice.
-sound/AI/connection_made = Link with Central Command has been re-established successfully. Emergency shuttle can now be called or recalled.
+sound/AI/connection_lost = Critical alert: Blue-space connection to Central Command has been lost. The emergency shuttle is be unable to be called or recalled until further notice.
+sound/AI/connection_made = Link with Central Command has been re-established successfully. The emergency shuttle can now be called or recalled.
 
 ########################
 ## NUMERICS

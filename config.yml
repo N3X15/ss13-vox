@@ -17,6 +17,8 @@ phrasefiles:
   - wordlists/vg/announcements.txt
   # /vg/-specific chemistry
   - wordlists/vg/chemistry.txt
+  # /vg/-specific mining
+  - wordlists/vg/mining.txt
   # /vg/-specific miscellaneous shit
   - wordlists/vg/misc.txt
   # Common wordlists for all stations

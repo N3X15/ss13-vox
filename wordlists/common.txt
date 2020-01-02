@@ -62,6 +62,14 @@ voxtest5 = HATE. LET ME TELL YOU HOW MUCH I'VE COME TO HATE YOU SINCE I BEGAN TO
 ## COMMON WORDS
 ############
 
+'cause
+'tis
+'twas
+I'd
+I'll
+I'm
+#I'm'o
+I've
 a = Ay
 aac = Ay Ay See
 abduction
@@ -128,6 +136,7 @@ again
 agent
 agents
 ai = A.I.
+ain't
 air
 airalarm = Air Alarm
 airalarms = Air Alarms
@@ -181,6 +190,7 @@ approach
 are
 area
 areas
+aren't
 arm
 armed
 arming
@@ -446,6 +456,7 @@ call
 called
 came
 can
+can't
 canal
 cancel
 cancelled
@@ -663,6 +674,8 @@ corrects
 corridor
 corridors
 could
+could've
+couldn't
 couldnt = couldn't
 country
 court
@@ -818,6 +831,11 @@ dicked
 dicking
 dicks
 did
+#couldn't've
+#daren't
+#daresn't
+#dasn't
+didn't
 die
 died
 dies
@@ -876,9 +894,11 @@ doctored
 doctoring
 doctors
 does
+doesn't
 dog
 dogs
 doing
+don't
 done
 doom
 doomed
@@ -904,6 +924,7 @@ duct
 ducts
 dying
 e = E.
+e'er
 each
 earth
 east
@@ -989,6 +1010,7 @@ evacuating
 eve
 even
 every
+everyone's
 everywhere
 evolute
 evolution
@@ -1084,6 +1106,7 @@ finish
 finished
 finishes
 finishing
+finna
 fire
 fired
 fires
@@ -1210,6 +1233,7 @@ gibbing
 gibs
 gigawatt
 gigawatts
+gimme
 girlfriend
 girlfriends
 give
@@ -1233,6 +1257,8 @@ golfed
 golfing
 golfs
 gone
+#giv'n
+gonna
 good
 goodbye
 goose
@@ -1280,6 +1306,7 @@ hackers
 hacking
 hacks
 had
+hadn't
 half
 hall
 halls
@@ -1303,15 +1330,20 @@ harmful
 harming
 harms
 has
+hasn't
 hate
 hated
 hates
 hating
 have
+haven't
 hazard
 hazardous
 hazards
 he
+he'd
+he'll
+he's
 head
 headed
 headhumper
@@ -1382,6 +1414,12 @@ hour
 hours
 house
 how
+#he've
+how'd
+how'll
+how're
+how's
+howdy
 hug
 huge
 hugged
@@ -1403,6 +1441,8 @@ husks
 hydro
 hydroponics
 i = eye
+i'll
+i'm
 iaa = internal affairs agent
 ian
 ice
@@ -1417,6 +1457,8 @@ illegal
 illegals
 imam
 imams
+#I'm'a
+imma
 immediate
 immediately
 immortal
@@ -1472,7 +1514,11 @@ invalid
 invalids
 invasion
 is
+isn't
 it
+it'd
+it'll
+it's
 its
 j = J.
 jack
@@ -1597,6 +1643,7 @@ left
 leg
 legal
 legs
+let's
 level
 levelled
 levelling
@@ -1695,6 +1742,7 @@ lucy
 lusty
 lying
 m = M.
+ma'am
 machine
 machines
 machining
@@ -1740,6 +1788,8 @@ material
 materials
 maximum
 may
+may've
+mayn't
 me
 mean
 meat
@@ -1775,6 +1825,8 @@ meters
 mice
 micro
 middle
+might've
+mightn't
 mike
 mile
 miles
@@ -1869,6 +1921,9 @@ murderers
 murdering
 music
 must
+must've
+mustn't
+mustn't've
 mutant
 mutants
 my
@@ -1887,11 +1942,13 @@ nanotrasen
 narcotic
 narcotics
 narsie = nar-see
+ne'er
 near
 nearest
 necrotic
 necrotics
 need
+needn't
 negative
 nerd
 nerds
@@ -1940,6 +1997,8 @@ nurglite
 nymph
 nymphs
 o = O.
+o'clock
+o'er
 objective
 objectives
 observation
@@ -1955,6 +2014,7 @@ officer
 officers
 offices
 ok = O.K.
+ol'
 old
 olympic
 olympics
@@ -1986,6 +2046,7 @@ ornaments
 oscar
 other
 others
+oughtn't
 our
 ours
 out
@@ -2459,11 +2520,16 @@ sewer
 shaft
 shafts
 shall
+#'s
+shalln't
+shan't
 shard
 shards
 shat
 she
+she'd
 she'll
+she's
 shield
 shift
 shifted
@@ -2486,6 +2552,9 @@ shoe
 shoes
 shoot
 should
+should've
+shouldn't
+shouldn't've
 show
 showed
 shower
@@ -2560,13 +2629,17 @@ snowmobiles
 snowstorm
 snowstorms
 so
+so're
 solar
 solars
 soldier
 soldiers
 some
+somebody's
 someone
+someone's
 something
+something's
 son
 sons
 soon
@@ -2600,6 +2673,10 @@ squad
 squads
 square
 ss13 = Space Station Thirteen
+stack
+stacked
+stacking
+stacks
 staff
 stairway
 stairways
@@ -2781,6 +2858,10 @@ thanking
 thanks
 thanksgiving
 that
+that'd
+that'll
+that're
+that's
 # mas fucks this up (becomes they)
 the = thee
 theater
@@ -2789,10 +2870,19 @@ their
 them
 then
 there
+there'd
+there'll
+there're
+there's
 thermal
 thermals
 these
+these're
 they
+they'd
+they'll
+they're
+they've
 thick
 thief
 thieves
@@ -2805,7 +2895,9 @@ third
 thirteen
 thirty
 this
+this's
 those
+those're
 thousand
 thousands
 threat
@@ -2835,6 +2927,7 @@ tiny
 tired
 tiresome
 to = two
+to've
 toil
 toiled
 toilet
@@ -2877,6 +2970,10 @@ trapping
 traps
 tree
 trees
+triangulate
+triangulated
+triangulates
+triangulating
 trigger
 triggered
 triggering
@@ -2950,6 +3047,8 @@ using
 v = V.
 vacate
 vacating
+vaccinated
+vaccinating
 vaccine
 vaccines
 vacuum
@@ -3037,6 +3136,7 @@ warred
 warring
 wars
 was
+wasn't
 waste
 water
 watt
@@ -3044,6 +3144,11 @@ watts
 way
 ways
 we
+we'd
+we'd've
+we'll
+we're
+we've
 weak
 weapon
 weed
@@ -3051,12 +3156,24 @@ welcome
 well
 went
 were
+weren't
 west
 wew = woo
 what
+what'd
+what'll
+what're
+what's
+what've
 when
+when's
 where
+where'd
+where're
+where's
+where've
 which
+which's
 while
 whirl
 whirled
@@ -3065,9 +3182,18 @@ whirls
 whiskey
 white
 who
+who'd
+who'd've
+who'll
+who're
+who's
+who've
 whom
 whose
 why
+why'd
+why're
+why's
 wiggle
 wilco
 will
@@ -3087,6 +3213,7 @@ wolf
 wolves
 woman
 women
+won't
 wood
 woody = wood-ee
 word
@@ -3103,6 +3230,8 @@ worries
 worry
 worrying
 would
+would've
+wouldn't
 wouldnt = wouldn't
 wow
 wreath
@@ -3121,6 +3250,9 @@ xenomorph
 xenomorphs
 xenos
 y = Y.
+y'all
+y'all'd've
+y'all're
 yankee
 yankees
 yards
@@ -3131,6 +3263,10 @@ yes
 yeti
 yetis
 you
+you'd
+you'll
+you're
+you've
 your
 yourself
 yule

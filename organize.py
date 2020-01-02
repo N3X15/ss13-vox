@@ -48,4 +48,5 @@ def organizeFile(filename: str) -> None:
 
 organizeFile('wordlists/common.txt')
 organizeFile('wordlists/vg/chemistry.txt')
+organizeFile('wordlists/vg/mining.txt')
 organizeFile('wordlists/vg/misc.txt')
