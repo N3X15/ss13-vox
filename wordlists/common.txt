@@ -676,9 +676,9 @@ cons
 console
 consoles
 construct
-constructs
 constructed
 constructing
+constructs
 consume
 consumed
 consumes
@@ -1007,6 +1007,8 @@ eats
 echo
 ed
 effect
+egg
+eggs
 egress
 eight
 eighteen
@@ -3548,6 +3550,3 @@ zoomed
 zooming
 zooms
 zulu
-
-egg
-eggs
