@@ -8,8 +8,8 @@
 # Phonemes are taken from here (must be lowercase): http://www.speech.cs.cmu.edu/cgi-bin/cmudict
 # pau = short pause
 #
-angstrom: noun "ae ng" 's t r aa m'
 aft: adjective 'ae f t'
+angstrom: noun "ae ng" 's t r aa m'
 animes: noun 'ae' 'n ih' 'm ey s'
 array: noun 'ah r ey'
 asimov: adjective "ae" 'z ih' 'm aa v'
@@ -18,6 +18,7 @@ asshole: noun "ae s" 'hh ow l'
 biohazard: adjective "b ay" 'ow' 'hh ae' 'z er d'
 bitch: noun "b ih t" 'ch'
 brig: noun 'b r ih g'
+canonical: adjective 'k eh' "n aa" 'n ih k' 'ow l'
 centcomm: noun "s eh n t" 'k aa m'
 code: noun "k ow d d"
 codeine: noun "k ow" 'iy n'

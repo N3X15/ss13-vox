@@ -65,10 +65,6 @@ voxtest5 = HATE. LET ME TELL YOU HOW MUCH I'VE COME TO HATE YOU SINCE I BEGAN TO
 'cause
 'tis
 'twas
-i'd
-i'll
-i'm
-i've
 a = Ay
 aac = Ay Ay See
 abduction
@@ -129,6 +125,7 @@ advise
 advised
 advises
 advising
+aeiou
 aft
 after
 again
@@ -142,6 +139,7 @@ airalarms = Air Alarms
 airlock
 airlocks
 alarm
+alas
 alert
 alien
 aliens
@@ -204,6 +202,10 @@ arrest
 artifact
 artifacts
 as
+ascend
+ascended
+ascending
+ascends
 asimov
 ask
 ass
@@ -220,6 +222,8 @@ asteroid
 asteroids
 at
 ate
+atlas
+atlases
 atmosphere
 atmospheres
 atmospheric
@@ -237,6 +241,10 @@ autism
 autistic
 autistics
 automatic
+autumn
+autumns
+avatar
+avatars
 away
 awesome
 awful
@@ -264,6 +272,13 @@ ball
 balls
 banana
 bananas
+bang
+banged
+banger
+bangers
+bangin'
+banging
+bangs
 bar
 barracks
 bars
@@ -302,6 +317,17 @@ being
 beings
 bellmont
 below
+bend
+bender
+benders
+bending
+bends
+bent
+better
+betters
+betties
+betty
+betty's
 between
 beware
 beyond
@@ -324,10 +350,12 @@ bird
 birds
 bishop
 bishops
+bit
 bitch
 bitched
 bitches
 bitching
+bits
 black
 blast
 bleed
@@ -369,6 +397,8 @@ bolting
 bolts
 bomb
 bombed
+bomber
+bombers
 bombing
 bombs
 bone
@@ -389,6 +419,8 @@ bother
 bothered
 bothering
 bothers
+botter
+botters
 bottom
 bought
 bounce
@@ -403,6 +435,7 @@ boxing
 boy
 boyfriend
 boyfriends
+boys
 brain
 braindead
 braindeads
@@ -427,6 +460,8 @@ bros
 brother
 brothers
 build
+burger
+burgers
 bust
 # Because fuck your ears
 bustin = bust-in
@@ -447,12 +482,19 @@ c = C.
 cabin
 cabins
 cable
+caesar
 cage
 caged
 cages
 caging
+cake
+caked
+cakes
+caking
 call
 called
+calling
+calls
 came
 can
 can't
@@ -463,9 +505,17 @@ cancelling
 cancels
 cancer
 cancerous
+candidate
+candidates
 canister
 canned
 canning
+cannon
+cannonball
+cannonballs
+cannons
+canon
+canonical
 cans
 cap
 capitalist
@@ -513,7 +563,10 @@ champed
 # champing at the bit
 champing
 champion
+championed
 champions
+championship
+championships
 champs
 change
 changed
@@ -545,8 +598,12 @@ chemists
 chicken
 chickens
 chief
+chop
+chopped
 chopper
 choppers
+chopping
+chops
 christ
 christmas
 chuckle
@@ -639,6 +696,12 @@ contamination
 contraband
 control
 controls
+converge
+converged
+convergence
+convergences
+converges
+converging
 convict = kunvict
 convict_ = kahnvict
 convicted
@@ -718,6 +781,10 @@ cryogenics
 crystal
 crystalline
 crystals
+cube
+cubed
+cubes
+cubing
 cuff
 cuffed
 cuffing
@@ -758,6 +825,10 @@ dat
 data
 day
 days
+de-escalate
+de-escalated
+de-escalates
+de-escalating
 deactivated
 dead
 deadly
@@ -787,7 +858,11 @@ demon
 demons
 denied
 denies
+denominator
+denominators
 dense
+denser
+densest
 deny
 depart
 departed
@@ -801,6 +876,14 @@ deploy
 deployed
 deploying
 deploys
+derrick
+derricks
+descend
+descended
+descending
+descends
+descent
+descents
 desire
 desired
 desires
@@ -857,6 +940,8 @@ directives
 director
 directorate
 directors
+dirge
+dirges
 dirt
 disable
 disabled
@@ -899,6 +984,7 @@ dogs
 doing
 don't
 done
+donk
 doom
 doomed
 doomsday
@@ -912,8 +998,14 @@ dots
 down
 downs
 dracula
+drank
+dranks
 drone
 drones
+drop
+dropped
+dropping
+drops
 druid
 druids
 drunk
@@ -941,6 +1033,10 @@ eighteen
 eighty
 electric
 electromagnetic
+elevate
+elevated
+elevates
+elevating
 elevator
 eleven
 elf
@@ -956,6 +1052,9 @@ emergency
 emerging
 emitter
 emitters
+emperor
+emperor's
+emperors
 enable
 enabled
 enables
@@ -989,11 +1088,16 @@ epic
 epics
 epiphanies
 epiphany
+equinox
 equipment
 erred
 erring
 error
 errors
+escalate
+escalated
+escalates
+escalating
 escape
 escaped
 escapes
@@ -1044,6 +1148,9 @@ explosion
 explosions
 explosive
 explosives
+exponent
+exponential
+exponents
 exposure
 exterminate
 exterminated
@@ -1072,7 +1179,15 @@ faith
 faithless
 faiths
 false
+fame
+famed
+families
+family
 far
+farm
+farmer
+farming
+farms
 farther
 farthest
 fascist
@@ -1085,6 +1200,9 @@ fat
 father
 fats
 fauna
+fear
+feared
+fears
 feast
 feasted
 feasting
@@ -1097,6 +1215,7 @@ fifteen
 fifth
 fifty
 final
+finale
 find
 finds
 fine
@@ -1119,6 +1238,10 @@ fix
 fixed
 fixes
 fixing
+flag
+flagged
+flagging
+flags
 flood
 flooded
 flooding
@@ -1153,6 +1276,10 @@ forced
 forces
 forcing
 fore = four
+forget
+forgets
+forgot
+forgotten
 form
 formed
 forming
@@ -1163,6 +1290,12 @@ fourteen
 fourth
 fourty
 foxtrot
+frame
+framed
+frames
+framing
+frank
+frankly
 free
 freed
 freeman
@@ -1189,6 +1322,7 @@ fucked
 fucking
 fucks
 fuel
+full
 fun
 funk
 funky
@@ -1196,8 +1330,13 @@ funny
 furries
 furry
 g = G.
+game
+gamed
+games
+gaming
 gang
 gangs
+garlic
 gas
 gassed
 gasses
@@ -1233,6 +1372,7 @@ gibs
 gigawatt
 gigawatts
 gimme
+gin
 girlfriend
 girlfriends
 give
@@ -1311,6 +1451,10 @@ hall
 halls
 hallway
 hallways
+hammer
+hammered
+hammering
+hammers
 hand
 handcuff
 handcuffed
@@ -1358,6 +1502,9 @@ heater
 heaters
 heating
 heats
+heavier
+heaviest
+heavy
 helicopter
 helicopters
 helium
@@ -1440,6 +1587,10 @@ husks
 hydro
 hydroponics
 i = eye
+i'd
+i'll
+i'm
+i've
 iaa = internal affairs agent
 ian
 ice
@@ -1512,6 +1663,9 @@ invalids
 invasion
 is
 isn't
+israel
+israeli
+israelis
 it
 it'd
 it'll
@@ -1544,6 +1698,7 @@ journalists
 juliet
 just
 k = K.
+kaiser
 keep
 kelvin
 key
@@ -1640,13 +1795,20 @@ left
 leg
 legal
 legs
+let
 let's
+lets
+letting
 level
 levelled
 levelling
 levels
 lever
 levers
+levitate
+levitated
+levitates
+levitating
 librarian
 librarians
 library
@@ -1658,6 +1820,8 @@ life
 lifeform
 light
 lighted
+lighter
+lighters
 lighting
 lights
 like
@@ -1740,11 +1904,13 @@ lusty
 lying
 m = M.
 ma'am
+mac
 machine
 machines
 machining
 machinist
 machinists
+macs
 made
 magenta
 maggot
@@ -1763,6 +1929,8 @@ malfunctioning
 malfunctions
 mama
 man
+manchurian
+manchurians
 mandy
 manly
 many
@@ -1807,6 +1975,8 @@ megafauna
 megawatt
 megawatts
 men
+mental
+mentally
 mercies
 mercy
 mesa
@@ -1892,6 +2062,7 @@ mortal
 mortality
 mortals
 most
+mostly
 moth
 mother
 motherfucker = mother-fucker
@@ -1942,6 +2113,12 @@ narsie = nar-see
 ne'er
 near
 nearest
+neck
+# Britbongs
+necked
+# Britbongs
+necking
+necks
 necrotic
 necrotics
 need
@@ -1971,6 +2148,12 @@ no
 no2 = nitrous oxide
 noel
 nominal
+nominate
+nominated
+nominates
+nominating
+nominator
+nominators
 north
 not
 november
@@ -2041,6 +2224,10 @@ organic
 ornament
 ornaments
 oscar
+oscillate
+oscillated
+oscillates
+oscillating
 other
 others
 oughtn't
@@ -2056,6 +2243,10 @@ over
 overdose
 overdosed
 overdosing
+overflow
+overflowed
+overflowing
+overflows
 overload
 overloaded
 overloading
@@ -2127,6 +2318,10 @@ piss
 pissed
 pisses
 pissing
+piston
+pistoned
+pistoning
+pistons
 pizza
 pizzas
 place
@@ -2146,6 +2341,11 @@ platform
 platforms
 plausible
 play
+played
+player
+players
+playing
+plays
 please
 pleases
 pod
@@ -2162,6 +2362,8 @@ poisons
 poly = polly
 pomfcoin = pomf-coin
 pomfcoins = pomf-coins
+poor
+poors
 port
 portal
 portals
@@ -2179,6 +2381,10 @@ posting
 posts
 potato
 potatoes
+pour
+poured
+pouring
+pours
 power
 powercreep
 powered
@@ -2191,6 +2397,14 @@ practices
 practicing
 praetorian
 praetorians
+premier
+premiere
+premiered
+premieres
+premiering
+premiers
+premiership
+premierships
 presence
 present
 presented
@@ -2203,6 +2417,10 @@ priest
 priests
 primaries
 primary
+prime
+primed
+primes
+priming
 print
 printed
 printing
@@ -2229,6 +2447,10 @@ propulsion
 prosecute
 prosecuting
 protective
+pulse
+pulsed
+pulses
+pulsing
 punch
 punched
 punches
@@ -2277,6 +2499,7 @@ quick
 quicker
 quickest
 quickly
+quiet
 quit
 r = R.
 rabbi
@@ -2312,6 +2535,10 @@ red
 regret
 regrets
 regretting
+regurgitate
+regurgitated
+regurgitates
+regurgitating
 reindeer
 relay
 released
@@ -2393,6 +2620,8 @@ roger
 rogue
 roid
 roids
+role
+roles
 romeo
 room
 round
@@ -2400,6 +2629,7 @@ royal
 royally
 royalty
 rudolph
+rummy
 run
 rune
 runes
@@ -2455,6 +2685,14 @@ science
 sciences
 scientist
 scientists
+scoop
+scooped
+scooping
+scoops
+scratch
+scratched
+scratches
+scratching
 scream
 screamed
 screaming
@@ -2467,6 +2705,7 @@ scrubbers
 scrubbing
 scrubs
 scrungularity
+scum
 search
 searched
 searches
@@ -2532,6 +2771,12 @@ shift
 shifted
 shifting
 shifts
+shin
+shine
+shined
+shines
+shining
+shins
 shipment
 shirt
 shirts
@@ -2619,6 +2864,16 @@ smoke
 smoked
 smokes
 smoking
+snipe
+sniped
+sniper
+snipers
+snipes
+sniping
+snoop
+snooped
+snooping
+snoops
 snow
 snowing
 snowmobile
@@ -2631,6 +2886,7 @@ solar
 solars
 soldier
 soldiers
+solstice
 some
 somebody's
 someone
@@ -2663,18 +2919,31 @@ spiderlings
 spiders
 splendid
 spooky
+# Yes, this is a word
+sprang
 spread
 spreading
 spreads
+spring
+springs
+# Yes, this is a word
+sprung
 squad
 squads
 square
+squared
+squares
+squaring
 ss13 = Space Station Thirteen
 stack
 stacked
 stacking
 stacks
 staff
+stage
+staged
+stages
+staging
 stairway
 stairways
 stand
@@ -2706,6 +2975,10 @@ sticks
 still
 stole
 stolen
+stone
+stoned
+stones
+stoning
 stood
 stop
 stopped
@@ -2716,6 +2989,16 @@ storing
 storm
 stormed
 storming
+straight
+straighten
+straightened
+straightening
+straightens
+strange
+strangle
+strangled
+strangles
+strangling
 strong
 stronger
 stuck
@@ -2735,6 +3018,8 @@ suffer
 suffering
 suit
 suits
+summer
+summers
 sun
 super
 superconducting
@@ -2773,6 +3058,7 @@ swirl
 swirled
 swirling
 swirls
+swirly
 switch
 switched
 switches
@@ -2809,6 +3095,8 @@ target
 targeted
 targeting
 targets
+taxi
+taxis
 team
 teamed
 teams
@@ -2925,12 +3213,17 @@ tired
 tiresome
 to = two
 to've
+tobacco
+today
+today's
 toil
 toiled
 toilet
 toilets
 toiling
 toils
+tomorrow
+tomorrow's
 too
 top
 topside
@@ -3002,8 +3295,16 @@ tux
 tuxedo
 tuxedoes
 tuxes
+tweed
+tweest
 twelve
 twenty
+twist
+twisted
+twister
+twisters
+twisting
+twists
 two
 typo
 typoes
@@ -3017,6 +3318,10 @@ unauthorized
 uncle
 unclothed
 under
+underflow
+underflowed
+underflowing
+underflows
 unholy
 uniform
 uniformed
@@ -3156,6 +3461,10 @@ were
 weren't
 west
 wew = woo
+whale
+whaled
+whales
+whaling
 what
 what'd
 what'll
@@ -3196,6 +3505,8 @@ wilco
 will
 wing
 wings
+winter
+winters
 winterveil = Winter Veil
 wire
 wired
@@ -3257,8 +3568,12 @@ year
 years
 yellow
 yes
+yesterday
+yesterday's
 yeti
 yetis
+yorrick
+yorrick's
 you
 you'd
 you'll
