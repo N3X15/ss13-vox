@@ -372,8 +372,6 @@ blitzes
 blitzing
 blizzard
 blizzards
-blob
-blobs
 blocked
 blood
 bloodied
@@ -534,11 +532,6 @@ cashing
 casino
 casinos
 cat
-catbeast = cat-beast
-# yes, also a verb now
-catbeasted = cat-beasted
-catbeasting = cat-beasting
-catbeasts = cat-beasts
 cats
 cause
 ce = Chief Engineer
@@ -570,8 +563,6 @@ championships
 champs
 change
 changed
-changeling
-changelings
 changer
 changes
 changing
@@ -685,8 +676,9 @@ cons
 console
 consoles
 construct
-constructing
 constructs
+constructed
+constructing
 consume
 consumed
 consumes
@@ -789,12 +781,6 @@ cuff
 cuffed
 cuffing
 cuffs
-cult
-cultconstruct = kahnstruct
-cultconstructs = kahnstructs
-cultist
-cultists
-cults
 cunt
 cunts
 cup
@@ -804,8 +790,6 @@ cured
 cures
 curing
 cyan
-cyberhorror = cyber horror
-cyberhorrors = cyber horrors
 # Fixes SY BAHRG(S)
 cyborg = seye-borg
 cyborgs = seye-borgs
@@ -1000,8 +984,6 @@ downs
 dracula
 drank
 dranks
-drone
-drones
 drop
 dropped
 dropping
@@ -1025,8 +1007,6 @@ eats
 echo
 ed
 effect
-egg
-eggs
 egress
 eight
 eighteen
@@ -1578,8 +1558,6 @@ humans
 humongous
 hundred
 hunger
-hunter
-hunters
 husk
 husked
 husking
@@ -1753,8 +1731,6 @@ larp
 larped
 larping
 larps
-larva
-larvae
 laser
 lasers
 lasposadas = Las Posadas
@@ -2140,8 +2116,6 @@ night
 nine
 nineteen
 ninety
-ninja
-ninjas
 nitrogen
 nitrous
 no
@@ -2166,8 +2140,6 @@ nudes
 nudity
 nuke
 nuked
-nukeop = Nuclear Operative
-nukeops = Nuclear Operatives
 nukes
 nuking
 number
@@ -2488,8 +2460,6 @@ quarter
 quartermaster
 quarters
 quebec
-queen
-queens
 question
 questionable
 questioned
@@ -2509,12 +2479,6 @@ radioactive
 radiological
 rads
 rage
-raid
-raided
-raider
-raiders
-raiding
-raids
 ramadan
 ran
 rapid
@@ -2593,9 +2557,6 @@ retiree
 retirees
 retires
 retiring
-revolution
-revolutionaries
-revolutionary
 rid
 riddance
 riddle
@@ -2738,8 +2699,6 @@ sentence
 sentenced
 sentences
 sentencing
-sentinel
-sentinels
 sergeant
 server
 servers
@@ -3247,8 +3206,6 @@ train
 trained
 training
 trains
-traitor
-traitors
 transport
 transportation
 transported
@@ -3357,8 +3314,6 @@ vacuum
 valid
 valids
 vamos
-vampire
-vampires
 vandal
 vandalism
 vandalized
@@ -3514,9 +3469,6 @@ wires
 wiring
 with
 without
-wizard
-wizarding
-wizards
 wolf
 wolves
 woman
@@ -3554,8 +3506,6 @@ xenoarcheologist
 xenoarcheologists
 xenoarcheology
 xenobiology
-xenomorph
-xenomorphs
 xenos
 y = Y.
 y'all
@@ -3598,3 +3548,6 @@ zoomed
 zooming
 zooms
 zulu
+
+egg
+eggs
