@@ -1,83 +1,35 @@
 # Traitor types
 
-#################
-# TRAITOR
-#################
-traitor
-traitor's
-traitorous
-traitors
+###############
+## BLOB
+###############
 
-#################
-# CHANGELING
-#################
-changeling
-changelings
+blob
+blobbed
+blobbing
+blobs
 
-#################
-# NUKE OPS
-#################
-nukeop = Nuclear Operative
-nukeops = Nuclear Operatives
+###############
+## CATBEAST
+###############
 
-#################
-# GRINCH
-#################
-grinch
-grinch's
-grinched
-grinches
-grinching
-
-#################
-# KRAMPUS
-#################
-krampus
-krampus's
-krampuses
-
-#################
-# XENOMORPH
-#################
-drone
-drones
-hunter
-hunters
-larva
-larvae
-queen
-queens
-sentinel
-sentinels
-xenomorph
-xenomorphs
-
-#################
-# RAMBLER
-#################
-rambler
-ramblers
-
-#################
-# CATBEAST
-#################
 catbeast = cat-beast
 # yes, also a verb now
 catbeasted = cat-beasted
 catbeasting = cat-beasting
 catbeasts = cat-beasts
 
-#################
-# BLOB
-#################
-blob
-blobs
-blobbed
-blobbing
+###############
+## CHANGELING
+###############
 
-#################
-# CULT
-#################
+changeling
+changelings
+
+###############
+## CULT
+###############
+
 _construct = kahnstruct
 _convert = kahnvert
 _converts = kahnverts
@@ -96,28 +48,86 @@ deconverted
 deconverting
 deconverts
 
-#################
-# CYBERHORROR
-#################
+###############
+## CYBERHORROR
+###############
+
 cyberhorror = cyber horror
 cyberhorrors = cyber horrors
 
-#################
-# REVS
-#################
+###############
+## DEATHSQUAD
+###############
+
+deathsquad = death-squad
+deathsquads = death-squads
+
+###############
+## ERT
+###############
+
+ert = emergency response team
+
+###############
+## GRINCH
+###############
+
+grinch
+grinch's
+grinched
+grinches
+grinching
+
+###############
+## KRAMPUS
+###############
+
+krampus
+krampus's
+krampuses
+
+###############
+## NINJA
+###############
+
+ninja
+ninjas
+
+###############
+## NUKE OPS
+###############
+
+nukeop = Nuclear Operative
+nukeops = Nuclear Operatives
+
+###############
+## RAMBLER
+###############
+
+rambler
+ramblers
+
+###############
+## REVS
+###############
+
 revolution
 revolutionaries
 revolutionary
 
-#################
-# NINJA
-#################
-ninja
-ninjas
+###############
+## TRAITOR
+###############
 
-#################
-# VAMP
-#################
+traitor
+traitor's
+traitorous
+traitors
+
+###############
+## VAMP
+###############
+
 thrall
 thralled
 thralling
@@ -125,19 +135,21 @@ thralls
 vampire
 vampires
 
-#################
-# VOX RAIDER
-#################
+###############
+## VOX RAIDER
+###############
+
+raid
+raided
 raider
 raiders
 raiding
 raids
-raided
-raid
 
-#################
-# WIZARD
-#################
+###############
+## WIZARD
+###############
+
 apprentice
 apprentices
 broomstick
@@ -157,13 +169,19 @@ wizard
 wizarding
 wizards
 
-#################
-# DEATHSQUAD
-#################
-deathsquad = death-squad
-deathsquads = death-squads
+###############
+## XENOMORPH
+###############
 
-#################
-# TRAITOR
-#################
-ert = emergency response team
+drone
+drones
+hunter
+hunters
+larva
+larvae
+queen
+queens
+sentinel
+sentinels
+xenomorph
+xenomorphs

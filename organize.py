@@ -4,11 +4,11 @@ from buildtools import log
 from ss13vox.phrase import Phrase, EPhraseFlags, ParsePhraseListFrom
 from ss13vox.pronunciation import Pronunciation, DumpLexiconScript, ParseLexiconText
 
-def organizeFile(filename: str) -> None:
+def organizeFile(filename: str, sort_sections: bool = False) -> None:
     phrases: Dict[str, List[Phrase]] = collections.OrderedDict({
-        EPhraseFlags.OLD_VOX.name: [],
+        #EPhraseFlags.OLD_VOX.name: [],
         #EPhraseFlags.NOT_VOX: [],
-        EPhraseFlags.SFX.name:     [],
+        #EPhraseFlags.SFX.name:     [],
     })
     phrasesByID = {}
     for p in ParsePhraseListFrom(filename):
@@ -27,11 +27,17 @@ def organizeFile(filename: str) -> None:
             phrases[assignTo] = []
         phrases[assignTo] += [p]
 
-    #phrases.sort(key=lambda x: x.id)
+    if sort_sections:
+        newPhOD = collections.OrderedDict()
+        for k in sorted(phrases.keys()):
+            newPhOD[k]=phrases[k]
+        phrases=newPhOD
     with open(filename+'.sorted', 'w') as w:
+        divider_len = max([len(x) for x in phrases.keys()])+4
+        divider = '#'*divider_len
         for section, sectionPhrases in phrases.items():
             if section != '':
-                w.write(f'\n############\n## {section}\n############\n\n')
+                w.write(f'\n{divider}\n## {section}\n{divider}\n\n')
             for phrase in sorted(sectionPhrases, key=lambda x: x.id):
                 for comm in phrase.comments_before:
                     comm = comm.rstrip()
@@ -50,3 +56,4 @@ organizeFile('wordlists/common.txt')
 organizeFile('wordlists/vg/chemistry.txt')
 organizeFile('wordlists/vg/mining.txt')
 organizeFile('wordlists/vg/misc.txt')
+organizeFile('wordlists/vg/antags.txt', sort_sections=True)
