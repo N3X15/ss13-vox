@@ -1,0 +1,114 @@
+# Traitor types
+traitor
+traitor's
+traitorous
+traitors
+
+changeling
+changelings
+
+nukeop = Nuclear Operative
+nukeops = Nuclear Operatives
+
+grinch
+grinch's
+grinched
+grinches
+grinching
+
+krampus
+krampus's
+krampuses
+
+drone
+drones
+hunter
+hunters
+larva
+larvae
+queen
+queens
+sentinel
+sentinels
+xenomorph
+xenomorphs
+
+rambler
+ramblers
+
+catbeast = cat-beast
+# yes, also a verb now
+catbeasted = cat-beasted
+catbeasting = cat-beasting
+catbeasts = cat-beasts
+
+blob
+blobs
+blobbed
+blobbing
+
+_construct = kahnstruct
+_convert = kahnvert
+_converts = kahnverts
+convert
+converted
+converting
+converts
+cult
+cultconstruct = kahnstruct
+cultconstructs = kahnstructs
+cultist
+cultists
+cults
+deconvert
+deconverted
+deconverting
+deconverts
+
+cyberhorror = cyber horror
+cyberhorrors = cyber horrors
+
+revolution
+revolutionaries
+revolutionary
+
+ninja
+ninjas
+
+thrall
+thralled
+thralling
+thralls
+vampire
+vampires
+
+raider
+raiders
+raiding
+raids
+raided
+raid
+
+apprentice
+apprentices
+broomstick
+broomsticks
+hogwarts
+scroll
+scrolls
+spellbook
+spellbooks
+thunderbird
+thunderbirds
+warlock
+warlocks
+witch
+witches
+wizard
+wizarding
+wizards
+
+deathsquad
+deathsquads
+
+ert = emergency response team
