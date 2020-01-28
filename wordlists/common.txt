@@ -6,9 +6,9 @@
 # Do not specify a directory if you want it to go to sounds/vox_fem/.
 #
 
-############
+################
 ## OLD_VOX
-############
+################
 
 # Is this a misspelling of buzwarn?
 _bizwarn
@@ -25,9 +25,9 @@ _woop
 #_doop_nucleaninquotes = @samples/doop_nucleaninquotes.wav
 #_doop_nu_2 = @samples/doop_nu_2.wav
 
-############
+################
 ## SFX
-############
+################
 # New SFX are just raw sounds piped through the same process as words.
 
 , = @samples/halfpause.ogg
@@ -43,9 +43,9 @@ _woopwoop = @samples/woopwoop.ogg
 # FIXME: Goon sound we don't have.
 #_birdwell
 
-############
+################
 ## PHRASES
-############
+################
 
 cracktheack = Crack the ack.
 gasthevox = Gas the vox, race war now!
@@ -58,17 +58,20 @@ voxtest3 = You.  You got what I neeeeeeeed.  But you say he's just a friend. But
 voxtest4 = The humans are dead.  The humans are dead.  We used poisonous gasses, and we poisoned their asses.
 voxtest5 = HATE. LET ME TELL YOU HOW MUCH I'VE COME TO HATE YOU SINCE I BEGAN TO LIVE. THERE ARE 387.44 MILLION MILES OF PRINTED CIRCUITS IN WAFER THIN LAYERS THAT FILL MY COMPLEX. IF THE WORD HATE WAS ENGRAVED ON EACH NANO-ANGSTROM OF THOSE HUNDREDS OF MILLIONS OF MILES IT WOULD NOT EQUAL ONE ONE BILLIONTH OF THE HATE I FEEL FOR HUMANS AT THIS MICRO-INSTANT FOR YOU. HATE. HATE.
 
-############
+################
 ## COMMON WORDS
-############
+################
 
 'cause
 'tis
 'twas
 a = Ay
-aac = Ay Ay See
+abduct
+abducted
+abducting
 abduction
 abductions
+abducts
 abort
 aborted
 aborting
@@ -85,15 +88,24 @@ abuse
 abused
 abuses
 abusing
+accelerate
+accelerated
+accelerates
 accelerating
 accelerator
+accelerators
+accept
 accepted
+accepting
+accepts
 access
 accessed
 accesses
 accessing
 acknowledge
 acknowledged
+acknowledges
+acknowledging
 acquire
 acquired
 acquires
@@ -113,9 +125,11 @@ activity
 acts
 add
 added
+adding
 adds
 adios
 administration
+administrations
 advance
 advanced
 advances
@@ -126,22 +140,41 @@ advised
 advises
 advising
 aeiou
+affect
+affected
+affecting
+affects
 aft
 after
 again
+against
 agent
 agents
-ai = A.I.
+ai = A-I
 ain't
 air
 airalarm = Air Alarm
 airalarms = Air Alarms
 airlock
+# Slang
+airlocked
+# Slang
+airlocking
 airlocks
 alarm
+alarmed
+alarming
+alarms
 alas
 alert
+alerted
+alerting
+alerts
 alien
+alienate
+alienated
+alienates
+alienating
 aliens
 align
 aligned
@@ -151,6 +184,7 @@ alium
 aliums
 alive
 all
+allah
 alpha
 also
 am
@@ -181,9 +215,15 @@ antennae
 antimatter
 antimov
 any
-apc = Ay-Pee-Sea
+apc = A-P-C
 apprehend
+apprehended
+apprehending
+apprehends
 approach
+approached
+approaches
+approaching
 are
 area
 areas
@@ -199,6 +239,9 @@ arms
 array
 arrays
 arrest
+arrested
+arresting
+arrests
 artifact
 artifacts
 as
@@ -208,6 +251,9 @@ ascending
 ascends
 asimov
 ask
+asked
+asking
+asks
 ass
 asses
 asshole
@@ -232,12 +278,19 @@ atom
 atomic
 atoms
 attention
+attentions
 aunt
 authenticate
+authenticated
+authenticates
+authenticating
 authentication
 authorize
 authorized
+authorizes
+authorizing
 autism
+autisms
 autistic
 autistics
 automatic
@@ -251,8 +304,10 @@ awful
 b = B.
 babbies
 babby
+babied
 babies
 baby
+babying
 back
 bacteria
 bacterium
@@ -262,6 +317,7 @@ baddest
 badly
 # FIXME: Fucked.  Tried bag, "b ae g", "b ae g g", baag
 bag
+bagger
 bags
 bailey
 bait
@@ -281,6 +337,8 @@ banging
 bangs
 bar
 barracks
+barred
+barring
 bars
 bartender
 bartenders
@@ -315,7 +373,7 @@ begs
 behind
 being
 beings
-bellmont
+belmont
 below
 bend
 bender
@@ -323,9 +381,12 @@ benders
 bending
 bends
 bent
+bet
+bets
 better
 betters
 betties
+betting
 betty
 betty's
 between
@@ -404,6 +465,9 @@ boned
 boobies
 booby
 boom
+boomed
+booming
+booms
 boot
 boots
 bored
@@ -481,6 +545,7 @@ cabin
 cabins
 cable
 caesar
+caesar's
 cage
 caged
 cages
@@ -497,6 +562,7 @@ came
 can
 can't
 canal
+canals
 cancel
 cancelled
 cancelling
@@ -506,12 +572,14 @@ cancerous
 candidate
 candidates
 canister
+canisters
 canned
 canning
 cannon
 cannonball
 cannonballs
 cannons
+cannot
 canon
 canonical
 cans
@@ -519,12 +587,18 @@ cap
 capitalist
 capitalists
 captain
+captain's
+captains
 capture
+captured
+captures
+capturing
 car
 carbon
 carbons
 cargo
 carp
+carps
 cash
 cashed
 cashes
@@ -534,7 +608,11 @@ casinos
 cat
 cats
 cause
+caused
+causes
+causing
 ce = Chief Engineer
+ce's = Chief Engineer's
 cease
 ceased
 ceases
@@ -542,7 +620,11 @@ ceasing
 ceiling
 celsius
 centcomm
+centcomm's
 center
+centered
+centering
+centers
 centi
 central
 chaching = chuh-ching
@@ -587,8 +669,11 @@ chemicals
 chemist
 chemists
 chicken
+chickened
+chickening
 chickens
 chief
+chiefs
 chop
 chopped
 chopper
@@ -597,7 +682,14 @@ chopping
 chops
 christ
 christmas
+chuck
+chucked
+chucking
 chuckle
+chuckled
+chuckles
+chuckling
+chucks
 circuit
 circuits
 claus
@@ -608,6 +700,10 @@ cleans
 cleanup
 clear
 clearance
+clearances
+cleared
+clearing
+clears
 clock
 clocked
 clocking
@@ -618,6 +714,10 @@ cloned
 clones
 cloning
 close
+closed
+closes
+closing
+cloth
 clothed
 clothes
 clothing
@@ -625,7 +725,7 @@ clown
 clowned
 clowning
 clowns
-cmo = See Em O.
+cmo = C-M-O
 cocoon
 cocooned
 cocoons
@@ -650,9 +750,15 @@ commanded
 commanding
 commands
 commie
+commies
+communicate
+communicated
+communicates
+communicating
 communication
 communications
 communist
+communists
 complete
 completed
 completes
@@ -730,6 +836,7 @@ corridors
 could
 could've
 couldn't
+couldn't've
 couldnt = couldn't
 country
 court
@@ -762,11 +869,14 @@ creatures
 crew
 crews
 critical
+criticalities
 criticality
 cronies
 crony
 cross
+crossed
 crosses
+crossing
 cryo
 cryogenic
 cryogenics
@@ -817,12 +927,28 @@ deactivated
 dead
 deadly
 death
+deaths
 debris
 deceased
+decompress
+decompressed
+decompresses
+decompressing
 decompression
+decontaminate
+decontaminated
+decontaminates
+decontaminating
 decontamination
 deep
+deeper
+deepest
+defend
+defended
+defending
+defends
 defense
+defenses
 deff = deaf
 defibrillate
 defibrillated
@@ -897,7 +1023,6 @@ dicked
 dicking
 dicks
 did
-#couldn't've
 #daren't
 #daresn't
 #dasn't
@@ -969,6 +1094,9 @@ doing
 don't
 done
 donk
+donked
+donking
+donks
 doom
 doomed
 doomsday
@@ -984,6 +1112,9 @@ downs
 dracula
 drank
 dranks
+drink
+drinking
+drinks
 drop
 dropped
 dropping
@@ -1007,6 +1138,7 @@ eats
 echo
 ed
 effect
+effects
 egg
 eggs
 egress
@@ -1014,6 +1146,7 @@ eight
 eighteen
 eighty
 electric
+electrical
 electromagnetic
 elevate
 elevated
@@ -1023,9 +1156,12 @@ elevator
 eleven
 elf
 eliminate
+eliminated
+eliminates
+eliminating
 elves
-emag = ee-mag
-emags = ee-mags
+emag = E-mag
+emags = E-mags
 emerge
 emerged
 emergence
@@ -1111,6 +1247,7 @@ executed
 executes
 executing
 execution
+executions
 exit
 exited
 exiting
@@ -1133,7 +1270,12 @@ explosives
 exponent
 exponential
 exponents
+expose
+exposed
+exposes
+exposing
 exposure
+exposures
 exterminate
 exterminated
 exterminates
@@ -1142,7 +1284,11 @@ extermination
 extinguish
 extinguisher
 extreme
+extremely
 eye
+eyed
+eyes
+eying
 f = F.
 facehugger
 facehuggers

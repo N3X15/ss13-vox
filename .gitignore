@@ -22,3 +22,5 @@ node_modules/
 *.sorted
 /.venv/
 /cachesfx.*
+
+yarn-error.log
