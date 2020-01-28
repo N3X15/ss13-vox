@@ -1612,7 +1612,13 @@ gun
 gunman
 gunmen
 guns
+gut
 guthrie
+guts
+gutted
+gutter
+gutters
+gutting
 gym
 h = H.
 hack
@@ -1853,6 +1859,8 @@ jack
 jacked
 jacking
 jacks
+jail
+jails
 jane
 janitor
 janitorial
@@ -2487,6 +2495,8 @@ perfect
 perfecting
 perfection
 perimeter
+permajail
+permajail'd
 permitted
 personal
 personnel
@@ -2628,6 +2638,7 @@ priority
 prison
 prisoner
 prisoners
+prisons
 private
 privates
 proceed
@@ -2640,7 +2651,11 @@ pronto
 proper
 propulsion
 prosecute
+prosecuted
+prosecutes
 prosecuting
+prosecution
+prosecutions
 protective
 pulse
 pulsed
@@ -2853,6 +2868,11 @@ salted
 salting
 salts
 same
+sanctimonious
+sanction
+sanctioned
+sanctioning
+sanctions
 sandal
 sandals
 sanguinala
@@ -3075,6 +3095,7 @@ snowstorm
 snowstorms
 so
 so're
+sol
 solar
 solars
 soldier
@@ -3143,6 +3164,7 @@ staging
 stairway
 stairways
 stand
+standard
 standing
 stands
 starboard

@@ -1,2 +1,15 @@
+###########
+## Machinery
+###########
+
 ame = A-M-E
 aac = A-A-C
+rpd = R-P-D
+
+##########
+## Races
+##########
+insectoid
+insectoids
+roachman
+roachmen
