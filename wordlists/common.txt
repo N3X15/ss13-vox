@@ -195,6 +195,8 @@ amigo
 amigos
 ammunition
 an
+anarchist
+anarchy
 and
 android
 androids
@@ -285,6 +287,9 @@ authenticated
 authenticates
 authenticating
 authentication
+authoritarian
+authoritarianism
+authoritarians
 authorize
 authorized
 authorizes
@@ -293,6 +298,8 @@ autism
 autisms
 autistic
 autistics
+autoarch
+autoarchy
 automatic
 autumn
 autumns
@@ -541,6 +548,8 @@ bypassed
 bypasses
 bypassing
 c = C.
+cabal
+cabals
 cabin
 cabins
 cable
@@ -739,6 +748,13 @@ colder
 coldest
 collider
 colliders
+colonial
+colonies
+colonize
+colonized
+colonizes
+colonizing
+colony
 combat
 combative
 comdom
@@ -772,6 +788,12 @@ computers
 con
 condition
 conditions
+confederacies
+confederacy
+confederal
+confederalist
+confederalists
+confederally
 conflict
 conflicts
 congratulations
@@ -964,6 +986,8 @@ delta
 delusion
 delusional
 delusions
+democracies
+democracy
 demon
 demons
 denied
@@ -1000,6 +1024,8 @@ desires
 desiring
 desk
 desks
+despot
+despots
 destroy
 destroyed
 destroying
@@ -1022,6 +1048,14 @@ dick
 dicked
 dicking
 dicks
+dictate
+dictated
+dictates
+dictating
+dictator
+dictators
+dictatorship
+dictatorships
 did
 #daren't
 #daresn't
@@ -1132,6 +1166,7 @@ e'er
 each
 earth
 east
+eastern
 eat
 eating
 eats
@@ -1173,6 +1208,8 @@ emitters
 emperor
 emperor's
 emperors
+empire
+empires
 enable
 enabled
 enables
@@ -1335,6 +1372,12 @@ feast
 feasted
 feasting
 feasts
+federal
+federalist
+federalists
+federally
+federation
+federations
 feet
 feminine
 field
@@ -1342,6 +1385,8 @@ fields
 fifteen
 fifth
 fifty
+figurehead
+figureheads
 final
 finale
 find
@@ -1534,7 +1579,9 @@ goosing
 gordon
 got
 gotta
+governance
 government
+governments
 grand
 grant
 granted
@@ -1558,6 +1605,8 @@ guard
 guarded
 guarding
 guards
+guerilla
+guerillas
 gulf
 gun
 gunman
@@ -1649,6 +1698,8 @@ hides
 hiding
 high
 highest
+highness
+highnesses
 him
 himself
 his
@@ -1822,6 +1873,8 @@ journalism
 journalist
 journalists
 juliet
+junta
+juntas
 just
 k = K.
 kaiser
@@ -1901,6 +1954,8 @@ lead_ = leed
 leader
 leading
 leads
+league
+leagues
 leak
 leaked
 leaking
@@ -1938,6 +1993,7 @@ librarians
 library
 lie
 lied
+liege
 lies
 lieutenant
 life
@@ -2020,6 +2076,10 @@ low
 lower
 lowers
 lowest
+loyal
+loyaler
+loyalest
+loyalist
 lsd = L S D
 # Saint Lucia's Day
 lucia
@@ -2043,6 +2103,8 @@ magic
 magnetic
 main
 maintenance
+majesties
+majesty
 make
 makes
 making
@@ -2164,6 +2226,11 @@ modifies
 modifying
 mommi = mommy
 mommy
+monarch
+monarchist
+monarchists
+monarchs
+monarchy
 money
 monkey
 monkeyed
@@ -2277,6 +2344,9 @@ nominating
 nominator
 nominators
 north
+northeastern
+northern
+northwestern
 not
 november
 now
@@ -2316,6 +2386,7 @@ offices
 ok = O.K.
 ol'
 old
+oligarchy
 olympic
 olympics
 on
@@ -2397,10 +2468,14 @@ part
 parted
 parties
 parting
+partisan
+partisans
 parts
 party
 pathetic
 pda = P-D-A
+peace
+peaceful
 penis
 penises
 pennies
@@ -2631,6 +2706,8 @@ ramadan
 ran
 rapid
 rapidly
+# Common across codebases.
+rcd = R-C-D
 rd = Research Director
 reach
 reached
@@ -2639,11 +2716,18 @@ read1 = reed
 read2 = red
 ready
 really
+rebel = reh-bull
+rebel_ = reh bell
+rebellion
+rebellions
+rebels
 recommend
 recommends
 record = reckerd
 record_ = reekord
 red
+regime
+regimes
 regret
 regrets
 regretting
@@ -2667,6 +2751,8 @@ repair
 repent
 report
 reports
+republic
+republics
 request
 requested
 requesting
@@ -3009,6 +3095,9 @@ sorry
 sound
 sounds
 south
+southeastern
+southern
+southwestern
 soviet
 soviets
 space
@@ -3058,6 +3147,7 @@ standing
 stands
 starboard
 state
+stated
 states
 stating
 station
@@ -3261,6 +3351,10 @@ theft
 their
 them
 then
+theocracies
+theocracy
+theocratic
+theocratics
 there
 there'd
 there'll
@@ -3334,6 +3428,9 @@ tomorrow's
 too
 top
 topside
+totalitarian
+totalitarianism
+totalitarians
 touch
 touched
 touches
@@ -3413,6 +3510,10 @@ twists
 two
 typo
 typoes
+tyrannies
+tyranny
+tyrant
+tyrants
 tzeench
 u = U.
 ugh = ug
@@ -3540,9 +3641,14 @@ warns
 warred
 warring
 wars
+warzone
+warzones
 was
 wasn't
 waste
+wasteland
+wastelander
+wastelands
 water
 watt
 watts
@@ -3563,6 +3669,7 @@ went
 were
 weren't
 west
+western
 wew = woo
 whale
 whaled
@@ -3604,13 +3711,16 @@ why'd
 why're
 why's
 wiggle
+wiggled
+wiggles
+wiggling
 wilco
 will
 wing
 wings
 winter
 winters
-winterveil = Winter Veil
+winterveil = Winter-veil
 wire
 wired
 wires
@@ -3623,7 +3733,9 @@ woman
 women
 won't
 wood
-woody = wood-ee
+wooded
+woods
+woody
 word
 worded
 wording
@@ -3640,7 +3752,6 @@ worrying
 would
 would've
 wouldn't
-wouldnt = wouldn't
 wow
 wreath
 wreaths
