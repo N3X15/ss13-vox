@@ -1,7 +1,9 @@
-########################
-## AI REPLACEMENT LINES
-########################
+# AI REPLACEMENT LINES
+# Each of these lines is used by automated systems, rather than the actual VOX system.
 
+###################
+## LOGIN ANNOUNCEMENTS
+###################
 sound/AI/vox_login = Hello! The automatic diagnostic and announcement system welcomes you to the station.  The time is: Twelve. Noon.
 sound/AI/vox_reminder1 = Reminder: Suit sensors are your express ticket to the magic heal tubes. Turn them on.
 sound/AI/vox_reminder2 = Have a secure day.
@@ -20,6 +22,9 @@ sound/AI/vox_reminder14 = Reminder: Purging Ay Eyes and Seye-borgs is a very bad
 sound/AI/vox_reminder15 = Reminder: Do not touch strange alien artefacts, use the clown instead
 sound/AI/vox_reminder16 = Reminder: Do not touch strange clowns, use the alien artefact instead
 
+##################
+## Alerts
+##################
 sound/AI/aliens = Unidentified lifesigns detected.  Secure any exterior access, including ducting and ventilation.
 sound/AI/animes = Wow!  This is just like one of those japanese animes.
 sound/AI/command_report = Attention: New command report created.
@@ -33,20 +38,31 @@ sound/AI/meteorround = A meteor storm has been detected in proximity of the stat
 # pls add with tornado siren tyvm
 sound/AI/singuloose = Danger! Uncontained gravitational singularity detected.  Crew should evacuate immediately, and be aware of gravitational shifts and E M peas.
 
+##################
+## Alerts: Outbreak
+##################
 sound/AI/outbreak_before = Confirmed outbreak of level
 sound/AI/outbreak_after  = biohazard aboard the station.  All personnel must contain the outbreak.
+sound/AI/blob_confirmed = Alert!  Biohazard outbreak alert status up graded to level 9.  Under Directive 7 10, the station is now locked down until further notice.
 
+##################
+## Alerts: Supermatter
+##################
 sound/AI/supermatter_integrity_before = Alert.  Super-matter crystal hyperstructure instability currently at
 sound/AI/supermatter_integrity_after = percent.
 sound/AI/supermatter_danger = Situation critical. Recommend immediate intervention.
 sound/AI/supermatter_delam = De-lamination imminent.  All personnel: Evacuate area immediately.
 
-sound/AI/blob_confirmed = Alert!  Biohazard outbreak alert status up graded to level 9.  Under Directive 7 10, the station is now locked down until further notice.
 
+##################
+## Alerts: Trading port
+##################
 sound/AI/trading_port_closed = The trading port has been locked down. Third party trader docking clearances rescinded.
 sound/AI/trading_port_open = The trading port lockdown has been lifted.
 
-# Requested
+##################
+## Alerts: Bluespace
+##################
 sound/AI/connection_lost = Critical alert: Blue-space connection to Central Command has been lost. The emergency shuttle is be unable to be called or recalled until further notice.
 sound/AI/connection_made = Link with Central Command has been re-established successfully. The emergency shuttle can now be called or recalled.
 
