@@ -531,9 +531,16 @@ brothers
 build
 burger
 burgers
+burrito
+burritos
 bust
+busted
+buster
+busters
 # Because fuck your ears
 bustin = bust-in
+busting
+busts
 but
 butt
 button
@@ -699,6 +706,8 @@ chuckled
 chuckles
 chuckling
 chucks
+churro
+churros
 circuit
 circuits
 claus
@@ -1031,6 +1040,7 @@ destroyed
 destroying
 destroys
 destruction
+desu
 detain
 detect
 detected
@@ -1214,6 +1224,8 @@ enable
 enabled
 enables
 enabling
+enchilada
+enchiladas
 end
 enemies
 enemy
@@ -1857,6 +1869,8 @@ jacking
 jacks
 jail
 jails
+jalapeno
+jalapenos
 jane
 janitor
 janitorial
@@ -2294,6 +2308,8 @@ mysteries
 mystery
 mythic
 n = N.
+nacho
+nachos
 naked
 name
 named
@@ -2449,6 +2465,7 @@ overloads
 override
 overrides
 own
+owo
 oxygen
 p = P.
 pacification
@@ -2975,6 +2992,7 @@ she
 she'd
 she'll
 she's
+sheeple
 shield
 shift
 shifted
@@ -3292,6 +3310,8 @@ table
 tabled
 tables
 tabling
+taco
+tacos
 tactical
 tajaran = tah-har-ran
 tajarans = tah-har-rans
@@ -3684,6 +3704,10 @@ we're
 we've
 weak
 weapon
+weeaboo
+weeaboos
+weeb
+weebs
 weed
 welcome
 well
