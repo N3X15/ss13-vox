@@ -204,6 +204,7 @@ def GenerateForWord(phrase: Phrase, voice: Voice, writtenfiles: set, args: Optio
         captured = os_utils.cmd_out(command, echo=False, critical=True)
         fdata.fromJSON(json.loads(captured))
         fdata.checksum = md5sum(oggfile)
+        fdata.duration -= 10
 
     for command_spec in cmds:
         (command, cfn) = command_spec
