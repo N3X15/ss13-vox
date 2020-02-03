@@ -1327,8 +1327,6 @@ eyed
 eyes
 eying
 f = F.
-facehugger
-facehuggers
 facilities
 facility
 fact
@@ -1539,6 +1537,7 @@ ghosted
 ghosting
 ghosts
 giant
+gib
 gibbed
 gibbing
 gibs
@@ -1672,8 +1671,6 @@ he'll
 he's
 head
 headed
-headhumper
-headhumpers
 heading
 heads
 health
@@ -1774,7 +1771,6 @@ i'd
 i'll
 i'm
 i've
-iaa = internal affairs agent
 ian
 ice
 iced
@@ -2727,8 +2723,8 @@ rd = Research Director
 reach
 reached
 reactor
-read1 = reed
-read2 = red
+read = red
+read_ = reed
 ready
 really
 rebel = reh-bull
@@ -3053,6 +3049,10 @@ skellington
 skellingtons
 skelly
 skipjack
+slap
+slapped
+slapping
+slaps
 slaughter
 slaughtered
 slaughtering

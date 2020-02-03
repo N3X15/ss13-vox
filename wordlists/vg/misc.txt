@@ -1,15 +1,32 @@
-###########
-## Machinery
-###########
 
-ame = A-M-E
+#############
+## Machinery
+#############
+
 aac = A-A-C
+ame = A-M-E
 rpd = R-P-D
 
-##########
+#############
 ## Races
-##########
+#############
 insectoid
 insectoids
 roachman
 roachmen
+
+#############
+## Weapons
+#############
+machete
+machetes
+
+#############
+## Jobs
+#############
+iaa = internal affairs agent
+
+#############
+## Virology
+#############
+humanity

@@ -157,6 +157,7 @@ broomsticks
 hogwarts
 scroll
 scrolls
+soc = staff of change
 spellbook
 spellbooks
 thunderbird
@@ -173,8 +174,16 @@ wizards
 ## XENOMORPH
 ###############
 
+chestburster = chest burster
+chestbursters = chest bursters
 drone
 drones
+facehugger
+facehuggers
+headhumper = head-humper
+headhumpers = head-humpers
+hugger
+huggers
 hunter
 hunters
 larva
