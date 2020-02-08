@@ -29,12 +29,13 @@ class FileData(object):
         self.filename: str = ''
         self.voice: str = ''
         self.checksum: str = ''
-        self.duration: float = 0
+        self.duration: float = 0.0
         self.size: int = 0
 
     def fromJSON(self, data: dict) -> None:
         self.size = int(data['format']['size'])
         self.duration = float(data['format']['duration'])
+        assert self.duration > 0.0
 
     def serialize(self) -> dict:
         return {

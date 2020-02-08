@@ -1,0 +1,2 @@
+vox_login = Hello! The automatic diagnostic and announcement system welcomes you to the station.  The time is: Twelve. Noon.
+vox_reminder1 = Reminder: Suit sensors are your express ticket to the magic heal tubes. Turn them on.
