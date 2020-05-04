@@ -1,0 +1,5 @@
+# See http://festvox.org/docs/manual-1.4.3/festival_29.html#SEC138
+# Songs have a special delimiter that tells ss13-vox to put Festival into singing mode.
+# Format:
+#  phrase_id = &songs/filename.xml
+_daisy = &songs/daisy.xml

@@ -23,6 +23,8 @@ phrasefiles:
   - wordlists/vg/mining.txt
   # /vg/-specific miscellaneous shit
   - wordlists/vg/misc.txt
+  # /vg/-specific songs
+  - wordlists/vg/songs.txt
   # Common wordlists for all stations
   - wordlists/common.txt
 # Here, we can override the autodetected defaults for each phrase.

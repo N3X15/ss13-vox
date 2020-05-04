@@ -172,14 +172,20 @@ def GenerateForWord(phrase: Phrase, voice: Voice, writtenfiles: set, args: Optio
     log.info('Generating {0} for {1} ({2!r})'.format(filename, voice.ID, phrase.phrase))
     text2wave = None
     if phrase.hasFlag(EPhraseFlags.SFX):
-        text2wave = 'ffmpeg -i '+phrase.phrase+' tmp/VOX-word.wav'
+        text2wave = ['ffmpeg', '-i', phrase.phrase, 'tmp/VOX-word.wav']
     else:
-        with open('tmp/VOX-word.txt', 'w') as wf:
-            wf.write(phrase.phrase)
+        phrasefile = os.path.join('tmp','VOX-word.txt')
 
-        text2wave = 'text2wave tmp/VOX-word.txt -o tmp/VOX-word.wav'
+        text2wave = ['text2wave']
         if os.path.isfile('tmp/VOXdict.lisp'):
-            text2wave = 'text2wave -eval tmp/VOXdict.lisp tmp/VOX-word.txt -o tmp/VOX-word.wav'
+            text2wave += ['-eval','tmp/VOXdict.lisp']
+        if phrase.hasFlag(EPhraseFlags.SING):
+            text2wave += ['-mode', 'singing', phrase.phrase]
+        else:
+            with open(phrasefile, 'w') as wf:
+                wf.write(phrase.phrase)
+            text2wave += [phrasefile]
+        text2wave += ['tmp/VOX-word.txt', '-o', 'tmp/VOX-word.wav']
     with open(checkfile, 'w') as wf:
         wf.write(md5)
     for fn in ('tmp/VOX-word.wav', 'tmp/VOX-soxpre-word.wav', 'tmp/VOX-sox-word.wav', 'tmp/VOX-encoded.ogg'):
@@ -187,7 +193,7 @@ def GenerateForWord(phrase: Phrase, voice: Voice, writtenfiles: set, args: Optio
             os.remove(fn)
 
     cmds = []
-    cmds += [(text2wave.split(' '), 'tmp/VOX-word.wav')]
+    cmds += [(text2wave, 'tmp/VOX-word.wav')]
     if not phrase.hasFlag(EPhraseFlags.NO_PROCESS) or not phrase.hasFlag(EPhraseFlags.NO_TRIM):
         cmds += [(['sox', 'tmp/VOX-word.wav', 'tmp/VOX-soxpre-word.wav'] + PRE_SOX_ARGS.split(' '), 'tmp/VOX-soxpre-word.wav')]
     if not phrase.hasFlag(EPhraseFlags.NO_PROCESS):
