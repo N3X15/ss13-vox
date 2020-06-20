@@ -7,11 +7,11 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@babel/core": "^7.6.3",
-    "@babel/plugin-transform-arrow-functions": "^7.2.0",
-    "@babel/polyfill": "^7.6.0",
-    "@babel/preset-env": "^7.6.3",
-    "coffeescript": "^2.4.1",
+    "@babel/core": "^7.10.3",
+    "@babel/plugin-transform-arrow-functions": "^7.10.1",
+    "@babel/polyfill": "^7.10.1",
+    "@babel/preset-env": "^7.10.3",
+    "coffeescript": "^2.5.1",
     "uglify-es": "^3.3.9"
   }
 }
