@@ -1,1 +1,1 @@
-pybuildtools==0.2.3
+pybuildtools==0.3.1

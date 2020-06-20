@@ -1,6 +1,7 @@
 from typing import List, Dict, Tuple
 from buildtools import log
-import re,sys
+import re, sys
+
 REGEX_SEARCH_STRINGS = re.compile(r'(\'|")(.*?)(?:\1)')
 
 class Pronunciation(object):
