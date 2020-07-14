@@ -1,1 +1,2 @@
 pybuildtools==0.3.6
+mypy==0.782
