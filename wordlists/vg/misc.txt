@@ -8,7 +8,7 @@ ame = A-M-E
 rpd = R-P-D
 
 #############
-## Races
+## Races - Insectoids
 #############
 insectoid
 insectoids

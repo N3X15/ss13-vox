@@ -10,6 +10,7 @@ ENV.prependTo('PATH', NODE_MODULES_DIR)
 COFFEE = os.path.join(NODE_MODULES_DIR, 'coffee')
 UGLIFY = os.path.join(NODE_MODULES_DIR, 'uglifyjs')
 SCSS = os.path.join(NODE_MODULES_DIR, 'scss')
+
 bm: BuildMaestro = BuildMaestro()
 yarn = bm.add(YarnBuildTarget())
 def mkCoffee(basefilename):

@@ -42,18 +42,21 @@ def organizeFile(filename: str, sort_sections: bool = False) -> None:
                 for comm in phrase.comments_before:
                     comm = comm.rstrip()
                     w.write(f'#{comm}\n')
-                key = phrase.id
+                key = newkey = phrase.id
+                if '/' not in key:
+                    newkey = key.lower()
                 value = phrase.phrase
                 if phrase.hasFlag(EPhraseFlags.SFX):
-                    w.write(f'{key.lower()} = @{value}\n')
+                    w.write(f'{newkey} = @{value}\n')
                 else:
                     if key != value:
-                        w.write(f'{key.lower()} = {value}\n')
+                        w.write(f'{newkey} = {value}\n')
                     else:
-                        w.write(f'{key.lower()}\n')
+                        w.write(f'{newkey}\n')
 
 organizeFile('wordlists/common.txt')
+organizeFile('wordlists/vg/announcements.txt')
+organizeFile('wordlists/vg/antags.txt', sort_sections=True)
 organizeFile('wordlists/vg/chemistry.txt')
 organizeFile('wordlists/vg/mining.txt')
-organizeFile('wordlists/vg/misc.txt')
-organizeFile('wordlists/vg/antags.txt', sort_sections=True)
+organizeFile('wordlists/vg/misc.txt', sort_sections=True)
