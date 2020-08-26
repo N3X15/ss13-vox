@@ -8,14 +8,14 @@ TTS-based announcer inspired by Half Life's announcement system.
 
 **This system has only been tested on Ubuntu.** Therefore, this should be installed and run on an Ubuntu system. A VM is recommended, but not necessary.
 
-1. Run ```sudo apt install python3.6 && pip install -r requirements.txt``` to install and configure Python 3.6 for Ubuntu.
-1. Run ```sudo python3.6 setup.py``` to install and configure SoX, Festival, and oggenc.
+1. Run ```sudo apt install python3 && pip install -r requirements.txt``` to install and configure Python 3 for Ubuntu.
+1. Run ```sudo python3 setup.py``` to install and configure SoX, Festival, and oggenc.
   * NOTE: During the install process, setup.py will download and install packages, and install new Festival voices.
 
 ## Generating Sounds
 
 ### /vg/-based Servers
-Simply edit voxwords.txt and announcements.txt to taste, and run generate.sh.
+Simply edit `wordlists/vg` to taste, and run generate.sh.
 
 Everything you need will end up in `dist/`. Note that old HL VOX sounds like `beep`, `bloop`, etc are not included and are expected to be in `sound/vox/`.
 
@@ -34,7 +34,7 @@ You can select which voice to use for each sex in `config.yml` in the `voices:` 
 <table><tr><th>Sex</th><th>Meaning</th></tr>
 <tr><th><code>default</code></th><td>Non-AI automated announcements, like <code>vox_login</code>.</td></tr>
 <tr><th><code>fem</code></th><td>Feminine voice</td></tr>
-<tr><th><code>mas</code></th><td>Feminine voice</td></tr>
+<tr><th><code>mas</code></th><td>Masculine voice</td></tr>
 </table>
 
 ## Voice IDs
@@ -48,18 +48,23 @@ Each voice requires manual tuning and fuckery in order to work with the standard
 
 # Adding to the List
 
-Simply edit voxwords.txt or announcements.txt and add the desired phrase:
+Simply edit the files in `wordlist/` according to the following format:
 
 ```
 apple
 zebra
+# Comment bound to wordfile. It'll follow it around when organize.py is run.
 wordfile = This is a sample phrase that will be saved to wordfile.ogg
 ```
 
+If it's a single letter, add it to the voxwords.txt as ```a = A.```
+
+# Testing Phrases
+
 To test a phrase as though it were from in-game, run (replace `$SEX` with `fem` or `mas`):
 
-```
-play dist/sounds/vox_$SEX/{sarah,connor,report,to,medbay,for,health,inspection}.ogg
+```shell
+$ python3 test.py --voice=$SEX sarah connor please report to medbay for johnson inspection
 ```
 
-If it's a single letter, add it to the voxwords.txt as ```a = A.```
+This will call `play` for you.
