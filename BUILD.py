@@ -9,7 +9,7 @@ NODE_MODULES_DIR = os.path.abspath(os.path.join('node_modules','.bin'))
 ENV.prependTo('PATH', NODE_MODULES_DIR)
 COFFEE = os.path.join(NODE_MODULES_DIR, 'coffee')
 UGLIFY = os.path.join(NODE_MODULES_DIR, 'uglifyjs')
-SCSS = os.path.join(NODE_MODULES_DIR, 'scss')
+SCSS = os.path.join(NODE_MODULES_DIR, 'dart-sass')
 
 bm: BuildMaestro = BuildMaestro()
 yarn = bm.add(YarnBuildTarget())
@@ -18,5 +18,5 @@ def mkCoffee(basefilename):
     coffee.coffee_opts += ['--transpile'] # Babel
     bm.add(UglifyJSTarget(os.path.join('dist', 'code', 'modules', 'html_interface', f'{basefilename}.min.js'), coffee.target, uglify_executable=UGLIFY))
 mkCoffee('aivoice')
-bm.add(DartSCSSBuildTarget(os.path.join('dist', 'html', 'browser', 'aivoice.css'), [os.path.join('scss', 'style.scss')], dependencies=[yarn.target]))
+bm.add(DartSCSSBuildTarget(os.path.join('dist', 'html', 'browser', 'aivoice.css'), [os.path.join('scss', 'style.scss')], dependencies=[yarn.target], sass_path=SCSS))
 bm.as_app()
