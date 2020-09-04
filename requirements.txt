@@ -1,1 +1,2 @@
+profanity-filter==1.3.3
 pybuildtools==0.3.6

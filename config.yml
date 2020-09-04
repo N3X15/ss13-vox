@@ -27,6 +27,10 @@ phrasefiles:
   - wordlists/vg/songs.txt
   # Common wordlists for all stations
   - wordlists/common.txt
+  # Censored announcements for "clean" stations.
+  #- wordlists/common-clean.txt
+  # Common profanity for all stations.
+  - wordlists/profanity.txt
 # Here, we can override the autodetected defaults for each phrase.
 overrides:
   # Silence for 0.5s (see resynth_sounds.sh)
