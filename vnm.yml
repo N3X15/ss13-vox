@@ -7,6 +7,6 @@ packages:
     frozen-at: 0.3.6
 dev-packages:
   isort:
-    frozen-at: 5.5.0
+    frozen-at: 5.5.1
   mypy:
     frozen-at: '0.782'

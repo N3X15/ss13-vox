@@ -32,7 +32,7 @@ Requires festival, sox, and vorbis-tools.
 
 create.py - Uses festival to generate word oggs.
 
-Copyright 2013-2019 Rob "N3X15" Nelson <nexis@7chan.org>
+Copyright 2013-2020 Rob "N3X15" Nelson <nexis@7chan.org>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
