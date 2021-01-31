@@ -7,10 +7,10 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@babel/core": "^7.11.4",
-    "@babel/plugin-transform-arrow-functions": "^7.10.4",
-    "@babel/polyfill": "^7.10.4",
-    "@babel/preset-env": "^7.11.0",
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-transform-arrow-functions": "^7.12.1",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.12.11",
     "coffeescript": "^2.5.1",
     "dart-sass": "^1.25.0",
     "uglify-es": "^3.3.9"
