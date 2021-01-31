@@ -4,9 +4,9 @@ packages:
   profanity-filter:
     frozen-at: 1.3.3
   pybuildtools:
-    frozen-at: 0.3.6
+    frozen-at: 0.4.2
 dev-packages:
   isort:
-    frozen-at: 5.5.1
+    frozen-at: 5.7.0
   mypy:
-    frozen-at: '0.782'
+    frozen-at: '0.800'
