@@ -12,7 +12,7 @@
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.12.11",
     "coffeescript": "^2.5.1",
-    "dart-sass": "^1.25.0",
+    "sass": "^1.32.5",
     "uglify-es": "^3.3.9"
   }
 }

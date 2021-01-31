@@ -9,7 +9,7 @@ NODE_MODULES_DIR = os.path.abspath(os.path.join('node_modules','.bin'))
 ENV.prependTo('PATH', NODE_MODULES_DIR)
 COFFEE = os.path.join(NODE_MODULES_DIR, 'coffee')
 UGLIFY = os.path.join(NODE_MODULES_DIR, 'uglifyjs')
-SCSS = os.path.join(NODE_MODULES_DIR, 'dart-sass')
+SCSS = os.path.join(NODE_MODULES_DIR, 'sass')
 
 bm: BuildMaestro = BuildMaestro()
 yarn = bm.add(YarnBuildTarget())
