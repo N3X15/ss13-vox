@@ -11,8 +11,13 @@
     "@babel/plugin-transform-arrow-functions": "^7.12.1",
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.12.11",
+    "coffee-loader": "^2.0.0",
     "coffeescript": "^2.5.1",
+    "css-loader": "^5.0.1",
     "sass": "^1.32.5",
-    "uglify-es": "^3.3.9"
+    "sass-loader": "^10.1.1",
+    "style-loader": "^2.0.0",
+    "uglify-es": "^3.3.9",
+    "webpack": "^5.19.0"
   }
 }
