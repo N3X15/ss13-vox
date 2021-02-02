@@ -20,7 +20,8 @@ sound/AI/vox_reminder12 = Reminder: Do not tickle the supermatter.
 sound/AI/vox_reminder13 = Remember: Tah har rans are violent savages and carry a load of diseases.  Kill cat-beasts before they kill you.
 sound/AI/vox_reminder14 = Reminder: Purging Ay Eyes and Seye-borgs is a very bad idea, so use the planning frame when changing laws.
 sound/AI/vox_reminder15 = Reminder: Do not touch strange alien artefacts, use the clown instead
-sound/AI/vox_reminder16 = Reminder: Do not touch strange clowns, use the alien artefact instead
+sound/AI/vox_reminder16 = Reminder: Do not touch strange clowns, use the alien artifact instead
+sound/AI/vox_reminder17 = Reminder: Do not take gifts from Santa Claus.  He is a registered sex offender. Please report him to security if seen.
 
 ##################
 ## Alerts
