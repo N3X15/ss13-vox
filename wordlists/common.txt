@@ -34,7 +34,7 @@ _woop
 , = @samples/halfpause.ogg
 . = @samples/fullpause.ogg
 _airhorn = @samples/airhorn.ogg
-_doorstuck = @samples/door-stuck.wav
+# LOUD _doorstuck = @samples/door-stuck.wav
 _excellent = @samples/billandted-excellent-trimmed.wav
 _fart = @samples/fart.ogg
 _honk = @samples/bikehorn.ogg
@@ -362,6 +362,8 @@ beaming
 beams
 bear
 bears
+beast
+beasts
 because
 bee
 been
@@ -434,6 +436,9 @@ blocked
 blood
 bloodied
 bloody
+blow
+blowing
+blown
 blue
 bluespace
 bluespaced
@@ -518,9 +523,18 @@ bronze
 bros
 brother
 brothers
+brutal
+brutally
+brute
+brutes
 build
 burger
 burgers
+burn
+burning
+burnings
+burns
+burnt
 burrito
 burritos
 bust
@@ -734,6 +748,8 @@ clowned
 clowning
 clowns
 cmo = C-M-O
+cockroach
+cockroaches
 cocoon
 cocooned
 cocoons
@@ -810,7 +826,11 @@ consume
 consumed
 consumes
 consuming
+contain
+contained
+containing
 containment
+contains
 contamination
 contraband
 control
@@ -871,6 +891,9 @@ cower
 cowering
 cowers
 cows
+crab
+crabby
+crabs
 crack
 cracked
 cracking
@@ -935,6 +958,7 @@ dangers
 dans
 dat
 data
+dave
 day
 days
 de-escalate
@@ -1341,6 +1365,7 @@ fame
 famed
 families
 family
+fancy
 far
 farm
 farmer
@@ -1365,12 +1390,16 @@ feast
 feasted
 feasting
 feasts
+fed
 federal
 federalist
 federalists
 federally
 federation
 federations
+feed
+feeding
+feeds
 feet
 feminine
 field
@@ -1408,12 +1437,19 @@ flag
 flagged
 flagging
 flags
+flesh
+fleshy
 flood
 flooded
 flooding
 floods
 floor
 flora
+flower
+flowers
+fluid
+fluidic
+fluids
 fluke
 flush
 flushed
@@ -1476,6 +1512,8 @@ friend
 friendly
 friends
 fries
+frog
+frogs
 from
 front
 frost
@@ -1546,9 +1584,9 @@ gloves
 # FIXME: This is fucked.  I do not know how to fix it.  I have tried many variations and lexicon entries.
 go
 god
-gods
 goddess
 goddesses
+gods
 goes
 going
 gold
@@ -1578,6 +1616,9 @@ grant
 granted
 granting
 grants
+grass
+grasses
+grassy
 grave
 graves
 gravity
@@ -1591,6 +1632,10 @@ gremlin
 gremlins
 grenade
 grenades
+gross
+grossed
+grosses
+grossing
 grow
 guard
 guarded
@@ -1646,6 +1691,12 @@ harmed
 harmful
 harming
 harms
+harvest
+harvested
+harvester
+harvesters
+harvesting
+harvests
 has
 hasn't
 hate
@@ -1758,6 +1809,7 @@ husking
 husks
 hydro
 hydroponics
+hyper
 i = eye
 i'd
 i'll
@@ -1807,6 +1859,8 @@ initialized
 initializes
 initializing
 inoperative
+insect
+insects
 inside
 inspected
 inspection
@@ -2298,7 +2352,6 @@ nanites
 nanotrasen
 narcotic
 narcotics
-narsie = nar-see
 ne'er
 near
 nearest
@@ -2346,6 +2399,8 @@ northeastern
 northern
 northwestern
 not
+nova
+novas
 november
 now
 ntcoin = n t coin
@@ -2381,6 +2436,7 @@ office
 officer
 officers
 offices
+oh
 ok = O.K.
 ol'
 old
@@ -2717,6 +2773,8 @@ rebel_ = reh bell
 rebellion
 rebellions
 rebels
+rebirth
+reborn
 recommend
 recommends
 record = reckerd
@@ -3003,11 +3061,13 @@ silvers
 simple
 simplicity
 simply
+sin
 single
 singles
 singling
 singularities
 singularity
+sins
 sister
 sisters
 six = sih-icks
@@ -3105,6 +3165,9 @@ spider
 spiderling
 spiderlings
 spiders
+spin
+spinning
+spins
 splendid
 spooky
 # Yes, this is a word
@@ -3116,6 +3179,7 @@ spring
 springs
 # Yes, this is a word
 sprung
+spun
 squad
 squads
 square
@@ -3195,6 +3259,10 @@ stuck
 studied
 study
 studying
+stun
+stunned
+stunning
+stuns
 stupid
 sub
 subsurface
@@ -3555,6 +3623,8 @@ vaccinating
 vaccine
 vaccines
 vacuum
+valentine
+valentine's
 valid
 valids
 vamos
@@ -3726,6 +3796,7 @@ wires
 wiring
 with
 without
+woah
 wolf
 wolves
 woman
@@ -3796,6 +3867,7 @@ zapped
 zapping
 zaps
 zero
+zine
 zombie
 zombies
 zone

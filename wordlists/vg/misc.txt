@@ -30,3 +30,13 @@ iaa = internal affairs agent
 ## Virology
 #############
 humanity
+
+#############
+## Mobs
+#############
+goliath
+goliaths
+basilisk
+basilisks
+wendigo
+wendigos

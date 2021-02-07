@@ -1,6 +1,14 @@
 # Traitor types
 
 ###############
+## AI
+###############
+shunt
+shunted
+shunting
+shunts
+
+###############
 ## BLOB
 ###############
 
@@ -8,6 +16,8 @@ blob
 blobbed
 blobbing
 blobs
+spore
+spores
 
 ###############
 ## CATBEAST
@@ -33,6 +43,8 @@ changelings
 _construct = kahnstruct
 _convert = kahnvert
 _converts = kahnverts
+artificer
+artificers
 convert
 converted
 converting
@@ -47,6 +59,11 @@ deconvert
 deconverted
 deconverting
 deconverts
+juggernaut
+juggernauts
+narsie = nar-see
+wraith
+wraiths
 
 ###############
 ## CYBERHORROR
