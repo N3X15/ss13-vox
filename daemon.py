@@ -19,8 +19,11 @@ if not os.path.isdir('logs'):
     os.makedirs('logs')
 logging.basicConfig(filename='logs/daemon.log',
                     filemode='w',
+                    format='%(asctime)s [%(levelname)-8s] @ (%(name)s): %(message)s',
+                    datefmt='%m/%d/%Y %I:%M:%S %p',
                     #encoding='utf-8', 3.9
                     level=logging.INFO)
+
 log = logging.getLogger(__name__)
 
 from ruamel.yaml import YAML
@@ -224,6 +227,22 @@ def main():
     global OTF_DIR, OTF_TMP_DIR, OTF_SOUNDS_DIR
     import argparse
 
+    argp = argparse.ArgumentParser()
+    argp.add_argument('--config', '-c', type=str, default=str(Path.cwd() / 'daemon.yml'), help='Path of daemon.yml')
+    argp.add_argument('--level', '-l', choices=['DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL'], default='INFO', help='Log level to display')
+    argp.add_argument('--quiet', '-q', action='store_true', default=False, help='Silence console output')
+
+    args = argp.parse_args()
+
+
+    # Console logging
+    if not args.quiet:
+        ch = logging.StreamHandler()
+        ch.setLevel(getattr(logging,args.level))
+        ch.setFormatter(logging.Formatter('%(asctime)s [%(levelname)-8s] @ (%(name)s): %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p'))
+        logging.getLogger().addHandler(ch)
+
+    daemon_yml = Path(args.config)
     if not os.path.isfile('daemon.yml'):
         print('Run `python tools/otftool.py init` first, then edit daemon.yml.')
         return
