@@ -1,5 +1,9 @@
+###
+# This file is a part of ss13-vox.  See https://github.com/N3X15/ss13-vox
+#
 # I hate javascript, especially this broke-ass edition of it. So, I use coffeescript to make the hell more bearable. - N3X
 # The ES5 output is run through babel so that (hopefully) we get working IE8 support.
+###
 
 # Max number of phrase IDs.
 MAX_WORDS = 30

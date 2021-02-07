@@ -18,10 +18,12 @@
 /code
 /hts_tmp
 /tmp
-/tools
 dist/
 node_modules/
 sound/
 upload.sh
 vnm.state
 yarn-error.log
+
+daemon.yml
+logs/daemon.log

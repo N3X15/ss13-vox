@@ -19,6 +19,7 @@ script_dir = os.path.dirname(os.path.realpath(__file__))
 from buildtools import os_utils, log, utils
 from buildtools.config import YAMLConfig, BaseConfig
 
+from ss13vox.consts import RECOMPRESS_ARGS, PRE_SOX_ARGS
 from ss13vox.proc import InitClass
 from ss13vox.phrase import Phrase, EPhraseFlags, ParsePhraseListFrom, FileData
 from ss13vox.pronunciation import Pronunciation, DumpLexiconScript, ParseLexiconText
@@ -32,7 +33,7 @@ Requires festival, sox, and vorbis-tools.
 
 create.py - Uses festival to generate word oggs.
 
-Copyright 2013-2020 Rob "N3X15" Nelson <nexis@7chan.org>
+Copyright 2013-2021 Rob "N3X15" Nelson <nexisentertainment@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -53,33 +54,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 """
-
-###############################################
-# CONFIG
-###############################################
-
-# Direct from TG's PR (https://github.com/tgstation/tgstation/pull/36492)
-# May bump up quality and rate slightly...
-RECOMPRESS_ARGS = [
-    # Audio Codec
-    '-c:a',     'libvorbis',
-    # Force to mono (should already be, since festival outputs mono...)
-    '-ac',      '1',
-    # Sampling rate in Hz. TG uses 16kHz.
-    '-ar',      '16000',
-    # Audio quality [0,9]. TG uses 0.
-    '-q:a',     '0',
-    # Playback speed
-    '-speed',   '0',
-    # Number of threads to use.  This works OK on my laptop, but you may need fewer
-    # Now specified in -j.
-    #'-threads', '8',
-    # Force overwrite
-    '-y']
-
-# Have to do the trimming seperately.
-PRE_SOX_ARGS = 'trim 0 -0.1'  # Trim off last 0.2s.
-
 
 ################################################
 # ROB'S AWFUL CODE BELOW (cleanup planned)

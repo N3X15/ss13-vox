@@ -5,6 +5,9 @@ packages:
     frozen-at: 1.3.3
   pybuildtools:
     frozen-at: 0.4.2
+  ruamel.yaml: {}
+  werkzeug:
+    frozen-at: 1.0.1
 dev-packages:
   isort:
     frozen-at: 5.7.0
