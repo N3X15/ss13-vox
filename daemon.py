@@ -25,6 +25,7 @@ logging.basicConfig(filename='logs/daemon.log',
                     level=logging.INFO)
 
 log = logging.getLogger(__name__)
+log.setLevel(logging.INFO)
 
 from ruamel.yaml import YAML
 yaml = YAML(typ='safe')
@@ -115,39 +116,58 @@ class VoxRESTService(WZService, JinjaMixin):
         self.basepath = Path(self.config['storage']['sounds'])
 
         if self.basepath.is_dir():
-            log.info('Clearing sound storage at %s...', self.soundbasepath)
+            log.info('Clearing sound storage at %s...', self.basepath)
 
     def handle_index(self) -> Response:
         return Response('This endpoint is not intended for human consumption')
 
-    def jsonify(*args, **kwargs) -> Response:
-        return Response(json.dumps(dict(*args, **kwargs), indent=None), mimetype='application/json')
+    MSG_403=json.dumps({
+        'error': True,
+        'source': 'server',
+        'message': 'Access Denied'
+    })
+    def make_403(self) -> Response:
+        return Response(self.MSG_403, status=403)
+
+    MSG_400=json.dumps({
+        'error': True,
+        'source': 'server',
+        'message': 'Bad Request'
+    })
+    def make_400(self) -> Response:
+        return Response(self.MSG_400, status=400)
+
+
+
+    def jsonify(self, data: dict, **kwargs) -> Response:
+        return Response(json.dumps(data, indent=None), mimetype='application/json', **kwargs)
 
     def handle_auth_server(self, request: Request) -> Response:
-        if request.method == 'GET' and 'gsid' in request.form:
+        if request.method == 'GET' and 'gsid' in request.args:
             return self.jsonify({'challenge': generate_preshared_key()})
 
         if request.method == 'POST' and 'response' in request.form and 'gsid' in request.form and 'challenge' in request.form:
             challenge = request.form['challenge']
             gsid = request.form['gsid']
             response  = request.form['response']
-            if gsid not in self.gameservers:
+            if gsid not in self.config['gameservers']:
                 log.info('Failed GS %r login from address %s', gsid, request.remote_addr)
-                return Response.make(403, b'Access Denied', {'Content-Type': 'text/html'})
+                return self.make_403()
 
             gss = VOXGameServer(gsid)
             gss.loadFrom(self.config)
 
-            expected = hashlib.md5((challenge+gss.secret_key).decode('utf-8')).hexdigest()
-            if response != gss.expected:
-                log.info('Failed GS %r login from address %s', gsid, request.remote_addr)
-                return Response.make(403, b'Access Denied', {'Content-Type': 'text/html'})
+            expected = hashlib.md5((challenge+gss.secret_key).encode('utf-8')).hexdigest()
+            if response != expected:
+                log.info('Failed GS %r login from address %s (%s != %s)', gsid, request.remote_addr, response, expected)
+                return self.make_403()
 
             gss.session_key = generate_preshared_key()
             gss.remote_addr = request.remote_addr
 
             self.gameservers[gss.id] = gss
 
+            gss.baseurl = f'{self.baseurl}/{gss.id}'
             gss.basepath = self.basepath / gss.id
             if gss.basepath.is_dir():
                 shutil.rmtree(gss.basepath)
@@ -159,69 +179,75 @@ class VoxRESTService(WZService, JinjaMixin):
                 'session': gss.session_key,
                 'limits':  self.config['limits']
             })
+        return self.make_400()
 
     def handle_announcement_new(self, request: Request) -> Response:
-        if request.method == 'POST' and 'a' in request.form and 'p' in request.form and 'v' in request.form and 'c' in request.form and 's' in request.form:
-            authkey = request.form['a']
-            phrase = request.form['p']
-            voice = request.form['v']
-            ckey = request.form['c']
-            srvid = request.form['s']
+        if request.method != 'POST':
+            log.error('Not a POST request!')
+            return self.make_400()
 
-            if srvid not in self.gameservers:
-                log.error('FAILED AUTH: %s tried to request an announcement as GSS %r, which doesn\'t exist.', request.remote_addr, srvid)
-                return Response.make(403, b'Access Denied', {'Content-Type': 'text/html'})
+        for k in ['auth', 'phrase', 'voice', 'ckey', 'gsid']:
+            if k not in request.form:
+                log.error('%s missing from request.form (%r)', k, dict(request.form))
+                return self.make_400()
 
-            gss = self.gameservers[srvid]
-            if request.form['a'] != hashlib.md5sum((self.session_key+phrase).encode('utf-8')).hexdigest():
-                log.error('FAILED AUTH: %r via %r requested phrase %r with voice %r', ckey, request.remote_addr, phrase, voice)
-                return Response.make(403, b'Access Denied', {'Content-Type': 'text/html'})
+        authkey = request.form['auth']
+        phrase = request.form['phrase']
+        voice = request.form['voice']
+        ckey = request.form['ckey']
+        srvid = request.form['gsid']
 
-            log.info('[%s]: %s requested phrase %r with voice %r', srvid, ckey, phrase, voice)
-            if voice not in ('mas', 'fem'):
-                return self.jsonify({'error': True, 'source': 'user', 'message': f'Incorrect voice.'})
+        if srvid not in self.gameservers:
+            log.error('FAILED AUTH: %s tried to request an announcement as GSS %r, which doesn\'t exist.', request.remote_addr, srvid)
+            return self.make_403()
 
-            phraselen = len(phrase)
-            limit = self.config['limits']['phraselen']['min']
-            if phraselen < limit:
-                return self.jsonify({'error': True, 'source': 'user', 'message': f'Too few characters. (your phraselen={phraselen}, limits.phraselen.min={limit})'})
+        gss = self.gameservers[srvid]
+        if authkey != hashlib.md5((gss.session_key+phrase).encode('utf-8')).hexdigest():
+            log.error('FAILED AUTH: %r via %r requested phrase %r with voice %r', ckey, request.remote_addr, phrase, voice)
+            return self.make_403()
 
-            limit = self.config['limits']['phraselen']['max']
-            if phraselen > limit:
-                return self.jsonify({'error': True, 'source': 'user', 'message': f'Too many characters. (your phraselen={phraselen}, limits.phraselen.max={limit})'})
+        log.info('[%s]: %s requested phrase %r with voice %r', srvid, ckey, phrase, voice)
+        if voice not in ('mas', 'fem'):
+            return self.jsonify({'error': True, 'source': 'user', 'message': f'Incorrect voice.'})
 
-            p = Phrase()
-            p.phrase = phrase
-            p.parsed_phrase = phrase.split(' ')
-            p.wordlen = len(self.parsed_phrase)
-            limit = self.config['limits']['nwords']['min']
-            if p.wordlen < limit:
-                return self.jsonify({'error': True, 'source': 'user', 'message': f'Too few words. (your wordlen={phrase.wordlen}, limits.nwords.min={limit})'})
+        phraselen = len(phrase)
+        limit = self.config['limits']['phraselen']['min']
+        if phraselen < limit:
+            return self.jsonify({'error': True, 'source': 'user', 'message': f'Too few characters. (your phraselen={phraselen}, limits.phraselen.min={limit})'})
 
-            limit = self.config['limits']['nwords']['max']
-            if p.wordlen > limit:
-                return self.jsonify({'error': True, 'source': 'user', 'message': f'Too many words. (your wordlen={phrase.wordlen}, limits.nwords.max={limit})'})
+        limit = self.config['limits']['phraselen']['max']
+        if phraselen > limit:
+            return self.jsonify({'error': True, 'source': 'user', 'message': f'Too many characters. (your phraselen={phraselen}, limits.phraselen.max={limit})'})
 
-            wordlens = [len(w) for w in p.parsed_phrase]
-            maxwordlen = max(wordlens)
+        p = Phrase()
+        p.phrase = phrase
+        p.parsed_phrase = phrase.split(' ')
+        p.wordlen = len(p.parsed_phrase)
+        limit = self.config['limits']['nwords']['min']
+        if p.wordlen < limit:
+            return self.jsonify({'error': True, 'source': 'user', 'message': f'Too few words. (your wordlen={phrase.wordlen}, limits.nwords.min={limit})'})
 
-            limit = self.config['limits']['wordlen']['max']
-            if maxwordlen > limit:
-                return self.jsonify({'error': True, 'source': 'user', 'message': f'A word was too big. (max(len(word), ...)={maxwordlen}, limits.wordlen.max={limit})'})
+        limit = self.config['limits']['nwords']['max']
+        if p.wordlen > limit:
+            return self.jsonify({'error': True, 'source': 'user', 'message': f'Too many words. (your wordlen={phrase.wordlen}, limits.nwords.max={limit})'})
 
-            pr: PhraseRef = self.gameservers[srvid].getPhrase(voice, phrase)
-            if pr is None:
-                sid = str(uuid.uuid4())
-                path = gss.basepath / f'{sid}.ogg'
-                url = f'{gss.baseurl}/{sid}.ogg'
-                pr = PhraseRef(sid, path, url)
-                self.runtime.createSoundFromPhrase(phrase, self.runtime.getVoiceByGCode(voice), str(path))
-                gss.addPhrase(pr)
+        wordlens = [len(w) for w in p.parsed_phrase]
+        maxwordlen = max(wordlens)
 
-            return self.jsonify({
-                'id': pr.id,
-                'url': pr.url,
-            })
+        limit = self.config['limits']['wordlen']['max']
+        if maxwordlen > limit:
+            return self.jsonify({'error': True, 'source': 'user', 'message': f'A word was too big. (max(len(word), ...)={maxwordlen}, limits.wordlen.max={limit})'})
+
+        pr: PhraseRef = self.gameservers[srvid].getPhrase(voice, phrase)
+        if pr is None:
+            pr = gss.addPhrase(voice, p)
+            self.runtime.createSoundFromPhrase(p, self.runtime.getVoiceByGCode(voice), str(pr.path))
+
+        return self.jsonify({
+            'error': False,
+            'id': pr.id,
+            'url': pr.url,
+        })
 
 def main():
     global OTF_DIR, OTF_TMP_DIR, OTF_SOUNDS_DIR
@@ -233,7 +259,6 @@ def main():
     argp.add_argument('--quiet', '-q', action='store_true', default=False, help='Silence console output')
 
     args = argp.parse_args()
-
 
     # Console logging
     if not args.quiet:

@@ -7,7 +7,7 @@ from buildtools import os_utils
 from buildtools.config import YAMLConfig, BaseConfig
 
 from ss13vox.consts import RECOMPRESS_ARGS, PRE_SOX_ARGS
-from ss13vox.utils import md5sum
+from ss13vox.utils import md5sum, generate_random_string
 from ss13vox.voice import Voice, VoiceRegistry, SFXVoice, USSLTFemale, EVoiceSex
 from ss13vox.phrase import Phrase, EPhraseFlags, ParsePhraseListFrom, FileData
 from ss13vox.pronunciation import Pronunciation, DumpLexiconScript, ParseLexiconText
@@ -84,6 +84,7 @@ class VOXRuntime(object):
         return self.voice_genders[code]
 
     def generateDictionaryLisp(self, voice: Voice, filename: str) -> None:
+        # DumpLexiconScript(voice.FESTIVAL_VOICE_ID, lexicon.values(), 'tmp/VOXdict.lisp')
         DumpLexiconScript(voice.FESTIVAL_VOICE_ID, self.lexicon.values(), filename)
 
     def createSoundFromPhrase(self, phrase: Phrase, voice: Voice, filename: str, quiet: bool=False) -> FileData:
@@ -92,9 +93,10 @@ class VOXRuntime(object):
         '''
         dict_lisp: Path
         phrasefile: Path
-        soxe_wav: Path
+        sox_wav: Path
         soxpre_wav: Path
         word_wav: Path
+        encoded_ogg: Path
 
         fdata = FileData()
         fdata.voice = voice.ID
@@ -102,72 +104,71 @@ class VOXRuntime(object):
 
         files_to_clean = set()
 
-        with tempfile.NamedTemporaryFile() as tmp_word_wav, \
-             tempfile.NamedTemporaryFile() as tmp_word_txt, \
-             tempfile.NamedTemporaryFile() as tmp_dict_lisp, \
-             tempfile.NamedTemporaryFile() as tmp_soxpre_word_wav, \
-             tempfile.NamedTemporaryFile() as tmp_sox_word_wav, \
-             tempfile.NamedTemporaryFile() as tmp_encoded_ogg:
+        def getAndRegisterRandomName(ext) -> Path:
+            fn = Path(self.tmp_dir) / (generate_random_string(32)+ext)
+            files_to_clean.add(fn)
+            return fn
 
-            dict_lisp = Path(tmp_dict_lisp.name) # 'tmp/VOXdict.lisp'
-            phrasefile = Path(tmp_word_txt.name) # phrasefile
-            sox_wav = Path(tmp_sox_word_wav.name) # 'tmp/VOX-sox-word.wav'
-            soxpre_wav = Path(tmp_soxpre_word_wav.name) # 'tmp/VOX-soxpre-word.wav'
-            word_wav = Path(tmp_word_wav.name) # 'tmp/VOX-word.wav'
-            encoded_ogg = Path(tmp_encoded_ogg.name) # 'tmp/VOX-encoded.ogg'
+        dict_lisp = getAndRegisterRandomName('.lisp') # 'tmp/VOXdict.lisp'
+        phrasefile = getAndRegisterRandomName('.txt') # phrasefile
+        sox_wav = getAndRegisterRandomName('.wav') # 'tmp/VOX-sox-word.wav'
+        soxpre_wav = getAndRegisterRandomName('.wav') # 'tmp/VOX-soxpre-word.wav'
+        word_wav = getAndRegisterRandomName('.wav') # 'tmp/VOX-word.wav'
+        encoded_ogg = getAndRegisterRandomName('.ogg') # 'tmp/VOX-encoded.ogg'
 
-            files_to_clean.add(dict_lisp)
-            files_to_clean.add(phrasefile)
-            files_to_clean.add(sox_wav)
-            files_to_clean.add(soxpre_wav)
-            files_to_clean.add(word_wav)
+        for f in files_to_clean:
+            if f.is_file():
+                f.unlink()
+            #print(str(f))
 
-        self.generateDictionaryLisp(voice, str(dict_lisp))
+        try:
+            #print(dict_lisp.read_text())
 
-        if not quiet:
-            log.info('Generating {0} for {1} ({2!r})'.format(filename, voice.ID, phrase.phrase))
-        text2wave = None
-        if phrase.hasFlag(EPhraseFlags.SFX):
-            text2wave = ['ffmpeg', '-i', phrase.phrase, str(word_wav)]
-        else:
-            text2wave = ['text2wave']
-            if dict_lisp.is_file():
-                text2wave += ['-eval', dict_lisp]
-            if phrase.hasFlag(EPhraseFlags.SING):
-                text2wave += ['-mode', 'singing', phrase.phrase]
+            if not quiet:
+                log.info('Generating {0} for {1} ({2!r})'.format(filename, voice.ID, phrase.phrase))
+            text2wave = None
+            if phrase.hasFlag(EPhraseFlags.SFX):
+                text2wave = ['ffmpeg', '-i', phrase.phrase, str(word_wav)]
             else:
-                with open(phrasefile, 'w') as wf:
-                    wf.write(phrase.phrase)
-                text2wave += [str(phrasefile)]
-            text2wave += [str(phrasefile), '-o', str(word_wav)]
+                self.generateDictionaryLisp(voice, str(dict_lisp))
+                text2wave = ['text2wave']
+                if dict_lisp.is_file():
+                    text2wave += ['-eval', str(dict_lisp)]
+                if phrase.hasFlag(EPhraseFlags.SING):
+                    text2wave += ['-mode', 'singing', str(phrase.phrase)]
+                else:
+                    with open(phrasefile, 'w') as wf:
+                        wf.write(phrase.phrase)
+                    text2wave += [str(phrasefile)]
+                text2wave += [str(phrasefile), '-o', str(word_wav)]
 
-        for path in files_to_clean:
-            if path.is_file():
-                path.unlink()
+            cmds = []
+            cmds += [(text2wave, str(word_wav))]
+            if not phrase.hasFlag(EPhraseFlags.NO_PROCESS) or not phrase.hasFlag(EPhraseFlags.NO_TRIM):
+                cmds += [(['sox', str(word_wav), str(soxpre_wav)] + PRE_SOX_ARGS.split(' '), str(soxpre_wav))]
+            if not phrase.hasFlag(EPhraseFlags.NO_PROCESS):
+                cmds += [(['sox', cmds[-1][1], str(sox_wav)] + voice.genSoxArgs(None), str(sox_wav))]
+            cmds += [(['oggenc', cmds[-1][1], '-o', str(encoded_ogg)], str(encoded_ogg))]
+            cmds += [(['ffmpeg', '-i', str(encoded_ogg)]+RECOMPRESS_ARGS+[filename], filename)]
+            for command_spec in cmds:
+                (command, cfn) = command_spec
+                with os_utils.TimeExecution(command[0]):
+                    os_utils.cmd(command, echo=False, critical=True, show_output=command[0] in ('text2wave',))
 
-        cmds = []
-        cmds += [(text2wave, word_wav)]
-        if not phrase.hasFlag(EPhraseFlags.NO_PROCESS) or not phrase.hasFlag(EPhraseFlags.NO_TRIM):
-            cmds += [(['sox', word_wav, str(soxpre_wav)] + PRE_SOX_ARGS.split(' '), str(soxpre_wav))]
-        if not phrase.hasFlag(EPhraseFlags.NO_PROCESS):
-            cmds += [(['sox', cmds[-1][1], str(sox_wav)] + voice.genSoxArgs(None), str(sox_wav))]
-        cmds += [(['oggenc', cmds[-1][1], '-o', str(encoded_ogg)], str(encoded_ogg))]
-        cmds += [(['ffmpeg', '-i', str(encoded_ogg)]+RECOMPRESS_ARGS+[filename], filename)]
-        for command_spec in cmds:
-            (command, cfn) = command_spec
+            command = ['ffprobe', '-v', 'quiet', '-print_format', 'json', '-show_format', '-show_streams', filename]
             with os_utils.TimeExecution(command[0]):
-                os_utils.cmd(command, echo=False, critical=True, show_output=command[0] in ('text2wave',))
+                captured = os_utils.cmd_out(command, echo=False, critical=True)
+                fdata.fromJSON(json.loads(captured))
+                fdata.checksum = md5sum(filename)
+                if (not phrase.hasFlag(EPhraseFlags.SFX)) and fdata.duration > 10.0:
+                    fdata.duration -= 10.0
 
-        command = ['ffprobe', '-v', 'quiet', '-print_format', 'json', '-show_format', '-show_streams', filename]
-        with os_utils.TimeExecution(command[0]):
-            captured = os_utils.cmd_out(command, echo=False, critical=True)
-            fdata.fromJSON(json.loads(captured))
-            fdata.checksum = md5sum(filename)
-            if (not phrase.hasFlag(EPhraseFlags.SFX)) and fdata.duration > 10.0:
-                fdata.duration -= 10.0
-
-        for command_spec in cmds:
-            (command, cfn) = command_spec
-            if not os.path.isfile(cfn):
-                log.error("File '{0}' doesn't exist, command '{1}' probably failed!".format(cfn, command))
-                raise VOXCommandExecutionFailed
+            for command_spec in cmds:
+                (command, cfn) = command_spec
+                if not os.path.isfile(cfn):
+                    log.error("File '{0}' doesn't exist, command '{1}' probably failed!".format(cfn, command))
+                    raise VOXCommandExecutionFailed
+        finally:
+            for f in files_to_clean:
+                if f.is_file():
+                    f.unlink()

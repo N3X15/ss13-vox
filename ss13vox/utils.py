@@ -9,3 +9,6 @@ def md5sum(filename):
 def generate_preshared_key():
     chars = string.ascii_uppercase + string.ascii_lowercase + string.digits
     return ''.join(random.choice(chars) for x in range(64))
+def generate_random_string(charlen=16):
+    chars = string.ascii_uppercase + string.ascii_lowercase + string.digits
+    return ''.join(random.choice(chars) for x in range(charlen))

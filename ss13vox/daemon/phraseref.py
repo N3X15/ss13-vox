@@ -2,7 +2,7 @@ from pathlib import Path
 
 class PhraseRef:
     def __init__(self, id: str, path: Path, url: str) -> None:
-        self.id: str = ''
+        self.id: str = id
         self.path: Path = path
         self.url: str = url
 
