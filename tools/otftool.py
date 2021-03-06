@@ -126,6 +126,8 @@ def cmd_gameserver_dump_cfg(args: argparse.Namespace) -> None:
     print('#')
     print('# Enable OTF? (yes/no, default=no)')
     print('ENABLED: yes')
+    print('# Unique ID of the gameserver. Used for reference.')
+    print(f'GSID: {args.gsid}')
     print('# IP address the OTF daemon is on. (default=127.0.0.1)')
     print(f'ADDRESS: {cfg.address}')
     print('# TCP port the OTF daemon is listening on. (default=8080)')
