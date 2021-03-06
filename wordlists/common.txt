@@ -34,7 +34,7 @@ _woop
 , = @samples/halfpause.ogg
 . = @samples/fullpause.ogg
 _airhorn = @samples/airhorn.ogg
-# LOUD _doorstuck = @samples/door-stuck.wav
+_doorstuck = @samples/door-stuck.wav
 _excellent = @samples/billandted-excellent-trimmed.wav
 _fart = @samples/fart.ogg
 _honk = @samples/bikehorn.ogg
