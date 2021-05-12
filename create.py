@@ -257,8 +257,10 @@ def main():
     phrases=[]
     phrasesByID = {}
     broked = False
+    max_wordlen = config.get('max-wordlen', 30)
     for filename in config.get('phrasefiles', ['announcements.txt', 'voxwords.txt']):
         for p in ParsePhraseListFrom(filename):
+            p.wordlen = min(max_wordlen, p.wordlen)
             if p.id in phrasesByID:
                 duplicated = phrasesByID[p.id]
                 log.critical('Duplicate phrase with ID %s in file %s on line %d! First instance in file %s on line %d.', p.id, p.deffile, p.defline, duplicated.deffile, duplicated.defline)

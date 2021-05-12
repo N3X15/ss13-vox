@@ -3,6 +3,8 @@ codebase: vg
 # 'us-clb' - US Female (Nitech ARCTIC)
 # 'us-slt' - US Female (Nitech ARCTIC; Midwestern)
 # 'us-rms' - US Male (Nitech ARCTIC)
+# Maximum phrase length, in words.
+max-wordlen: 30
 voices:
   # Feminine voiceset
   fem:     us-clb
@@ -85,3 +87,5 @@ overrides:
       - no-process
     duration: 0.630295
     word-count: 1
+  voxtest5:
+    word-count: 30
