@@ -29,8 +29,8 @@ REQUIRED_PACKAGES = [
 	'vorbis-tools', #oggenc
 	'ffmpeg',
 
-	# It's 2019
-	'python3.6'
+	# It's 2021
+	'python3.8'
 ]
 
 NITECH_VOICES = [

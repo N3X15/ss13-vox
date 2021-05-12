@@ -1,1 +1,1 @@
-python3.6 create.py
+python create.py
