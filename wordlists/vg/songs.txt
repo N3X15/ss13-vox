@@ -2,4 +2,4 @@
 # Songs have a special delimiter that tells ss13-vox to put Festival into singing mode.
 # Format:
 #  phrase_id = &songs/filename.xml
-_daisy = &songs/daisy.xml
+#_daisy = &songs/daisy.xml
