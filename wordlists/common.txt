@@ -578,7 +578,11 @@ call
 called
 calling
 calls
+cam
 came
+camera
+cameras
+cams
 can
 can't
 canal
@@ -2546,6 +2550,9 @@ permitted
 personal
 personnel
 petty
+photograph
+photographed
+photographs
 picture
 pictures
 picturing
@@ -3653,6 +3660,13 @@ venting
 vents
 very
 victor
+victories
+victorious
+victors
+victory
+video
+videoed
+videos
 village
 villager
 villagers
