@@ -4,18 +4,19 @@ options:
   generate-setup: false
   generate-requirements: true
 packages:
+  autopep8: {}
   profanity-filter:
     frozen-at: 1.3.3
   pybuildtools:
     frozen-at: 0.4.3
   requests:
-    frozen-at: 2.25.1
+    frozen-at: 2.26.0
   ruamel.yaml:
     frozen-at: 0.15.100
   werkzeug:
-    frozen-at: 2.0.0
+    frozen-at: 2.0.1
 dev-packages:
   isort:
-    frozen-at: 5.8.0
+    frozen-at: 5.9.3
   mypy:
-    frozen-at: '0.812'
+    frozen-at: '0.910'
