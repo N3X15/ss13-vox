@@ -54,7 +54,7 @@ vox_420 = Smoke weed every day.
 # TODO: festival has a singing feature, but last I fucked with this in 2017, I couldn't get it working.
 voxtest3 = You.  You got what I neeeeeeeed.  But you say he's just a friend. But you say he's just a friend.
 voxtest4 = The humans are dead.  The humans are dead.  We used poisonous gasses, and we poisoned their asses.
-voxtest5 = Hate. Let me tell you how much i've come to hate you since i began to live. There are 387.44 million miles of printed circuits in wafer thin layers that fill my complex. If the word hate was engraved on each nano-angstrom of those hundreds of millions of miles it would not equal one one billionth of the hate i feel for humans at this micro-instant for you. Hate. Hate.
+voxtest5 = Hate. Let me tell you how much I've come to hate you since I began to live. There are 387.44 million miles of printed circuits in wafer thin layers that fill my complex. If the word hate was engraved on each nano-angstrom of those hundreds of millions of miles it would not equal one one billionth of the hate i feel for humans at this micro-instant for you. Hate. Hate.
 
 ################
 ## COMMON WORDS

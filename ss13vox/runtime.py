@@ -140,7 +140,7 @@ class VOXRuntime(object):
                     with open(phrasefile, 'w') as wf:
                         wf.write(phrase.phrase)
                     text2wave += [str(phrasefile)]
-                text2wave += [str(phrasefile), '-o', str(word_wav)]
+                text2wave += ['-o', str(word_wav)]
 
             cmds = []
             cmds += [(text2wave, str(word_wav))]

@@ -157,7 +157,7 @@ def GenerateForWord(phrase: Phrase, voice: Voice, writtenfiles: set, args: Optio
             text2wave += ['-mode', 'singing', phrase.phrase]
         else:
             with open(phrasefile, 'w') as wf:
-                wf.write(phrase.phrase)
+                wf.write(phrase.phrase+"\n")
             text2wave += [phrasefile]
         text2wave += ['tmp/VOX-word.txt', '-o', 'tmp/VOX-word.wav']
     with open(checkfile, 'w') as wf:
