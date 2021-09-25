@@ -64,6 +64,10 @@ voxtest5 = Hate. Let me tell you how much I've come to hate you since I began to
 'tis
 'twas
 a = Ay
+abandon
+abandoned
+abandoning
+abandons
 abduct
 abducted
 abducting
@@ -128,6 +132,8 @@ adds
 adios
 administration
 administrations
+administrator
+administrators
 advance
 advanced
 advances
@@ -203,6 +209,10 @@ animal
 animals
 announcement
 announcements
+annoy
+annoyed
+annoying
+annoys
 anomalies
 anomalous
 anomaly
@@ -408,6 +418,8 @@ biohazards
 biological
 biomass
 biomasses
+biomechanic
+biomechanical
 birb
 birbs
 bird
@@ -651,8 +663,12 @@ centering
 centers
 centi
 central
+centrifuge
+centrifuges
 chaching = chuh-ching
 chad
+chair
+chairs
 challenge
 challenged
 challenges
@@ -718,6 +734,7 @@ churro
 churros
 circuit
 circuits
+clarke
 claus
 clean
 cleaned
@@ -752,6 +769,7 @@ clowned
 clowning
 clowns
 cmo = C-M-O
+co2 = carbon dioxide
 cockroach
 cockroaches
 cocoon
@@ -903,7 +921,9 @@ cracked
 cracking
 cracks
 crate
+crated
 crates
+crating
 crayon
 crayons
 crazies
@@ -1128,6 +1148,11 @@ dish
 dishes
 disk
 disks
+dispense
+dispensed
+dispenser
+dispensers
+dispensing
 disposal
 disposals
 distance
@@ -1181,6 +1206,11 @@ drunks
 dual
 duct
 ducts
+durand
+dye
+dyed
+dyeing
+dyes
 dying
 e = E.
 e'er
@@ -1540,6 +1570,7 @@ games
 gaming
 gang
 gangs
+garbage
 garlic
 gas
 gassed
@@ -1659,6 +1690,7 @@ gutted
 gutter
 gutters
 gutting
+gygax
 gym
 h = H.
 hack
@@ -1742,6 +1774,7 @@ her
 here
 hers
 herself
+hey
 hidden
 hide
 hides
@@ -1992,6 +2025,8 @@ laser
 lasers
 lasposadas = Las Posadas
 last
+lathe
+lathes
 laugh
 laughed
 laughing
@@ -2169,6 +2204,8 @@ malfunction
 malfunctioned
 malfunctioning
 malfunctions
+malpractice
+malpracticing
 mama
 man
 manchurian
@@ -2240,6 +2277,7 @@ mike
 mile
 miles
 military
+milk
 milli
 million
 millions
@@ -2344,6 +2382,8 @@ mysteries
 mystery
 mythic
 n = N.
+n2 = nitrogen
+n2o = nitrous oxide
 nacho
 nachos
 naked
@@ -2426,6 +2466,7 @@ nymphs
 o = O.
 o'clock
 o'er
+o2 = oxygen
 objective
 objectives
 observation
@@ -2792,6 +2833,10 @@ recommends
 record = reckerd
 record_ = reekord
 red
+refine
+refined
+refines
+refining
 regime
 regimes
 regret
@@ -2827,6 +2872,10 @@ require
 required
 requires
 requiring
+rescue
+rescued
+rescues
+rescuing
 research
 reservoir
 reservoirs
@@ -2868,7 +2917,11 @@ roboticist
 roboticists
 robotics
 robots
+rock
+rocked
 rocket
+rocking
+rocks
 rod
 rodded
 rodding
@@ -2903,6 +2956,7 @@ saboteur
 saboteurs
 safe
 safer
+safes
 safest
 safeties
 safety
@@ -3036,7 +3090,11 @@ shined
 shines
 shining
 shins
+ship
 shipment
+shipped
+shipping
+ships
 shirt
 shirts
 shock
@@ -3164,6 +3222,7 @@ southern
 southwestern
 soviet
 soviets
+soy
 space
 spaced
 spaces
@@ -3376,6 +3435,8 @@ team
 teamed
 teams
 tech
+technician
+technicians
 technologies
 technology
 teen
@@ -3402,6 +3463,7 @@ terminated
 terminates
 terminating
 termination
+terrible
 test
 tested
 testing
@@ -3543,6 +3605,10 @@ trap
 trapped
 trapping
 traps
+trash
+trashed
+trashes
+trashing
 tree
 trees
 triangulate
@@ -3724,6 +3790,8 @@ wanted
 war
 warden
 wardens
+warhead
+warheads
 warm
 warn
 warned
