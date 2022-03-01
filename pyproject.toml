@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "ss13-vox"
+version = "0.0.1"
+description = "Announcements wordlist generator for SS13"
+authors = ["Rob Nelson <nexisentertainment@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+profanity-filter = "^1.3.3"
+pybuildtools = "^0.4.6"
+requests = "^2.27.1"
+Werkzeug = "^2.0.3"
+
+[tool.poetry.dev-dependencies]
+autopep8 = "^1.6.0"
+isort = "^5.10.1"
+mypy = "^0.931"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
