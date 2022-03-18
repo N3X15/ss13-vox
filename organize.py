@@ -4,16 +4,20 @@ from buildtools import log
 from ss13vox.phrase import Phrase, EPhraseFlags, ParsePhraseListFrom
 from ss13vox.pronunciation import Pronunciation, DumpLexiconScript, ParseLexiconText
 
-from profanity_filter import ProfanityFilter
+# PF is now unmaintained.
+# _PF: ProfanityFilter = None
+# PROFANITY_CHECK: bool = False
+# try:
+#     from profanity_filter import ProfanityFilter
+# except:
+#     PROFANITY_CHECK = False
 
-PROFANITY_CHECK: bool = True
-PF: ProfanityFilter = None
 def organizeFile(filename: str, sort_sections: bool = False, skip_profanity_check:bool = None) -> None:
-    global PF
-    if skip_profanity_check is None:
-        skip_profanity_check = not PROFANITY_CHECK
-    if PF is None:
-        PF = ProfanityFilter()
+    # global _PF
+    # if skip_profanity_check is None:
+    #     skip_profanity_check = not PROFANITY_CHECK
+    # if _PF is None:
+    #     _PF = ProfanityFilter()
 
     phrases: Dict[str, List[Phrase]] = collections.OrderedDict({
         #EPhraseFlags.OLD_VOX.name: [],
@@ -59,8 +63,8 @@ def organizeFile(filename: str, sort_sections: bool = False, skip_profanity_chec
                 if phrase.hasFlag(EPhraseFlags.SFX):
                     w.write(f'{newkey} = @{value}\n')
                 else:
-                    if not skip_profanity_check and PF.is_profane(value):
-                        log.warning(f'{filename}: Phrase {phrase.id} contains profanity.')
+                    # if not skip_profanity_check and _PF.is_profane(value):
+                    #     log.warning(f'{filename}: Phrase {phrase.id} contains profanity.')
                     if key != value:
                         w.write(f'{newkey} = {value}\n')
                     else:
