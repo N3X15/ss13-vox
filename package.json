@@ -13,10 +13,10 @@
     "@babel/preset-env": "^7.12.11",
     "coffee-loader": "^3.0.0",
     "coffeescript": "^2.5.1",
-    "css-loader": "^5.0.1",
+    "css-loader": "^6.7.1",
     "sass": "^1.32.5",
-    "sass-loader": "^11.1.0",
-    "style-loader": "^2.0.0",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1",
     "uglify-js": "^3.14.5",
     "webpack": "^5.19.0"
   }
