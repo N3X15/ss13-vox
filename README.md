@@ -8,8 +8,8 @@ TTS-based announcer inspired by Half Life's announcement system.
 
 **This system has only been tested on Ubuntu.** Therefore, this should be installed and run on an Ubuntu system. A VM is recommended, but not necessary.
 
-1. Run ```sudo apt install python3 && pip install -r requirements.txt``` to install and configure Python 3 for Ubuntu.
-1. Run ```sudo python3 setup.py``` to install and configure SoX, Festival, and oggenc.
+1. Run `sudo apt install python3 && pip3 install -U poetry && poetry install --no-root` to install and configure Python 3 for Ubuntu.
+1. Run `sudo python3 setup.py` to install and configure SoX, Festival, and oggenc.
   * NOTE: During the install process, setup.py will download and install packages, and install new Festival voices.
 
 ## Generating Sounds
@@ -68,3 +68,9 @@ $ python3 test.py --voice=$SEX sarah connor please report to medbay for johnson 
 ```
 
 This will call `play` for you.
+
+# Fixing Generated Code
+
+Coding standards change over time, and this repo is relatively slow to update.  
+
+If you need different dm output, please see `templates/` and edit the appropriate file (`vglist.jinja` or `tglist.jinja`).  Once done, run `generate.sh` again.  Afterwards, please send us a PR so everyone else gets the update.
