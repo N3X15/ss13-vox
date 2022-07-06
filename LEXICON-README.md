@@ -1,6 +1,6 @@
 # Lexicon
 
-The lexicon is a tool that tells [Festival TTS](http://www.cstr.ed.ac.uk/projects/festival/) how to say certain words using
+The *lexicon* is a tool that tells [Festival TTS](http://www.cstr.ed.ac.uk/projects/festival/) how to say certain words using
 an easy-to-use script that makes use of the [CMU Pronouncing Dictionary](http://www.speech.cs.cmu.edu/cgi-bin/cmudict?).  
 This script is then translated to a LISP script for each voice during generation.
 

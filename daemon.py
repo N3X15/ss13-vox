@@ -250,7 +250,7 @@ class VoxRESTService(WZService, JinjaMixin):
         })
 
 def main():
-    global OTF_DIR, OTF_TMP_DIR, OTF_SOUNDS_DIR
+    global OTF_DIR, OTF_TMP_DIR#, OTF_SOUNDS_DIR
     import argparse
 
     argp = argparse.ArgumentParser()
