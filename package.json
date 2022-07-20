@@ -11,11 +11,11 @@
     "@babel/plugin-transform-arrow-functions": "^7.12.1",
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.12.11",
-    "coffee-loader": "^3.0.0",
+    "coffee-loader": "^4.0.0",
     "coffeescript": "^2.5.1",
     "css-loader": "^6.7.1",
     "sass": "^1.32.5",
-    "sass-loader": "^12.6.0",
+    "sass-loader": "^13.0.2",
     "style-loader": "^3.3.1",
     "uglify-js": "^3.14.5",
     "webpack": "^5.19.0"
