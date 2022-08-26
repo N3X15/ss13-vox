@@ -388,7 +388,7 @@ watchdog = ["watchdog"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "4a54f7f70b65fb4d6002491948f0ecc34404ab3d89605ed60ffbdec63e2bf6b4"
+content-hash = "98c10f999f43e9d1545337344f62a884da77cb31d09c04a9494c1b49f4554758"
 
 [metadata.files]
 autopep8 = []

@@ -4,13 +4,15 @@ TTS-based announcer inspired by Half Life's announcement system.
 
 **This project was originally written in 2013 when I was still learning python, so it's a bit rough around the edges.** I am slowly trying to improve the code.
 
+**I AM UNABLE TO GET THIS WORKING ON UBUNTU 22.04 LTS DUE TO A PROBLEM WITH UBUNTU AND VIRTUALBOX.**  Please be patient while I work on this.
+
 ## Installing
 
-**This system has only been tested on Ubuntu.** Therefore, this should be installed and run on an Ubuntu system. A VM is recommended, but not necessary.
+**This system has only been tested on Ubuntu 20.04 (focal).** Therefore, this should be installed and run on an Ubuntu system. A VM (such as VMWare, VirtualBox, or Xen) is recommended, but not necessary.
 
 1. Run `sudo apt install python3 && pip3 install -U poetry && poetry install --no-root` to install and configure Python 3 for Ubuntu.
 1. Run `sudo python3 setup.py` to install and configure SoX, Festival, and oggenc.
-  * NOTE: During the install process, setup.py will download and install packages, and install new Festival voices.
+  * NOTE: During the install process, setup.py will download and install operating system packages, and install new Festival voices.
 
 ## Generating Sounds
 

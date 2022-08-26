@@ -16,6 +16,7 @@ autopep8 = "^1.7.0"
 isort = "^5.10.1"
 mypy = "^0.971"
 poetryup = "^0.10.0"
+pybuildtools = "^0.5.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

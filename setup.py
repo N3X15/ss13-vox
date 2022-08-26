@@ -1,16 +1,24 @@
-
-import os, re, sys, logging, shutil
+import click
+import logging
+import os
+import re
+import sys
 from pathlib import Path
-from typing import Set
+from typing import Callable, FrozenSet, List, Optional, Set
 from urllib.parse import urlparse
+
 try:
 	import apt
 except:
 	print('Please run `apt install python3-apt`!')
 	sys.exit(1)
 
-from buildtools import os_utils, http
-from buildtools.bt_logging import IndentLogger
+try:
+	from buildtools import http, os_utils
+	from buildtools.bt_logging import IndentLogger
+except:
+	print('pybuildtools not detected! Please run `python3 -m poetry install && sudo poetry run python setup.py`.')
+	sys.exit(1)
 
 SCRIPT_DIR = Path(__file__).parent
 
@@ -159,21 +167,55 @@ def FixHTS():
 						os.remove(fixed_filename)
 		log.info('{} files changed.'.format(files_changed))
 
+def do_check(label: str, callback: Callable[[], bool]) -> None:
+	click.secho(('  '+label+'...').rjust(80-4), nl=False)
+	if callback():
+		click.secho('PASS', fg='green')
+	else:
+		click.secho('FAIL', fg='red')
+		sys.exit(1)
+
+CHECK_POSTFIX: List[str] = []
+CURRENT_LSB: Optional[str] = None
+VALID_RELEASES: FrozenSet[str] = frozenset({
+	'focal',
+	'jammy'
+})
+
+def chk_uid() -> bool:
+	return os.getuid() != 0
+
+def get_base_prefix_compat():
+    """Get base/real prefix, or sys.prefix if there is none."""
+    return getattr(sys, "base_prefix", None) or getattr(sys, "real_prefix", None) or sys.prefix
+
+def chk_venv() -> bool:
+	return get_base_prefix_compat() != sys.prefix
+
+def chk_lsb() -> bool:
+	try:
+		import lsb_release
+		lsbdata: dict = {}
+		if hasattr(lsb_release, 'get_distro_information'):
+			lsbdata = lsb_release.get_distro_information()
+		else:
+			lsbdata = lsb_release.get_os_release()
+		CURRENT_LSB = lsbdata['RELEASE']
+		return CURRENT_LSB in VALID_RELEASES
+	except:
+		return False
 
 def main():
 	print('This script will set up your Ubuntu system for building VOX phrases.')
-	#print('This assumes you are running on Ubuntu as root (run with sudo).')
-	with log.info('Permissions check:'):
-		if os.getuid() != 0:
-			log.critical('This script is required to be run as root. Example:')
-			log.critical('$ sudo python3 setup.py')
-			sys.exit(1)
-		else:
-			log.info('I am root.')
+	with log.info('Sanity checks:'):
+		do_check('Running as root', chk_uid)
+		do_check('Checking Ubuntu release (LSB)', chk_lsb)
+		do_check('Running in virtualenv (poetry shell)', chk_venv)
 
 	InstallPackages()
 	InstallHTS()
 	FixHTS()
+
 	log.info('Done!')
 
 if __name__ == '__main__':
